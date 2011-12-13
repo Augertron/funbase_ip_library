@@ -18,6 +18,7 @@ if test -z $TMP_DIR
 then
 	echo "Env variable TMP_DIR, which defines the location of Modelsim's work dir, is not set"
 	echo "In cygwin, you must use Windows style such as D:/user/Xavier... and not /cygdrive/d/user..."
+	echo "You can also use current directory: export TMP_DIR=.  "
 	echo "->Exit"
 	exit
 fi
@@ -55,7 +56,7 @@ echo; echo "Compiling vhdl codes"; echo
 
 echo; echo "Compiling HIBI"; echo
 
-HIBI_DIR="../../../../../../release_1/lib/hw_lib/ips/communication/hibi/vhd"
+HIBI_DIR="../../../../../ip.hwp.communication/hibi/2.0/vhd"
 
 
 vcom -quiet -check_synthesis -pedanticerrors $HIBI_DIR/hibiv2_pkg.vhd
@@ -84,7 +85,7 @@ vcom -quiet -check_synthesis -pedanticerrors $HIBI_DIR/hibi_wrapper_r3.vhd
 vcom -quiet -check_synthesis -pedanticerrors $HIBI_DIR/hibi_wrapper_r4.vhd
 
 echo
-echo "Compiling Altera libraries"
+echo "Compiling Altera libraries"; echo
 vlog -quiet -work work -L mtiAvm -L mtiOvm -L mtiUPF $QUARTUS_ROOTDIR/eda/sim_lib/arriaii_atoms.v
 vlog -quiet -work work -L mtiAvm -L mtiOvm -L mtiUPF $QUARTUS_ROOTDIR/eda/sim_lib/altera_mf.v
 vlog -quiet -work work -L mtiAvm -L mtiOvm -L mtiUPF $QUARTUS_ROOTDIR/eda/sim_lib/altera_primitives.v
@@ -92,12 +93,15 @@ vlog -quiet -work work -L mtiAvm -L mtiOvm -L mtiUPF $QUARTUS_ROOTDIR/eda/sim_li
 vlog -quiet -work work -L mtiAvm -L mtiOvm -L mtiUPF $QUARTUS_ROOTDIR/eda/sim_lib/220model.v
 
 ALT_MEM_CTRL=a2_ddr2_dimm_1GB
-ALT_MEM_CTRL_DIR="../alt_mem_ctrl/$ALT_MEM_CTRL"
+ALT_MEM_CTRL_DIR="../../../$ALT_MEM_CTRL"
+
 
 echo
-echo "Compiling Altera DDR2 controller"
-vlog -quiet +incdir+$ALT_MEM_CTRL_DIR -work work -L mtiAvm -L mtiOvm -L mtiUPF $ALT_MEM_CTRL_DIR/alt_ddrx_*.v
-vlog -quiet +incdir+$ALT_MEM_CTRL_DIR -work work -L mtiAvm -L mtiOvm -L mtiUPF $ALT_MEM_CTRL_DIR/${ALT_MEM_CTRL}.v
+echo "Compiling Altera DDR2 controller"; echo
+vlog -quiet +incdir+$ALT_MEM_CTRL_DIR -work work -L mtiAvm -L mtiOvm -L mtiUPF ../../../a2_ddr2_dimm_1GB.comp/2.0/hdl/alt_ddrx_*.v
+
+vlog -quiet +incdir+$ALT_MEM_CTRL_DIR -work work -L mtiAvm -L mtiOvm -L mtiUPF ../../../a2_ddr_dimm_1GB_full_mem_model.comp/1.0/tb/*.v
+
 vlog -quiet +incdir+$ALT_MEM_CTRL_DIR -work work -L mtiAvm -L mtiOvm -L mtiUPF $ALT_MEM_CTRL_DIR/${ALT_MEM_CTRL}_alt_ddrx_controller_wrapper.v
 vlog -quiet +incdir+$ALT_MEM_CTRL_DIR -work work -L mtiAvm -L mtiOvm -L mtiUPF $ALT_MEM_CTRL_DIR/${ALT_MEM_CTRL}_controller_phy.v
 vlog -quiet +incdir+$ALT_MEM_CTRL_DIR -work work -L mtiAvm -L mtiOvm -L mtiUPF $ALT_MEM_CTRL_DIR/${ALT_MEM_CTRL}_phy.v
@@ -105,17 +109,19 @@ vlog -quiet +incdir+$ALT_MEM_CTRL_DIR -work work -L mtiAvm -L mtiOvm -L mtiUPF $
 vlog -quiet +incdir+$ALT_MEM_CTRL_DIR -work work -L mtiAvm -L mtiOvm -L mtiUPF $ALT_MEM_CTRL_DIR/${ALT_MEM_CTRL}_phy_alt_mem_phy_dq_dqs.v
 vlog -quiet +incdir+$ALT_MEM_CTRL_DIR -work work -L mtiAvm -L mtiOvm -L mtiUPF $ALT_MEM_CTRL_DIR/${ALT_MEM_CTRL}_phy_alt_mem_phy_pll.v
 vlog -quiet +incdir+$ALT_MEM_CTRL_DIR -work work -L mtiAvm -L mtiOvm -L mtiUPF $ALT_MEM_CTRL_DIR/${ALT_MEM_CTRL}_phy_alt_mem_phy_seq_wrapper.vo
+
 vlog -quiet +incdir+$ALT_MEM_CTRL_DIR -work work -L mtiAvm -L mtiOvm -L mtiUPF $ALT_MEM_CTRL_DIR/testbench/${ALT_MEM_CTRL}_full_mem_model.v
+#vlog -quiet +incdir+$ALT_MEM_CTRL_DIR -work work -L mtiAvm -L mtiOvm -L mtiUPF $ALT_MEM_CTRL_DIR/testbench/${ALT_MEM_CTRL}_full_mem_model.v
 
 echo
-echo "Compiling alt_mem modules"
+echo "Compiling alt_mem modules"; echo
 vlog -quiet -work work -L mtiAvm -L mtiOvm -L mtiUPF ../ts/a2gx_hibi_mem_dma_perf_test/alt_mem.v
 vlog -quiet -work work -L mtiAvm -L mtiOvm -L mtiUPF ../ts/a2gx_hibi_mem_dma_perf_test/alt_mem_2.v
 
 echo
 echo "Compile MEM_DMA"
 TESTER_DIR="../vhd"
-vcom -quiet -check_synthesis -pedanticerrors ../hdl/txt_util.vhd
+vcom -quiet -check_synthesis -pedanticerrors ../../../../../ip.hwp.support/txt_util/1.0/hdl/txt_util.vhd
 
 vcom -quiet -check_synthesis -pedanticerrors ../hdl/dual_port_ram_u.vhd
 vcom -quiet -check_synthesis -pedanticerrors ../hdl/dual_ram_async_read.vhd
@@ -127,8 +133,8 @@ vcom -quiet -check_synthesis ../hdl/hibi_mem_dma.vhd
 
 
 # Testipenkki
-echo; echo "Compiling vhdl testbenches";echo
-vcom -quiet ../../../misc/pseudo_rand_gen/vhd/pseudo_rand_gen_r2.vhd
+echo; echo "Compiling vhdl testbenches"; echo
+vcom -quiet ./pseudo_rand_gen_r2.vhd
 vcom -quiet ./hibi_seg.vhd
 vcom -quiet ./hibi_mem_dma_tester.vhd
 vcom -quiet ./hibi_mem_dma_tb.vhd
