@@ -311,6 +311,8 @@ IEEE__numeric_std = $(LIB_IEEE)/numeric_std/_primary.dat
 ./CODELIB__alt_outbuf_tri = $(LIB_./CODELIB)/alt_outbuf_tri/_primary.dat
 ./CODELIB__alt_outbuf_diff = $(LIB_./CODELIB)/alt_outbuf_diff/_primary.dat
 ./CODELIB__alt_outbuf = $(LIB_./CODELIB)/alt_outbuf/_primary.dat
+./CODELIB__alt_mem_2 = $(LIB_./CODELIB)/alt_mem_2/_primary.dat
+./CODELIB__alt_mem = $(LIB_./CODELIB)/alt_mem/_primary.dat
 ./CODELIB__alt_iobuf_diff = $(LIB_./CODELIB)/alt_iobuf_diff/_primary.dat
 ./CODELIB__alt_iobuf = $(LIB_./CODELIB)/alt_iobuf/_primary.dat
 ./CODELIB__alt_inbuf_diff = $(LIB_./CODELIB)/alt_inbuf_diff/_primary.dat
@@ -370,8 +372,27 @@ IEEE__numeric_std = $(LIB_IEEE)/numeric_std/_primary.dat
 ./CODELIB__addr_data_demux_read__rtl = $(LIB_./CODELIB)/addr_data_demux_read/rtl.dat
 ./CODELIB__addr_data_demux_read = $(LIB_./CODELIB)/addr_data_demux_read/_primary.dat
 ./CODELIB__a_graycounter = $(LIB_./CODELIB)/a_graycounter/_primary.dat
+./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_write_dp = $(LIB_./CODELIB)/a2_ddr2_dimm_1@g@b_phy_alt_mem_phy_write_dp/_primary.dat
+./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_seq_wrapper = $(LIB_./CODELIB)/a2_ddr2_dimm_1@g@b_phy_alt_mem_phy_seq_wrapper/_primary.dat
+./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_reset_pipe = $(LIB_./CODELIB)/a2_ddr2_dimm_1@g@b_phy_alt_mem_phy_reset_pipe/_primary.dat
+./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_read_dp = $(LIB_./CODELIB)/a2_ddr2_dimm_1@g@b_phy_alt_mem_phy_read_dp/_primary.dat
+./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_rdata_valid = $(LIB_./CODELIB)/a2_ddr2_dimm_1@g@b_phy_alt_mem_phy_rdata_valid/_primary.dat
+./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_postamble = $(LIB_./CODELIB)/a2_ddr2_dimm_1@g@b_phy_alt_mem_phy_postamble/_primary.dat
+./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_pll = $(LIB_./CODELIB)/a2_ddr2_dimm_1@g@b_phy_alt_mem_phy_pll/_primary.dat
+./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_mux = $(LIB_./CODELIB)/a2_ddr2_dimm_1@g@b_phy_alt_mem_phy_mux/_primary.dat
+./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_mimic_debug = $(LIB_./CODELIB)/a2_ddr2_dimm_1@g@b_phy_alt_mem_phy_mimic_debug/_primary.dat
+./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_mimic = $(LIB_./CODELIB)/a2_ddr2_dimm_1@g@b_phy_alt_mem_phy_mimic/_primary.dat
+./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_dq_dqs = $(LIB_./CODELIB)/a2_ddr2_dimm_1@g@b_phy_alt_mem_phy_dq_dqs/_primary.dat
+./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_dp_io = $(LIB_./CODELIB)/a2_ddr2_dimm_1@g@b_phy_alt_mem_phy_dp_io/_primary.dat
+./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_clk_reset = $(LIB_./CODELIB)/a2_ddr2_dimm_1@g@b_phy_alt_mem_phy_clk_reset/_primary.dat
+./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_addr_cmd = $(LIB_./CODELIB)/a2_ddr2_dimm_1@g@b_phy_alt_mem_phy_addr_cmd/_primary.dat
+./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_ac = $(LIB_./CODELIB)/a2_ddr2_dimm_1@g@b_phy_alt_mem_phy_ac/_primary.dat
+./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy = $(LIB_./CODELIB)/a2_ddr2_dimm_1@g@b_phy_alt_mem_phy/_primary.dat
+./CODELIB__a2_ddr2_dimm_1GB_phy = $(LIB_./CODELIB)/a2_ddr2_dimm_1@g@b_phy/_primary.dat
 ./CODELIB__a2_ddr2_dimm_1GB_full_mem_model_ram_module = $(LIB_./CODELIB)/a2_ddr2_dimm_1@g@b_full_mem_model_ram_module/_primary.dat
 ./CODELIB__a2_ddr2_dimm_1GB_full_mem_model = $(LIB_./CODELIB)/a2_ddr2_dimm_1@g@b_full_mem_model/_primary.dat
+./CODELIB__a2_ddr2_dimm_1GB_controller_phy = $(LIB_./CODELIB)/a2_ddr2_dimm_1@g@b_controller_phy/_primary.dat
+./CODELIB__a2_ddr2_dimm_1GB_alt_ddrx_controller_wrapper = $(LIB_./CODELIB)/a2_ddr2_dimm_1@g@b_alt_ddrx_controller_wrapper/_primary.dat
 VCOM = vcom
 VLOG = vlog
 VOPT = vopt
@@ -676,6 +697,8 @@ whole_library :     $(./CODELIB__txt_util__body) \
     $(./CODELIB__alt_outbuf_tri) \
     $(./CODELIB__alt_outbuf_diff) \
     $(./CODELIB__alt_outbuf) \
+    $(./CODELIB__alt_mem_2) \
+    $(./CODELIB__alt_mem) \
     $(./CODELIB__alt_iobuf_diff) \
     $(./CODELIB__alt_iobuf) \
     $(./CODELIB__alt_inbuf_diff) \
@@ -735,8 +758,27 @@ whole_library :     $(./CODELIB__txt_util__body) \
     $(./CODELIB__addr_data_demux_read__rtl) \
     $(./CODELIB__addr_data_demux_read) \
     $(./CODELIB__a_graycounter) \
+    $(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_write_dp) \
+    $(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_seq_wrapper) \
+    $(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_reset_pipe) \
+    $(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_read_dp) \
+    $(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_rdata_valid) \
+    $(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_postamble) \
+    $(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_pll) \
+    $(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_mux) \
+    $(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_mimic_debug) \
+    $(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_mimic) \
+    $(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_dq_dqs) \
+    $(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_dp_io) \
+    $(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_clk_reset) \
+    $(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_addr_cmd) \
+    $(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_ac) \
+    $(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy) \
+    $(./CODELIB__a2_ddr2_dimm_1GB_phy) \
     $(./CODELIB__a2_ddr2_dimm_1GB_full_mem_model_ram_module) \
-    $(./CODELIB__a2_ddr2_dimm_1GB_full_mem_model)
+    $(./CODELIB__a2_ddr2_dimm_1GB_full_mem_model) \
+    $(./CODELIB__a2_ddr2_dimm_1GB_controller_phy) \
+    $(./CODELIB__a2_ddr2_dimm_1GB_alt_ddrx_controller_wrapper)
 
 $(./CODELIB__addr_data_demux_read) \
 $(./CODELIB__addr_data_demux_read__rtl) \
@@ -770,8 +812,27 @@ $(./CODELIB__addr_decoder__rtl) : ../../../../../ip.hwp.communication/hibi/2.0/v
 	$(VCOM) -2002 -work ./codelib -quiet -check_synthesis \
 		 -pedanticerrors ../../../../../ip.hwp.communication/hibi/2.0/vhd/addr_decoder.vhd
 
+$(./CODELIB__a2_ddr2_dimm_1GB_alt_ddrx_controller_wrapper) \
+$(./CODELIB__a2_ddr2_dimm_1GB_controller_phy) \
 $(./CODELIB__a2_ddr2_dimm_1GB_full_mem_model) \
 $(./CODELIB__a2_ddr2_dimm_1GB_full_mem_model_ram_module) \
+$(./CODELIB__a2_ddr2_dimm_1GB_phy) \
+$(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy) \
+$(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_ac) \
+$(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_addr_cmd) \
+$(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_clk_reset) \
+$(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_dp_io) \
+$(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_dq_dqs) \
+$(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_mimic) \
+$(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_mimic_debug) \
+$(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_mux) \
+$(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_pll) \
+$(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_postamble) \
+$(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_rdata_valid) \
+$(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_read_dp) \
+$(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_reset_pipe) \
+$(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_seq_wrapper) \
+$(./CODELIB__a2_ddr2_dimm_1GB_phy_alt_mem_phy_write_dp) \
 $(./CODELIB__alt_ddrx_addr_cmd) \
 $(./CODELIB__alt_ddrx_afi_block) \
 $(./CODELIB__alt_ddrx_avalon_if) \
@@ -838,8 +899,15 @@ $(./CODELIB__alt_ddrx_wdata_fifo) : ../../../a2_ddr2_dimm_1GB.comp/2.0/hdl/alt_d
 		 ../../../a2_ddr2_dimm_1GB.comp/2.0/hdl/alt_ddrx_avalon_if.v \
 		 ../../../a2_ddr2_dimm_1GB.comp/2.0/hdl/alt_ddrx_afi_block.v \
 		 ../../../a2_ddr2_dimm_1GB.comp/2.0/hdl/alt_ddrx_addr_cmd.v \
-		 ../../../a2_ddr_dimm_1GB_full_mem_model.comp/1.0/tb/a2_ddr2_dimm_1GB_full_mem_model.v
-	$(VLOG) -quiet +incdir+../../../a2_ddr2_dimm_1GB \
+		 ../../../a2_ddr2_dimm_1GB.comp/2.0/hdl/a2_ddr2_dimm_1GB_phy_alt_mem_phy.v \
+		 ../../../a2_ddr2_dimm_1GB.comp/2.0/hdl/a2_ddr2_dimm_1GB_phy_alt_mem_phy_seq_wrapper.v \
+		 ../../../a2_ddr2_dimm_1GB.comp/2.0/hdl/a2_ddr2_dimm_1GB_phy_alt_mem_phy_pll.v \
+		 ../../../a2_ddr2_dimm_1GB.comp/2.0/hdl/a2_ddr2_dimm_1GB_phy_alt_mem_phy_dq_dqs.v \
+		 ../../../a2_ddr2_dimm_1GB.comp/2.0/hdl/a2_ddr2_dimm_1GB_phy.v \
+		 ../../../a2_ddr_dimm_1GB_full_mem_model.comp/1.0/tb/a2_ddr2_dimm_1GB_full_mem_model.v \
+		 ../../../a2_ddr2_dimm_1GB.comp/2.0/hdl/a2_ddr2_dimm_1GB_controller_phy.v \
+		 ../../../a2_ddr2_dimm_1GB.comp/2.0/hdl/a2_ddr2_dimm_1GB_alt_ddrx_controller_wrapper.v
+	$(VLOG) -quiet +incdir+../../../a2_ddr2_dimm_1GB.comp/2.0/hdl \
 		 -work work -L mtiAvm -L mtiOvm -L mtiUPF \
 		 -L mtiUvm ../../../a2_ddr2_dimm_1GB.comp/2.0/hdl/alt_ddrx_wdata_fifo.v \
 		 ../../../a2_ddr2_dimm_1GB.comp/2.0/hdl/alt_ddrx_timing_param.v \
@@ -872,7 +940,14 @@ $(./CODELIB__alt_ddrx_wdata_fifo) : ../../../a2_ddr2_dimm_1GB.comp/2.0/hdl/alt_d
 		 ../../../a2_ddr2_dimm_1GB.comp/2.0/hdl/alt_ddrx_avalon_if.v \
 		 ../../../a2_ddr2_dimm_1GB.comp/2.0/hdl/alt_ddrx_afi_block.v \
 		 ../../../a2_ddr2_dimm_1GB.comp/2.0/hdl/alt_ddrx_addr_cmd.v \
-		 ../../../a2_ddr_dimm_1GB_full_mem_model.comp/1.0/tb/a2_ddr2_dimm_1GB_full_mem_model.v
+		 ../../../a2_ddr2_dimm_1GB.comp/2.0/hdl/a2_ddr2_dimm_1GB_phy_alt_mem_phy.v \
+		 ../../../a2_ddr2_dimm_1GB.comp/2.0/hdl/a2_ddr2_dimm_1GB_phy_alt_mem_phy_seq_wrapper.v \
+		 ../../../a2_ddr2_dimm_1GB.comp/2.0/hdl/a2_ddr2_dimm_1GB_phy_alt_mem_phy_pll.v \
+		 ../../../a2_ddr2_dimm_1GB.comp/2.0/hdl/a2_ddr2_dimm_1GB_phy_alt_mem_phy_dq_dqs.v \
+		 ../../../a2_ddr2_dimm_1GB.comp/2.0/hdl/a2_ddr2_dimm_1GB_phy.v \
+		 ../../../a2_ddr_dimm_1GB_full_mem_model.comp/1.0/tb/a2_ddr2_dimm_1GB_full_mem_model.v \
+		 ../../../a2_ddr2_dimm_1GB.comp/2.0/hdl/a2_ddr2_dimm_1GB_controller_phy.v \
+		 ../../../a2_ddr2_dimm_1GB.comp/2.0/hdl/a2_ddr2_dimm_1GB_alt_ddrx_controller_wrapper.v
 
 $(./CODELIB__cfg_init_pkg) : ../../../../../ip.hwp.communication/hibi/2.0/vhd/cfg_init_pkg.vhd \
 		$(IEEE__std_logic_arith) \
@@ -1141,6 +1216,8 @@ $(./CODELIB__alt_inbuf) \
 $(./CODELIB__alt_inbuf_diff) \
 $(./CODELIB__alt_iobuf) \
 $(./CODELIB__alt_iobuf_diff) \
+$(./CODELIB__alt_mem) \
+$(./CODELIB__alt_mem_2) \
 $(./CODELIB__alt_outbuf) \
 $(./CODELIB__alt_outbuf_diff) \
 $(./CODELIB__alt_outbuf_tri) \
@@ -1384,12 +1461,16 @@ $(./CODELIB__ttn_n_cntr) \
 $(./CODELIB__ttn_scale_cntr) : c:/altera/91/quartus/eda/sim_lib/altera_mf.v \
 		 c:/altera/91/quartus/eda/sim_lib/sgate.v c:/altera/91/quartus/eda/sim_lib/altera_primitives.v \
 		 c:/altera/91/quartus/eda/sim_lib/220model.v \
-		 c:/altera/91/quartus/eda/sim_lib/arriaii_atoms.v
+		 c:/altera/91/quartus/eda/sim_lib/arriaii_atoms.v \
+		 ../ts/a2gx_hibi_mem_dma_perf_test/alt_mem_2.v \
+		 ../ts/a2gx_hibi_mem_dma_perf_test/alt_mem.v
 	$(VLOG) -quiet -work work -L mtiAvm \
 		 -L mtiOvm -L mtiUPF -L mtiUvm c:\altera\91\quartus/eda/sim_lib/altera_mf.v \
 		 c:\altera\91\quartus/eda/sim_lib/sgate.v c:\altera\91\quartus/eda/sim_lib/altera_primitives.v \
 		 c:\altera\91\quartus/eda/sim_lib/220model.v \
-		 c:\altera\91\quartus/eda/sim_lib/arriaii_atoms.v
+		 c:\altera\91\quartus/eda/sim_lib/arriaii_atoms.v \
+		 ../ts/a2gx_hibi_mem_dma_perf_test/alt_mem_2.v \
+		 ../ts/a2gx_hibi_mem_dma_perf_test/alt_mem.v
 
 $(./CODELIB__tx_control) \
 $(./CODELIB__tx_control__rtl) : ../../../../../ip.hwp.communication/hibi/2.0/vhd/tx_ctrl.vhd \
