@@ -92,15 +92,17 @@ vlog -quiet -work work -L mtiAvm -L mtiOvm -L mtiUPF $QUARTUS_ROOTDIR/eda/sim_li
 vlog -quiet -work work -L mtiAvm -L mtiOvm -L mtiUPF $QUARTUS_ROOTDIR/eda/sim_lib/sgate.v
 vlog -quiet -work work -L mtiAvm -L mtiOvm -L mtiUPF $QUARTUS_ROOTDIR/eda/sim_lib/220model.v
 
-ALT_MEM_CTRL=a2_ddr2_dimm_1GB
-ALT_MEM_CTRL_DIR="../../../$ALT_MEM_CTRL"
 
 
 echo
 echo "Compiling Altera DDR2 controller"; echo
-vlog -quiet +incdir+$ALT_MEM_CTRL_DIR -work work -L mtiAvm -L mtiOvm -L mtiUPF ../../../a2_ddr2_dimm_1GB.comp/2.0/hdl/alt_ddrx_*.v
 
-vlog -quiet +incdir+$ALT_MEM_CTRL_DIR -work work -L mtiAvm -L mtiOvm -L mtiUPF ../../../a2_ddr_dimm_1GB_full_mem_model.comp/1.0/tb/*.v
+ALT_MEM_CTRL=a2_ddr2_dimm_1GB
+ALT_MEM_CTRL_DIR="../../../a2_ddr2_dimm_1GB.comp/2.0/hdl"
+
+vlog -quiet +incdir+$ALT_MEM_CTRL_DIR -work work -L mtiAvm -L mtiOvm -L mtiUPF $ALT_MEM_CTRL_DIR/alt_ddrx_*.v
+
+vlog -quiet +incdir+../../../a2_ddr_dimm_1GB_full_mem_model.comp/1.0/tb/ -work work -L mtiAvm -L mtiOvm -L mtiUPF ../../../a2_ddr_dimm_1GB_full_mem_model.comp/1.0/tb/*.v
 
 vlog -quiet +incdir+$ALT_MEM_CTRL_DIR -work work -L mtiAvm -L mtiOvm -L mtiUPF $ALT_MEM_CTRL_DIR/${ALT_MEM_CTRL}_alt_ddrx_controller_wrapper.v
 vlog -quiet +incdir+$ALT_MEM_CTRL_DIR -work work -L mtiAvm -L mtiOvm -L mtiUPF $ALT_MEM_CTRL_DIR/${ALT_MEM_CTRL}_controller_phy.v
@@ -108,10 +110,9 @@ vlog -quiet +incdir+$ALT_MEM_CTRL_DIR -work work -L mtiAvm -L mtiOvm -L mtiUPF $
 vlog -quiet +incdir+$ALT_MEM_CTRL_DIR -work work -L mtiAvm -L mtiOvm -L mtiUPF $ALT_MEM_CTRL_DIR/${ALT_MEM_CTRL}_phy_alt_mem_phy.v
 vlog -quiet +incdir+$ALT_MEM_CTRL_DIR -work work -L mtiAvm -L mtiOvm -L mtiUPF $ALT_MEM_CTRL_DIR/${ALT_MEM_CTRL}_phy_alt_mem_phy_dq_dqs.v
 vlog -quiet +incdir+$ALT_MEM_CTRL_DIR -work work -L mtiAvm -L mtiOvm -L mtiUPF $ALT_MEM_CTRL_DIR/${ALT_MEM_CTRL}_phy_alt_mem_phy_pll.v
-vlog -quiet +incdir+$ALT_MEM_CTRL_DIR -work work -L mtiAvm -L mtiOvm -L mtiUPF $ALT_MEM_CTRL_DIR/${ALT_MEM_CTRL}_phy_alt_mem_phy_seq_wrapper.vo
+vlog -quiet +incdir+$ALT_MEM_CTRL_DIR -work work -L mtiAvm -L mtiOvm -L mtiUPF $ALT_MEM_CTRL_DIR/${ALT_MEM_CTRL}_phy_alt_mem_phy_seq_wrapper.v
 
-vlog -quiet +incdir+$ALT_MEM_CTRL_DIR -work work -L mtiAvm -L mtiOvm -L mtiUPF $ALT_MEM_CTRL_DIR/testbench/${ALT_MEM_CTRL}_full_mem_model.v
-#vlog -quiet +incdir+$ALT_MEM_CTRL_DIR -work work -L mtiAvm -L mtiOvm -L mtiUPF $ALT_MEM_CTRL_DIR/testbench/${ALT_MEM_CTRL}_full_mem_model.v
+vlog -quiet +incdir+$ALT_MEM_CTRL_DIR -work work -L mtiAvm -L mtiOvm -L mtiUPF ../../../a2_ddr_dimm_1GB_full_mem_model.comp/1.0/tb/${ALT_MEM_CTRL}_full_mem_model.v
 
 echo
 echo "Compiling alt_mem modules"; echo
