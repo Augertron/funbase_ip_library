@@ -128,7 +128,7 @@ vcom -quiet -check_synthesis ../hdl/hibi_mem_dma.vhd
 
 # Testipenkki
 echo; echo "Compiling vhdl testbenches";echo
-vcom -quiet ../../../../ip.hwp.support/pseudo_rand_gen/vhd/pseudo_rand_gen_r2.vhd
+vcom -quiet ../../../../../ip.hwp.support/pseudo_rand_gen.comp/vhd/pseudo_rand_gen_r2.vhd
 vcom -quiet ./hibi_seg.vhd
 vcom -quiet ./hibi_mem_dma_tester.vhd
 vcom -quiet ./hibi_mem_dma_tb.vhd
