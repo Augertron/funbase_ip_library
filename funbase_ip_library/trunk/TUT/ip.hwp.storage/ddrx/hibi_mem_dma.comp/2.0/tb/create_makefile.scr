@@ -85,7 +85,7 @@ vcom -quiet -check_synthesis -pedanticerrors $HIBI_DIR/hibi_wrapper_r3.vhd
 vcom -quiet -check_synthesis -pedanticerrors $HIBI_DIR/hibi_wrapper_r4.vhd
 
 echo
-echo "Compiling Altera libraries"; echo
+echo "Compiling Altera libraries (from Quartus dir)"; echo
 vlog -quiet -work work -L mtiAvm -L mtiOvm -L mtiUPF $QUARTUS_ROOTDIR/eda/sim_lib/arriaii_atoms.v
 vlog -quiet -work work -L mtiAvm -L mtiOvm -L mtiUPF $QUARTUS_ROOTDIR/eda/sim_lib/altera_mf.v
 vlog -quiet -work work -L mtiAvm -L mtiOvm -L mtiUPF $QUARTUS_ROOTDIR/eda/sim_lib/altera_primitives.v
