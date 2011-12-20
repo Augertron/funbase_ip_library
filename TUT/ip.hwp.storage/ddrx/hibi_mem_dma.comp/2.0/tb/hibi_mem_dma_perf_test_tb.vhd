@@ -238,7 +238,7 @@ architecture structural of hibi_mem_dma_perf_test_tb is
            q       : out std_logic_vector(23 downto 0));
   end component;
 
-  component a2_ddr2_dimm_1GB
+  component alt_ddr2_agx2
     port (
       local_address         : in    std_logic_vector(MEM_ADDR_WIDTH-1 downto 0);
       local_write_req       : in    std_logic;
@@ -264,7 +264,7 @@ architecture structural of hibi_mem_dma_perf_test_tb is
       mem_we_n              : out   std_logic;
       mem_dm                : out   std_logic_vector(7 downto 0);
       local_refresh_ack     : out   std_logic;
-      local_wdata_req       : out   std_logic;
+--      local_wdata_req       : out   std_logic;
       local_init_done       : out   std_logic;
       reset_phy_clk_n       : out   std_logic;
       dll_reference_clk     : out   std_logic;
@@ -617,7 +617,7 @@ begin  -- structural
 
   gen_1 : if ENABLE_SIM = 1 generate
     
-    mem_ctrl : a2_ddr2_dimm_1GB
+    mem_ctrl : alt_ddr2_agx2
       port map (
         pll_ref_clk => ref_clk,
         phy_clk     => clk,
@@ -658,7 +658,7 @@ begin  -- structural
   end generate;
 
   gen_2 : if ENABLE_SIM = 0 generate
-    mem_ctrl : a2_ddr2_dimm_1GB
+    mem_ctrl : alt_ddr2_agx2
       port map (
         pll_ref_clk => ref_clk,
         phy_clk     => clk,
@@ -695,7 +695,7 @@ begin  -- structural
   end generate;
 
   --synthesis translate_off
-  a2_ddr2_dimm_1GB_0 : a2_ddr2_dimm_1GB_full_mem_model
+  a2_ddr2_dimm_1GB_0 : entity work.alt_ddr2_agx2_full_mem_model
     port map (
       mem_clk   => ddr2_clk(0),
       mem_clk_n => ddr2_clk_n(0),
