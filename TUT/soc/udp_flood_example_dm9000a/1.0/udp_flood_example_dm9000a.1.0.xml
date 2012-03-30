@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Created by Kactus 2 document generator 11:13:57 pe marras 11 2011-->
+<!--Created by Kactus 2 document generator 10:48:31 to tammi 12 2012-->
 <spirit:component kts_firmtype="HW" kts_producthier="SoC" kts_reuselevel="Block">
 	<spirit:vendor>TUT</spirit:vendor>
 	<spirit:library>soc</spirit:library>
@@ -145,6 +145,18 @@
 				<spirit:name>kactusHierarchical</spirit:name>
 				<spirit:envIdentifier></spirit:envIdentifier>
 				<spirit:hierarchyRef spirit:vendor="TUT" spirit:library="soc" spirit:name="udp_flood_example_dm9000a.designcfg" spirit:version="1.0"/>
+				<spirit:vendorExtensions>
+					<kactus2:topLevelViewRef>rtl</kactus2:topLevelViewRef>
+				</spirit:vendorExtensions>
+			</spirit:view>
+			<spirit:view>
+				<spirit:name>rtl</spirit:name>
+				<spirit:envIdentifier>VHDL::</spirit:envIdentifier>
+				<spirit:language spirit:strict="false">vhdl</spirit:language>
+				<spirit:modelName>udp_flood_example_dm9000a(top_level)</spirit:modelName>
+				<spirit:fileSetRef>
+					<spirit:localName>vhdlSource</spirit:localName>
+				</spirit:fileSetRef>
 			</spirit:view>
 		</spirit:views>
 		<spirit:ports>
@@ -248,4 +260,32 @@
 			</spirit:port>
 		</spirit:ports>
 	</spirit:model>
+	<spirit:fileSets>
+		<spirit:fileSet>
+			<spirit:name>vhdlSource</spirit:name>
+			<spirit:group>sourceFiles</spirit:group>
+			<spirit:file>
+				<spirit:name>vhd/udp_flood_example_dm9000a.vhd</spirit:name>
+				<spirit:fileType>vhdlSource</spirit:fileType>
+				<spirit:isIncludeFile spirit:externalDeclarations="false">true</spirit:isIncludeFile>
+				<spirit:logicalName spirit:default="false">soc</spirit:logicalName>
+				<spirit:buildCommand>
+					<spirit:command>vcom</spirit:command>
+					<spirit:flags>-quiet -check_synthesis -work work</spirit:flags>
+					<spirit:replaceDefaultFlags>true</spirit:replaceDefaultFlags>
+				</spirit:buildCommand>
+			</spirit:file>
+		</spirit:fileSet>
+		<spirit:fileSet>
+			<spirit:name>quartusFiles</spirit:name>
+			<spirit:file>
+				<spirit:name>../../../ip.hwp.interface/udp_ip/1.0/syn/udp_ip_dm9000a_de2_assignments.qsf</spirit:name>
+				<spirit:userFileType>quartusPinmap</spirit:userFileType>
+				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
+				<spirit:buildCommand>
+					<spirit:replaceDefaultFlags>false</spirit:replaceDefaultFlags>
+				</spirit:buildCommand>
+			</spirit:file>
+		</spirit:fileSet>
+	</spirit:fileSets>
 </spirit:component>
