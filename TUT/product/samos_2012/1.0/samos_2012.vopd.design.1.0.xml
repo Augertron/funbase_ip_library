@@ -1,0 +1,809 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by Kactus2 - Open source IP-Xact toolset -->
+<!-- http://sourceforge.net/projects/kactus2/ -->
+<!-- Date: 06.07.2012 -->
+<!-- Time: 16:53:43 -->
+<spirit:design xmlns:kactus2="http://funbase.cs.tut.fi/" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5/index.xsd">
+	<spirit:vendor>TUT</spirit:vendor>
+	<spirit:library>product</spirit:library>
+	<spirit:name>samos_2012.vopd.design</spirit:name>
+	<spirit:version>1.0</spirit:version>
+	<spirit:componentInstances>
+		<spirit:componentInstance>
+			<spirit:instanceName>xilinx_spartan_xc3S500e_ublaze</spirit:instanceName>
+			<spirit:displayName>uBlaze</spirit:displayName>
+			<spirit:description></spirit:description>
+			<spirit:componentRef spirit:vendor="TUT" spirit:library="ip.hwp.cpu" spirit:name="ublaze" spirit:version="1.0"/>
+			<spirit:configurableElementValues/>
+			<spirit:vendorExtensions>
+				<kactus2:position x="800" y="60"/>
+				<kactus2:imported kactus2:importRef="xilinx_spartan_xc3S500e_ublaze"/>
+				<kactus2:propertyValues/>
+			</spirit:vendorExtensions>
+		</spirit:componentInstance>
+		<spirit:componentInstance>
+			<spirit:instanceName>PC_x86</spirit:instanceName>
+			<spirit:displayName></spirit:displayName>
+			<spirit:description></spirit:description>
+			<spirit:componentRef spirit:vendor="TUT" spirit:library="ip.hwp.cpu" spirit:name="x86" spirit:version="1.0"/>
+			<spirit:configurableElementValues/>
+			<spirit:vendorExtensions>
+				<kactus2:position x="800" y="420"/>
+				<kactus2:imported kactus2:importRef="PC_x86"/>
+				<kactus2:propertyValues/>
+			</spirit:vendorExtensions>
+		</spirit:componentInstance>
+		<spirit:componentInstance>
+			<spirit:instanceName>de2_samos_soc_nios_ii_sram_0</spirit:instanceName>
+			<spirit:displayName>nios_II_sram</spirit:displayName>
+			<spirit:description></spirit:description>
+			<spirit:componentRef spirit:vendor="TUT" spirit:library="ip.hwp.cpu" spirit:name="nios_ii_sram" spirit:version="1.0"/>
+			<spirit:configurableElementValues/>
+			<spirit:vendorExtensions>
+				<kactus2:position x="480" y="60"/>
+				<kactus2:imported kactus2:importRef="de2_samos_soc_nios_ii_sram_0"/>
+				<kactus2:propertyValues/>
+			</spirit:vendorExtensions>
+		</spirit:componentInstance>
+		<spirit:componentInstance>
+			<spirit:instanceName>de2_samos_soc_nios_ii_sdram_0</spirit:instanceName>
+			<spirit:displayName>nios_II_sdram</spirit:displayName>
+			<spirit:description></spirit:description>
+			<spirit:componentRef spirit:vendor="TUT" spirit:library="ip.hwp.cpu" spirit:name="nios_ii_sdram" spirit:version="1.0"/>
+			<spirit:configurableElementValues/>
+			<spirit:vendorExtensions>
+				<kactus2:position x="160" y="60"/>
+				<kactus2:imported kactus2:importRef="de2_samos_soc_nios_ii_sdram_0"/>
+				<kactus2:propertyValues/>
+			</spirit:vendorExtensions>
+		</spirit:componentInstance>
+		<spirit:componentInstance>
+			<spirit:instanceName>de2_samos_soc_dct_to_hibi_0</spirit:instanceName>
+			<spirit:displayName>dct_acc</spirit:displayName>
+			<spirit:description></spirit:description>
+			<spirit:componentRef spirit:vendor="TUT" spirit:library="ip.hwp.accelerator" spirit:name="dct_to_hibi" spirit:version="1.0"/>
+			<spirit:configurableElementValues/>
+			<spirit:vendorExtensions>
+				<kactus2:position x="160" y="860"/>
+				<kactus2:imported kactus2:importRef="de2_samos_soc_dct_to_hibi_0"/>
+				<kactus2:propertyValues/>
+			</spirit:vendorExtensions>
+		</spirit:componentInstance>
+	</spirit:componentInstances>
+	<spirit:vendorExtensions>
+		<kactus2:swInstances>
+			<kactus2:swInstance>
+				<spirit:instanceName>xilinx_spartan_xc3S500e_ublaze_mcapi_ublaze_0</spirit:instanceName>
+				<spirit:displayName>mcapi_ublaze_0</spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.swp.stack" spirit:name="mcapi_ublaze" spirit:version="1.0"/>
+				<kactus2:mapping kactus2:hwRef="xilinx_spartan_xc3S500e_ublaze"/>
+				<kactus2:position x="0" y="220"/>
+				<kactus2:imported kactus2:importRef="mcapi_ublaze_0"/>
+				<kactus2:apiInterfacePositions>
+					<kactus2:apiInterfacePosition kactus2:apiRef="mcapi">
+						<kactus2:position x="80" y="60"/>
+					</kactus2:apiInterfacePosition>
+				</kactus2:apiInterfacePositions>
+			</kactus2:swInstance>
+			<kactus2:swInstance>
+				<spirit:instanceName>vopd_timer_0</spirit:instanceName>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.application" spirit:name="vopd_timer" spirit:version="1.0"/>
+				<kactus2:mapping kactus2:hwRef="xilinx_spartan_xc3S500e_ublaze"/>
+				<kactus2:position x="0" y="40"/>
+				<kactus2:apiInterfacePositions>
+					<kactus2:apiInterfacePosition kactus2:apiRef="mcapi">
+						<kactus2:position x="80" y="140"/>
+					</kactus2:apiInterfacePosition>
+				</kactus2:apiInterfacePositions>
+				<kactus2:comInterfacePositions>
+					<kactus2:comInterfacePosition kactus2:comRef="to_arm">
+						<kactus2:position x="-80" y="110"/>
+					</kactus2:comInterfacePosition>
+					<kactus2:comInterfacePosition kactus2:comRef="to_vid">
+						<kactus2:position x="-80" y="50"/>
+					</kactus2:comInterfacePosition>
+				</kactus2:comInterfacePositions>
+			</kactus2:swInstance>
+			<kactus2:swInstance>
+				<spirit:instanceName>openmcapi_0</spirit:instanceName>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.swp.api" spirit:name="openmcapi" spirit:version="1.0"/>
+				<kactus2:mapping kactus2:hwRef="PC_x86"/>
+				<kactus2:position x="0" y="410"/>
+				<kactus2:apiInterfacePositions>
+					<kactus2:apiInterfacePosition kactus2:apiRef="mcapi">
+						<kactus2:position x="-80" y="40"/>
+					</kactus2:apiInterfacePosition>
+				</kactus2:apiInterfacePositions>
+			</kactus2:swInstance>
+			<kactus2:swInstance>
+				<spirit:instanceName>vopd_pad_0</spirit:instanceName>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.application" spirit:name="vopd_pad" spirit:version="1.0"/>
+				<kactus2:mapping kactus2:hwRef="PC_x86"/>
+				<kactus2:position x="0" y="40"/>
+				<kactus2:apiInterfacePositions>
+					<kactus2:apiInterfacePosition kactus2:apiRef="mcapi">
+						<kactus2:position x="-80" y="330"/>
+					</kactus2:apiInterfacePosition>
+				</kactus2:apiInterfacePositions>
+				<kactus2:comInterfacePositions>
+					<kactus2:comInterfacePosition kactus2:comRef="from_vop_mem">
+						<kactus2:position x="-80" y="250"/>
+					</kactus2:comInterfacePosition>
+					<kactus2:comInterfacePosition kactus2:comRef="from_vop_rec">
+						<kactus2:position x="-80" y="110"/>
+					</kactus2:comInterfacePosition>
+					<kactus2:comInterfacePosition kactus2:comRef="to_vop_mem">
+						<kactus2:position x="-80" y="290"/>
+					</kactus2:comInterfacePosition>
+				</kactus2:comInterfacePositions>
+			</kactus2:swInstance>
+			<kactus2:swInstance>
+				<spirit:instanceName>de2_samos_soc_nios_ii_sram_0_mcapi_nios_0</spirit:instanceName>
+				<spirit:displayName>mcapi_nios_0</spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.swp.stack" spirit:name="mcapi_nios" spirit:version="1.0"/>
+				<kactus2:mapping kactus2:hwRef="de2_samos_soc_nios_ii_sram_0"/>
+				<kactus2:position x="0" y="990"/>
+				<kactus2:imported kactus2:importRef="mcapi_nios_0"/>
+				<kactus2:apiInterfacePositions>
+					<kactus2:apiInterfacePosition kactus2:apiRef="mcapi">
+						<kactus2:position x="80" y="70"/>
+					</kactus2:apiInterfacePosition>
+				</kactus2:apiInterfacePositions>
+			</kactus2:swInstance>
+			<kactus2:swInstance>
+				<spirit:instanceName>vopd_up_samp_0</spirit:instanceName>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.application" spirit:name="vopd_up_samp" spirit:version="1.0"/>
+				<kactus2:mapping kactus2:hwRef="de2_samos_soc_nios_ii_sram_0"/>
+				<kactus2:position x="0" y="40"/>
+				<kactus2:apiInterfacePositions>
+					<kactus2:apiInterfacePosition kactus2:apiRef="mcapi">
+						<kactus2:position x="80" y="40"/>
+					</kactus2:apiInterfacePosition>
+				</kactus2:apiInterfacePositions>
+				<kactus2:comInterfacePositions>
+					<kactus2:comInterfacePosition kactus2:comRef="from_idct">
+						<kactus2:position x="80" y="90"/>
+					</kactus2:comInterfacePosition>
+					<kactus2:comInterfacePosition kactus2:comRef="to_vop_rec">
+						<kactus2:position x="-80" y="90"/>
+					</kactus2:comInterfacePosition>
+				</kactus2:comInterfacePositions>
+			</kactus2:swInstance>
+			<kactus2:swInstance>
+				<spirit:instanceName>vopd_vop_rec_0</spirit:instanceName>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.application" spirit:name="vopd_vop_rec" spirit:version="1.0"/>
+				<kactus2:mapping kactus2:hwRef="de2_samos_soc_nios_ii_sram_0"/>
+				<kactus2:position x="0" y="170"/>
+				<kactus2:apiInterfacePositions>
+					<kactus2:apiInterfacePosition kactus2:apiRef="mcapi">
+						<kactus2:position x="80" y="60"/>
+					</kactus2:apiInterfacePosition>
+				</kactus2:apiInterfacePositions>
+				<kactus2:comInterfacePositions>
+					<kactus2:comInterfacePosition kactus2:comRef="from_up_samp">
+						<kactus2:position x="-80" y="40"/>
+					</kactus2:comInterfacePosition>
+					<kactus2:comInterfacePosition kactus2:comRef="from_vop_mem">
+						<kactus2:position x="-80" y="80"/>
+					</kactus2:comInterfacePosition>
+					<kactus2:comInterfacePosition kactus2:comRef="to_pad">
+						<kactus2:position x="80" y="40"/>
+					</kactus2:comInterfacePosition>
+				</kactus2:comInterfacePositions>
+			</kactus2:swInstance>
+			<kactus2:swInstance>
+				<spirit:instanceName>vopd_iquan_0</spirit:instanceName>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.application" spirit:name="vopd_iquan" spirit:version="1.0"/>
+				<kactus2:mapping kactus2:hwRef="de2_samos_soc_nios_ii_sram_0"/>
+				<kactus2:position x="0" y="290"/>
+				<kactus2:apiInterfacePositions>
+					<kactus2:apiInterfacePosition kactus2:apiRef="mcapi">
+						<kactus2:position x="80" y="40"/>
+					</kactus2:apiInterfacePosition>
+				</kactus2:apiInterfacePositions>
+				<kactus2:comInterfacePositions>
+					<kactus2:comInterfacePosition kactus2:comRef="from_acdc_pred">
+						<kactus2:position x="-80" y="70"/>
+					</kactus2:comInterfacePosition>
+					<kactus2:comInterfacePosition kactus2:comRef="from_stripe_mem">
+						<kactus2:position x="-80" y="120"/>
+					</kactus2:comInterfacePosition>
+					<kactus2:comInterfacePosition kactus2:comRef="to_idct">
+						<kactus2:position x="-80" y="150"/>
+					</kactus2:comInterfacePosition>
+				</kactus2:comInterfacePositions>
+			</kactus2:swInstance>
+			<kactus2:swInstance>
+				<spirit:instanceName>vopd_idct_0</spirit:instanceName>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.application" spirit:name="vopd_idct" spirit:version="1.0"/>
+				<kactus2:mapping kactus2:hwRef="de2_samos_soc_nios_ii_sram_0"/>
+				<kactus2:position x="0" y="480"/>
+				<kactus2:apiInterfacePositions>
+					<kactus2:apiInterfacePosition kactus2:apiRef="mcapi">
+						<kactus2:position x="80" y="120"/>
+					</kactus2:apiInterfacePosition>
+				</kactus2:apiInterfacePositions>
+				<kactus2:comInterfacePositions>
+					<kactus2:comInterfacePosition kactus2:comRef="from_arm">
+						<kactus2:position x="-80" y="70"/>
+					</kactus2:comInterfacePosition>
+					<kactus2:comInterfacePosition kactus2:comRef="from_iquan">
+						<kactus2:position x="-80" y="40"/>
+					</kactus2:comInterfacePosition>
+					<kactus2:comInterfacePosition kactus2:comRef="to_uo_samp">
+						<kactus2:position x="80" y="90"/>
+					</kactus2:comInterfacePosition>
+				</kactus2:comInterfacePositions>
+			</kactus2:swInstance>
+			<kactus2:swInstance>
+				<spirit:instanceName>vopd_arm_0</spirit:instanceName>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.application" spirit:name="vopd_arm" spirit:version="1.0"/>
+				<kactus2:mapping kactus2:hwRef="de2_samos_soc_nios_ii_sram_0"/>
+				<kactus2:position x="0" y="640"/>
+				<kactus2:apiInterfacePositions>
+					<kactus2:apiInterfacePosition kactus2:apiRef="mcapi">
+						<kactus2:position x="80" y="120"/>
+					</kactus2:apiInterfacePosition>
+				</kactus2:apiInterfacePositions>
+				<kactus2:comInterfacePositions>
+					<kactus2:comInterfacePosition kactus2:comRef="timer">
+						<kactus2:position x="80" y="40"/>
+					</kactus2:comInterfacePosition>
+					<kactus2:comInterfacePosition kactus2:comRef="to_idct">
+						<kactus2:position x="-80" y="40"/>
+					</kactus2:comInterfacePosition>
+				</kactus2:comInterfacePositions>
+			</kactus2:swInstance>
+			<kactus2:swInstance>
+				<spirit:instanceName>vopd_vop_mem_0</spirit:instanceName>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.application" spirit:name="vopd_vop_mem" spirit:version="1.0"/>
+				<kactus2:mapping kactus2:hwRef="de2_samos_soc_nios_ii_sram_0"/>
+				<kactus2:position x="0" y="800"/>
+				<kactus2:apiInterfacePositions>
+					<kactus2:apiInterfacePosition kactus2:apiRef="mcapi">
+						<kactus2:position x="80" y="150"/>
+					</kactus2:apiInterfacePosition>
+				</kactus2:apiInterfacePositions>
+				<kactus2:comInterfacePositions>
+					<kactus2:comInterfacePosition kactus2:comRef="from_pad">
+						<kactus2:position x="80" y="110"/>
+					</kactus2:comInterfacePosition>
+					<kactus2:comInterfacePosition kactus2:comRef="to_pad">
+						<kactus2:position x="80" y="40"/>
+					</kactus2:comInterfacePosition>
+					<kactus2:comInterfacePosition kactus2:comRef="to_vop_rec">
+						<kactus2:position x="-80" y="70"/>
+					</kactus2:comInterfacePosition>
+				</kactus2:comInterfacePositions>
+			</kactus2:swInstance>
+			<kactus2:swInstance>
+				<spirit:instanceName>de2_samos_soc_nios_ii_sdram_0_mcapi_nios_0</spirit:instanceName>
+				<spirit:displayName>mcapi_nios_0</spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.swp.stack" spirit:name="mcapi_nios" spirit:version="1.0"/>
+				<kactus2:mapping kactus2:hwRef="de2_samos_soc_nios_ii_sdram_0"/>
+				<kactus2:position x="0" y="680"/>
+				<kactus2:imported kactus2:importRef="mcapi_nios_0"/>
+				<kactus2:apiInterfacePositions>
+					<kactus2:apiInterfacePosition kactus2:apiRef="mcapi">
+						<kactus2:position x="-80" y="40"/>
+					</kactus2:apiInterfacePosition>
+				</kactus2:apiInterfacePositions>
+			</kactus2:swInstance>
+			<kactus2:swInstance>
+				<spirit:instanceName>vopd_inv_scan_0</spirit:instanceName>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.application" spirit:name="vopd_inv_scan" spirit:version="1.0"/>
+				<kactus2:mapping kactus2:hwRef="de2_samos_soc_nios_ii_sdram_0"/>
+				<kactus2:position x="0" y="300"/>
+				<kactus2:apiInterfacePositions>
+					<kactus2:apiInterfacePosition kactus2:apiRef="mcapi">
+						<kactus2:position x="-80" y="80"/>
+					</kactus2:apiInterfacePosition>
+				</kactus2:apiInterfacePositions>
+				<kactus2:comInterfacePositions>
+					<kactus2:comInterfacePosition kactus2:comRef="from_run_len_dec">
+						<kactus2:position x="80" y="40"/>
+					</kactus2:comInterfacePosition>
+					<kactus2:comInterfacePosition kactus2:comRef="to_acdc_pred">
+						<kactus2:position x="80" y="60"/>
+					</kactus2:comInterfacePosition>
+				</kactus2:comInterfacePositions>
+			</kactus2:swInstance>
+			<kactus2:swInstance>
+				<spirit:instanceName>vopd_run_len_dec_0</spirit:instanceName>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.application" spirit:name="vopd_run_len_dec" spirit:version="1.0"/>
+				<kactus2:mapping kactus2:hwRef="de2_samos_soc_nios_ii_sdram_0"/>
+				<kactus2:position x="0" y="170"/>
+				<kactus2:apiInterfacePositions>
+					<kactus2:apiInterfacePosition kactus2:apiRef="mcapi">
+						<kactus2:position x="-80" y="90"/>
+					</kactus2:apiInterfacePosition>
+				</kactus2:apiInterfacePositions>
+				<kactus2:comInterfacePositions>
+					<kactus2:comInterfacePosition kactus2:comRef="from_vid">
+						<kactus2:position x="80" y="40"/>
+					</kactus2:comInterfacePosition>
+					<kactus2:comInterfacePosition kactus2:comRef="to_inv_scan">
+						<kactus2:position x="80" y="70"/>
+					</kactus2:comInterfacePosition>
+				</kactus2:comInterfacePositions>
+			</kactus2:swInstance>
+			<kactus2:swInstance>
+				<spirit:instanceName>vopd_acdc_pred_0</spirit:instanceName>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.application" spirit:name="vopd_acdc_pred" spirit:version="1.0"/>
+				<kactus2:mapping kactus2:hwRef="de2_samos_soc_nios_ii_sdram_0"/>
+				<kactus2:position x="0" y="420"/>
+				<kactus2:apiInterfacePositions>
+					<kactus2:apiInterfacePosition kactus2:apiRef="mcapi">
+						<kactus2:position x="-80" y="40"/>
+					</kactus2:apiInterfacePosition>
+				</kactus2:apiInterfacePositions>
+				<kactus2:comInterfacePositions>
+					<kactus2:comInterfacePosition kactus2:comRef="from_inv_scan">
+						<kactus2:position x="80" y="40"/>
+					</kactus2:comInterfacePosition>
+					<kactus2:comInterfacePosition kactus2:comRef="to_iquan">
+						<kactus2:position x="80" y="70"/>
+					</kactus2:comInterfacePosition>
+					<kactus2:comInterfacePosition kactus2:comRef="to_stripe_mem">
+						<kactus2:position x="80" y="100"/>
+					</kactus2:comInterfacePosition>
+				</kactus2:comInterfacePositions>
+			</kactus2:swInstance>
+			<kactus2:swInstance>
+				<spirit:instanceName>vopd_stripe_mem_0</spirit:instanceName>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.application" spirit:name="vopd_stripe_mem" spirit:version="1.0"/>
+				<kactus2:mapping kactus2:hwRef="de2_samos_soc_nios_ii_sdram_0"/>
+				<kactus2:position x="0" y="560"/>
+				<kactus2:apiInterfacePositions>
+					<kactus2:apiInterfacePosition kactus2:apiRef="mcapi">
+						<kactus2:position x="-80" y="70"/>
+					</kactus2:apiInterfacePosition>
+				</kactus2:apiInterfacePositions>
+				<kactus2:comInterfacePositions>
+					<kactus2:comInterfacePosition kactus2:comRef="from_acdc_pred">
+						<kactus2:position x="80" y="40"/>
+					</kactus2:comInterfacePosition>
+					<kactus2:comInterfacePosition kactus2:comRef="to_iquan">
+						<kactus2:position x="80" y="80"/>
+					</kactus2:comInterfacePosition>
+				</kactus2:comInterfacePositions>
+			</kactus2:swInstance>
+			<kactus2:swInstance>
+				<spirit:instanceName>vopd_vid_0</spirit:instanceName>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.application" spirit:name="vopd_vid" spirit:version="1.0"/>
+				<kactus2:mapping kactus2:hwRef="de2_samos_soc_nios_ii_sdram_0"/>
+				<kactus2:position x="0" y="40"/>
+				<kactus2:apiInterfacePositions>
+					<kactus2:apiInterfacePosition kactus2:apiRef="mcapi">
+						<kactus2:position x="-80" y="40"/>
+					</kactus2:apiInterfacePosition>
+				</kactus2:apiInterfacePositions>
+				<kactus2:comInterfacePositions>
+					<kactus2:comInterfacePosition kactus2:comRef="timer">
+						<kactus2:position x="80" y="50"/>
+					</kactus2:comInterfacePosition>
+					<kactus2:comInterfacePosition kactus2:comRef="vid_to_run_len_dec">
+						<kactus2:position x="80" y="90"/>
+					</kactus2:comInterfacePosition>
+				</kactus2:comInterfacePositions>
+			</kactus2:swInstance>
+		</kactus2:swInstances>
+		<kactus2:apiDependencies>
+			<kactus2:apiDependency>
+				<spirit:name>vopd_pad_0_mcapi_to_openmcapi_0_mcapi</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeApiInterface kactus2:componentRef="vopd_pad_0" kactus2:apiRef="mcapi"/>
+				<kactus2:activeApiInterface kactus2:componentRef="openmcapi_0" kactus2:apiRef="mcapi"/>
+				<kactus2:route>
+					<kactus2:position x="720" y="790"/>
+					<kactus2:position x="690" y="790"/>
+					<kactus2:position x="690" y="870"/>
+					<kactus2:position x="720" y="870"/>
+				</kactus2:route>
+			</kactus2:apiDependency>
+			<kactus2:apiDependency>
+				<spirit:name>vopd_timer_0_mcapi_to_xilinx_spartan_xc3S500e_ublaze_mcapi_ublaze_0_mcapi</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeApiInterface kactus2:componentRef="vopd_timer_0" kactus2:apiRef="mcapi"/>
+				<kactus2:activeApiInterface kactus2:componentRef="xilinx_spartan_xc3S500e_ublaze_mcapi_ublaze_0" kactus2:apiRef="mcapi"/>
+				<kactus2:route>
+					<kactus2:position x="880" y="240"/>
+					<kactus2:position x="900" y="240"/>
+					<kactus2:position x="900" y="340"/>
+					<kactus2:position x="880" y="340"/>
+				</kactus2:route>
+			</kactus2:apiDependency>
+			<kactus2:apiDependency>
+				<spirit:name>de2_samos_soc_nios_ii_sdram_0_mcapi_nios_0_mcapi_to_vopd_acdc_pred_0_mcapi</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeApiInterface kactus2:componentRef="de2_samos_soc_nios_ii_sdram_0_mcapi_nios_0" kactus2:apiRef="mcapi"/>
+				<kactus2:activeApiInterface kactus2:componentRef="vopd_acdc_pred_0" kactus2:apiRef="mcapi"/>
+				<kactus2:route>
+					<kactus2:position x="80" y="780"/>
+					<kactus2:position x="40" y="780"/>
+					<kactus2:position x="40" y="520"/>
+					<kactus2:position x="80" y="520"/>
+				</kactus2:route>
+			</kactus2:apiDependency>
+			<kactus2:apiDependency>
+				<spirit:name>vopd_inv_scan_0_mcapi_to_de2_samos_soc_nios_ii_sdram_0_mcapi_nios_0_mcapi</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeApiInterface kactus2:componentRef="vopd_inv_scan_0" kactus2:apiRef="mcapi"/>
+				<kactus2:activeApiInterface kactus2:componentRef="de2_samos_soc_nios_ii_sdram_0_mcapi_nios_0" kactus2:apiRef="mcapi"/>
+				<kactus2:route>
+					<kactus2:position x="80" y="440"/>
+					<kactus2:position x="40" y="440"/>
+					<kactus2:position x="40" y="780"/>
+					<kactus2:position x="80" y="780"/>
+				</kactus2:route>
+			</kactus2:apiDependency>
+			<kactus2:apiDependency>
+				<spirit:name>vopd_run_len_dec_0_mcapi_to_de2_samos_soc_nios_ii_sdram_0_mcapi_nios_0_mcapi</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeApiInterface kactus2:componentRef="vopd_run_len_dec_0" kactus2:apiRef="mcapi"/>
+				<kactus2:activeApiInterface kactus2:componentRef="de2_samos_soc_nios_ii_sdram_0_mcapi_nios_0" kactus2:apiRef="mcapi"/>
+				<kactus2:route>
+					<kactus2:position x="80" y="320"/>
+					<kactus2:position x="40" y="320"/>
+					<kactus2:position x="40" y="780"/>
+					<kactus2:position x="80" y="780"/>
+				</kactus2:route>
+			</kactus2:apiDependency>
+			<kactus2:apiDependency>
+				<spirit:name>vopd_vid_0_mcapi_to_de2_samos_soc_nios_ii_sdram_0_mcapi_nios_0_mcapi</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeApiInterface kactus2:componentRef="vopd_vid_0" kactus2:apiRef="mcapi"/>
+				<kactus2:activeApiInterface kactus2:componentRef="de2_samos_soc_nios_ii_sdram_0_mcapi_nios_0" kactus2:apiRef="mcapi"/>
+				<kactus2:route>
+					<kactus2:position x="80" y="140"/>
+					<kactus2:position x="40" y="140"/>
+					<kactus2:position x="40" y="780"/>
+					<kactus2:position x="80" y="780"/>
+				</kactus2:route>
+			</kactus2:apiDependency>
+			<kactus2:apiDependency>
+				<spirit:name>vopd_stripe_mem_0_mcapi_to_de2_samos_soc_nios_ii_sdram_0_mcapi_nios_0_mcapi</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeApiInterface kactus2:componentRef="vopd_stripe_mem_0" kactus2:apiRef="mcapi"/>
+				<kactus2:activeApiInterface kactus2:componentRef="de2_samos_soc_nios_ii_sdram_0_mcapi_nios_0" kactus2:apiRef="mcapi"/>
+				<kactus2:route>
+					<kactus2:position x="80" y="690"/>
+					<kactus2:position x="40" y="690"/>
+					<kactus2:position x="40" y="780"/>
+					<kactus2:position x="80" y="780"/>
+				</kactus2:route>
+			</kactus2:apiDependency>
+			<kactus2:apiDependency>
+				<spirit:name>vopd_arm_0_mcapi_to_de2_samos_soc_nios_ii_sram_0_mcapi_nios_0_mcapi</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeApiInterface kactus2:componentRef="vopd_arm_0" kactus2:apiRef="mcapi"/>
+				<kactus2:activeApiInterface kactus2:componentRef="de2_samos_soc_nios_ii_sram_0_mcapi_nios_0" kactus2:apiRef="mcapi"/>
+				<kactus2:route>
+					<kactus2:position x="560" y="820"/>
+					<kactus2:position x="610" y="820"/>
+					<kactus2:position x="610" y="1120"/>
+					<kactus2:position x="560" y="1120"/>
+				</kactus2:route>
+			</kactus2:apiDependency>
+			<kactus2:apiDependency>
+				<spirit:name>vopd_vop_mem_0_mcapi_to_de2_samos_soc_nios_ii_sram_0_mcapi_nios_0_mcapi</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeApiInterface kactus2:componentRef="vopd_vop_mem_0" kactus2:apiRef="mcapi"/>
+				<kactus2:activeApiInterface kactus2:componentRef="de2_samos_soc_nios_ii_sram_0_mcapi_nios_0" kactus2:apiRef="mcapi"/>
+				<kactus2:route>
+					<kactus2:position x="560" y="1010"/>
+					<kactus2:position x="580" y="1010"/>
+					<kactus2:position x="580" y="1120"/>
+					<kactus2:position x="560" y="1120"/>
+				</kactus2:route>
+			</kactus2:apiDependency>
+			<kactus2:apiDependency>
+				<spirit:name>vopd_idct_0_mcapi_to_de2_samos_soc_nios_ii_sram_0_mcapi_nios_0_mcapi</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeApiInterface kactus2:componentRef="vopd_idct_0" kactus2:apiRef="mcapi"/>
+				<kactus2:activeApiInterface kactus2:componentRef="de2_samos_soc_nios_ii_sram_0_mcapi_nios_0" kactus2:apiRef="mcapi"/>
+				<kactus2:route>
+					<kactus2:position x="560" y="660"/>
+					<kactus2:position x="610" y="660"/>
+					<kactus2:position x="610" y="1120"/>
+					<kactus2:position x="560" y="1120"/>
+				</kactus2:route>
+			</kactus2:apiDependency>
+			<kactus2:apiDependency>
+				<spirit:name>vopd_up_samp_0_mcapi_to_de2_samos_soc_nios_ii_sram_0_mcapi_nios_0_mcapi</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeApiInterface kactus2:componentRef="vopd_up_samp_0" kactus2:apiRef="mcapi"/>
+				<kactus2:activeApiInterface kactus2:componentRef="de2_samos_soc_nios_ii_sram_0_mcapi_nios_0" kactus2:apiRef="mcapi"/>
+				<kactus2:route>
+					<kactus2:position x="560" y="140"/>
+					<kactus2:position x="610" y="140"/>
+					<kactus2:position x="610" y="1120"/>
+					<kactus2:position x="560" y="1120"/>
+				</kactus2:route>
+			</kactus2:apiDependency>
+			<kactus2:apiDependency>
+				<spirit:name>vopd_vop_rec_0_mcapi_to_de2_samos_soc_nios_ii_sram_0_mcapi_nios_0_mcapi</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeApiInterface kactus2:componentRef="vopd_vop_rec_0" kactus2:apiRef="mcapi"/>
+				<kactus2:activeApiInterface kactus2:componentRef="de2_samos_soc_nios_ii_sram_0_mcapi_nios_0" kactus2:apiRef="mcapi"/>
+				<kactus2:route>
+					<kactus2:position x="560" y="290"/>
+					<kactus2:position x="610" y="290"/>
+					<kactus2:position x="610" y="1120"/>
+					<kactus2:position x="560" y="1120"/>
+				</kactus2:route>
+			</kactus2:apiDependency>
+			<kactus2:apiDependency>
+				<spirit:name>vopd_iquan_0_mcapi_to_de2_samos_soc_nios_ii_sram_0_mcapi_nios_0_mcapi</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeApiInterface kactus2:componentRef="vopd_iquan_0" kactus2:apiRef="mcapi"/>
+				<kactus2:activeApiInterface kactus2:componentRef="de2_samos_soc_nios_ii_sram_0_mcapi_nios_0" kactus2:apiRef="mcapi"/>
+				<kactus2:route>
+					<kactus2:position x="560" y="390"/>
+					<kactus2:position x="610" y="390"/>
+					<kactus2:position x="610" y="1120"/>
+					<kactus2:position x="560" y="1120"/>
+				</kactus2:route>
+			</kactus2:apiDependency>
+		</kactus2:apiDependencies>
+		<kactus2:comConnections>
+			<kactus2:comConnection>
+				<spirit:name>vopd_run_len_dec_0_to_inv_scan_to_vopd_inv_scan_0_from_run_len_dec</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_run_len_dec_0" kactus2:comRef="to_inv_scan"/>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_inv_scan_0" kactus2:comRef="from_run_len_dec"/>
+				<kactus2:route>
+					<kactus2:position x="240" y="300"/>
+					<kactus2:position x="260" y="300"/>
+					<kactus2:position x="260" y="400"/>
+					<kactus2:position x="240" y="400"/>
+				</kactus2:route>
+			</kactus2:comConnection>
+			<kactus2:comConnection>
+				<spirit:name>vopd_inv_scan_0_to_acdc_pred_to_vopd_acdc_pred_0_from_inv_scan</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_inv_scan_0" kactus2:comRef="to_acdc_pred"/>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_acdc_pred_0" kactus2:comRef="from_inv_scan"/>
+				<kactus2:route>
+					<kactus2:position x="240" y="420"/>
+					<kactus2:position x="270" y="420"/>
+					<kactus2:position x="270" y="520"/>
+					<kactus2:position x="240" y="520"/>
+				</kactus2:route>
+			</kactus2:comConnection>
+			<kactus2:comConnection>
+				<spirit:name>vopd_acdc_pred_0_to_stripe_mem_to_vopd_stripe_mem_0_from_acdc_pred</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_acdc_pred_0" kactus2:comRef="to_stripe_mem"/>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_stripe_mem_0" kactus2:comRef="from_acdc_pred"/>
+				<kactus2:route>
+					<kactus2:position x="240" y="580"/>
+					<kactus2:position x="260" y="580"/>
+					<kactus2:position x="260" y="660"/>
+					<kactus2:position x="240" y="660"/>
+				</kactus2:route>
+			</kactus2:comConnection>
+			<kactus2:comConnection>
+				<spirit:name>vopd_vid_0_vid_to_run_len_dec_to_vopd_run_len_dec_0_from_vid</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_vid_0" kactus2:comRef="vid_to_run_len_dec"/>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_run_len_dec_0" kactus2:comRef="from_vid"/>
+				<kactus2:route>
+					<kactus2:position x="240" y="190"/>
+					<kactus2:position x="260" y="190"/>
+					<kactus2:position x="260" y="270"/>
+					<kactus2:position x="240" y="270"/>
+				</kactus2:route>
+			</kactus2:comConnection>
+			<kactus2:comConnection>
+				<spirit:name>vopd_iquan_0_from_acdc_pred_to_vopd_acdc_pred_0_to_iquan</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_iquan_0" kactus2:comRef="from_acdc_pred"/>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_acdc_pred_0" kactus2:comRef="to_iquan"/>
+				<kactus2:route>
+					<kactus2:position x="400" y="420"/>
+					<kactus2:position x="310" y="420"/>
+					<kactus2:position x="310" y="550"/>
+					<kactus2:position x="240" y="550"/>
+				</kactus2:route>
+			</kactus2:comConnection>
+			<kactus2:comConnection>
+				<spirit:name>vopd_stripe_mem_0_to_iquan_to_vopd_iquan_0_from_stripe_mem</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_stripe_mem_0" kactus2:comRef="to_iquan"/>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_iquan_0" kactus2:comRef="from_stripe_mem"/>
+				<kactus2:route>
+					<kactus2:position x="240" y="700"/>
+					<kactus2:position x="340" y="700"/>
+					<kactus2:position x="340" y="470"/>
+					<kactus2:position x="400" y="470"/>
+				</kactus2:route>
+			</kactus2:comConnection>
+			<kactus2:comConnection>
+				<spirit:name>vopd_idct_0_from_arm_to_vopd_arm_0_to_idct</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_idct_0" kactus2:comRef="from_arm"/>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_arm_0" kactus2:comRef="to_idct"/>
+				<kactus2:route>
+					<kactus2:position x="400" y="610"/>
+					<kactus2:position x="380" y="610"/>
+					<kactus2:position x="380" y="740"/>
+					<kactus2:position x="400" y="740"/>
+				</kactus2:route>
+			</kactus2:comConnection>
+			<kactus2:comConnection>
+				<spirit:name>vopd_timer_0_to_vid_to_vopd_vid_0_timer</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_timer_0" kactus2:comRef="to_vid"/>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_vid_0" kactus2:comRef="timer"/>
+				<kactus2:route>
+					<kactus2:position x="720" y="150"/>
+					<kactus2:position x="240" y="150"/>
+				</kactus2:route>
+			</kactus2:comConnection>
+			<kactus2:comConnection>
+				<spirit:name>vopd_pad_0_from_vop_rec_to_vopd_vop_rec_0_to_pad</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_pad_0" kactus2:comRef="from_vop_rec"/>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_vop_rec_0" kactus2:comRef="to_pad"/>
+				<kactus2:route>
+					<kactus2:position x="720" y="570"/>
+					<kactus2:position x="670" y="570"/>
+					<kactus2:position x="670" y="270"/>
+					<kactus2:position x="560" y="270"/>
+				</kactus2:route>
+			</kactus2:comConnection>
+			<kactus2:comConnection>
+				<spirit:name>vopd_iquan_0_to_idct_to_vopd_idct_0_from_iquan</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_iquan_0" kactus2:comRef="to_idct"/>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_idct_0" kactus2:comRef="from_iquan"/>
+				<kactus2:route>
+					<kactus2:position x="400" y="500"/>
+					<kactus2:position x="380" y="500"/>
+					<kactus2:position x="380" y="580"/>
+					<kactus2:position x="400" y="580"/>
+				</kactus2:route>
+			</kactus2:comConnection>
+			<kactus2:comConnection>
+				<spirit:name>vopd_timer_0_to_arm_to_vopd_arm_0_timer</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_timer_0" kactus2:comRef="to_arm"/>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_arm_0" kactus2:comRef="timer"/>
+				<kactus2:route>
+					<kactus2:position x="720" y="210"/>
+					<kactus2:position x="630" y="210"/>
+					<kactus2:position x="630" y="740"/>
+					<kactus2:position x="560" y="740"/>
+				</kactus2:route>
+			</kactus2:comConnection>
+			<kactus2:comConnection>
+				<spirit:name>vopd_vop_mem_0_to_pad_to_vopd_pad_0_from_vop_mem</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_vop_mem_0" kactus2:comRef="to_pad"/>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_pad_0" kactus2:comRef="from_vop_mem"/>
+				<kactus2:route>
+					<kactus2:position x="560" y="900"/>
+					<kactus2:position x="640" y="900"/>
+					<kactus2:position x="640" y="710"/>
+					<kactus2:position x="720" y="710"/>
+				</kactus2:route>
+			</kactus2:comConnection>
+			<kactus2:comConnection>
+				<spirit:name>vopd_pad_0_to_vop_mem_to_vopd_vop_mem_0_from_pad</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_pad_0" kactus2:comRef="to_vop_mem"/>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_vop_mem_0" kactus2:comRef="from_pad"/>
+				<kactus2:route>
+					<kactus2:position x="720" y="750"/>
+					<kactus2:position x="660" y="750"/>
+					<kactus2:position x="660" y="970"/>
+					<kactus2:position x="560" y="970"/>
+				</kactus2:route>
+			</kactus2:comConnection>
+			<kactus2:comConnection>
+				<spirit:name>vopd_up_samp_0_to_vop_rec_to_vopd_vop_rec_0_from_up_samp</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_up_samp_0" kactus2:comRef="to_vop_rec"/>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_vop_rec_0" kactus2:comRef="from_up_samp"/>
+				<kactus2:route>
+					<kactus2:position x="400" y="190"/>
+					<kactus2:position x="380" y="190"/>
+					<kactus2:position x="380" y="270"/>
+					<kactus2:position x="400" y="270"/>
+				</kactus2:route>
+			</kactus2:comConnection>
+			<kactus2:comConnection>
+				<spirit:name>vopd_up_samp_0_from_idct_to_vopd_idct_0_to_uo_samp</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_up_samp_0" kactus2:comRef="from_idct"/>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_idct_0" kactus2:comRef="to_uo_samp"/>
+				<kactus2:route>
+					<kactus2:position x="560" y="190"/>
+					<kactus2:position x="590" y="190"/>
+					<kactus2:position x="590" y="630"/>
+					<kactus2:position x="560" y="630"/>
+				</kactus2:route>
+			</kactus2:comConnection>
+			<kactus2:comConnection>
+				<spirit:name>vopd_vop_rec_0_from_vop_mem_to_vopd_vop_mem_0_to_vop_rec</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_vop_rec_0" kactus2:comRef="from_vop_mem"/>
+				<kactus2:activeComInterface kactus2:componentRef="vopd_vop_mem_0" kactus2:comRef="to_vop_rec"/>
+				<kactus2:route>
+					<kactus2:position x="400" y="310"/>
+					<kactus2:position x="350" y="310"/>
+					<kactus2:position x="350" y="930"/>
+					<kactus2:position x="400" y="930"/>
+				</kactus2:route>
+			</kactus2:comConnection>
+		</kactus2:comConnections>
+		<kactus2:columnLayout>
+			<kactus2:column name="SW Components" contentType="2" allowedItems="2" minWidth="319" width="319"/>
+			<kactus2:column name="SW Components" contentType="2" allowedItems="2" minWidth="319" width="319"/>
+			<kactus2:column name="SW Components" contentType="2" allowedItems="2" minWidth="319" width="319"/>
+			<kactus2:column name="SW Components" contentType="2" allowedItems="2" minWidth="319" width="319"/>
+		</kactus2:columnLayout>
+		<kactus2:routes/>
+	</spirit:vendorExtensions>
+</spirit:design>

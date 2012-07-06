@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by Kactus2 - Open source IP-Xact toolset -->
+<!-- http://sourceforge.net/projects/kactus2/ -->
+<!-- Date: 04.07.2012 -->
+<!-- Time: 13:23:38 -->
+<spirit:design xmlns:kactus2="http://funbase.cs.tut.fi/" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5/index.xsd">
+	<spirit:vendor>TUT</spirit:vendor>
+	<spirit:library>product</spirit:library>
+	<spirit:name>samos_2012.pc_nios_sw.design</spirit:name>
+	<spirit:version>1.0</spirit:version>
+	<spirit:componentInstances>
+		<spirit:componentInstance>
+			<spirit:instanceName>nios_ii_sdram</spirit:instanceName>
+			<spirit:displayName></spirit:displayName>
+			<spirit:description></spirit:description>
+			<spirit:componentRef spirit:vendor="TUT" spirit:library="ip.hwp.cpu" spirit:name="nios_ii_sdram" spirit:version="1.0"/>
+			<spirit:configurableElementValues/>
+			<spirit:vendorExtensions>
+				<kactus2:position x="480" y="60"/>
+				<kactus2:imported kactus2:importRef="mjpeg_de2_soc_nios_ii_sdram_0"/>
+				<kactus2:propertyValues/>
+			</spirit:vendorExtensions>
+		</spirit:componentInstance>
+		<spirit:componentInstance>
+			<spirit:instanceName>xilinx_spartan_xc3S500e_ublaze</spirit:instanceName>
+			<spirit:displayName></spirit:displayName>
+			<spirit:description></spirit:description>
+			<spirit:componentRef spirit:vendor="TUT" spirit:library="ip.hwp.cpu" spirit:name="ublaze" spirit:version="1.0"/>
+			<spirit:configurableElementValues/>
+			<spirit:vendorExtensions>
+				<kactus2:position x="480" y="860"/>
+				<kactus2:imported kactus2:importRef="xilinx_spartan_xc3S500e_ublaze"/>
+				<kactus2:propertyValues/>
+			</spirit:vendorExtensions>
+		</spirit:componentInstance>
+		<spirit:componentInstance>
+			<spirit:instanceName>nios_ii_sram</spirit:instanceName>
+			<spirit:displayName></spirit:displayName>
+			<spirit:description></spirit:description>
+			<spirit:componentRef spirit:vendor="TUT" spirit:library="ip.hwp.cpu" spirit:name="nios_ii_sram" spirit:version="1.0"/>
+			<spirit:configurableElementValues/>
+			<spirit:vendorExtensions>
+				<kactus2:position x="480" y="570"/>
+				<kactus2:imported kactus2:importRef="mjpeg_de2_soc_nios_ii_sram_0"/>
+				<kactus2:propertyValues/>
+			</spirit:vendorExtensions>
+		</spirit:componentInstance>
+		<spirit:componentInstance>
+			<spirit:instanceName>mjpeg_de2_soc_dct_to_hibi_0</spirit:instanceName>
+			<spirit:displayName></spirit:displayName>
+			<spirit:description></spirit:description>
+			<spirit:componentRef spirit:vendor="TUT" spirit:library="ip.hwp.accelerator" spirit:name="dct_to_hibi" spirit:version="1.0"/>
+			<spirit:configurableElementValues/>
+			<spirit:vendorExtensions>
+				<kactus2:position x="480" y="700"/>
+				<kactus2:imported kactus2:importRef="mjpeg_de2_soc_dct_to_hibi_0"/>
+				<kactus2:propertyValues/>
+			</spirit:vendorExtensions>
+		</spirit:componentInstance>
+		<spirit:componentInstance>
+			<spirit:instanceName>PC_x86</spirit:instanceName>
+			<spirit:displayName></spirit:displayName>
+			<spirit:description></spirit:description>
+			<spirit:componentRef spirit:vendor="TUT" spirit:library="ip.hwp.cpu" spirit:name="x86" spirit:version="1.0"/>
+			<spirit:configurableElementValues/>
+			<spirit:vendorExtensions>
+				<kactus2:position x="160" y="60"/>
+				<kactus2:imported kactus2:importRef="PC_x86"/>
+				<kactus2:propertyValues/>
+			</spirit:vendorExtensions>
+		</spirit:componentInstance>
+	</spirit:componentInstances>
+	<spirit:vendorExtensions>
+		<kactus2:swInstances>
+			<kactus2:swInstance>
+				<spirit:instanceName>hibi_pe_dma_1</spirit:instanceName>
+				<spirit:displayName>hibi_pe_dma</spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.swp.driver" spirit:name="hibi_pe_dma" spirit:version="1.0"/>
+				<kactus2:mapping kactus2:hwRef="nios_ii_sdram"/>
+				<kactus2:position x="0" y="390"/>
+				<kactus2:apiInterfacePositions>
+					<kactus2:apiInterfacePosition kactus2:apiRef="hibi_pe_dma">
+						<kactus2:position x="80" y="40"/>
+					</kactus2:apiInterfacePosition>
+				</kactus2:apiInterfacePositions>
+			</kactus2:swInstance>
+			<kactus2:swInstance>
+				<spirit:instanceName>mcapi_transport_nios_1</spirit:instanceName>
+				<spirit:displayName>mcapi_transport_nios</spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.swp.api" spirit:name="mcapi_transport_nios" spirit:version="1.0"/>
+				<kactus2:mapping kactus2:hwRef="nios_ii_sdram"/>
+				<kactus2:position x="0" y="290"/>
+				<kactus2:apiInterfacePositions>
+					<kactus2:apiInterfacePosition kactus2:apiRef="hibi_pe_dma">
+						<kactus2:position x="80" y="60"/>
+					</kactus2:apiInterfacePosition>
+					<kactus2:apiInterfacePosition kactus2:apiRef="mcapi_transport">
+						<kactus2:position x="80" y="40"/>
+					</kactus2:apiInterfacePosition>
+				</kactus2:apiInterfacePositions>
+			</kactus2:swInstance>
+			<kactus2:swInstance>
+				<spirit:instanceName>mcapi_top_1</spirit:instanceName>
+				<spirit:displayName>mcapi_top</spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.swp.api" spirit:name="mcapi_top" spirit:version="1.0"/>
+				<kactus2:mapping kactus2:hwRef="nios_ii_sdram"/>
+				<kactus2:position x="0" y="190"/>
+				<kactus2:apiInterfacePositions>
+					<kactus2:apiInterfacePosition kactus2:apiRef="mcapi">
+						<kactus2:position x="80" y="40"/>
+					</kactus2:apiInterfacePosition>
+					<kactus2:apiInterfacePosition kactus2:apiRef="mcapi_transport">
+						<kactus2:position x="80" y="60"/>
+					</kactus2:apiInterfacePosition>
+				</kactus2:apiInterfacePositions>
+			</kactus2:swInstance>
+			<kactus2:swInstance>
+				<spirit:instanceName>h.263_encoder_dct</spirit:instanceName>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.application" spirit:name="h.263_encoder_dct" spirit:version="1.0"/>
+				<kactus2:mapping kactus2:hwRef="nios_ii_sdram"/>
+				<kactus2:position x="0" y="40"/>
+				<kactus2:propertyValues>
+					<kactus2:propertyValue kactus2:name="node_id" kactus2:value=""/>
+				</kactus2:propertyValues>
+				<kactus2:apiInterfacePositions>
+					<kactus2:apiInterfacePosition kactus2:apiRef="mcapi">
+						<kactus2:position x="80" y="90"/>
+					</kactus2:apiInterfacePosition>
+				</kactus2:apiInterfacePositions>
+				<kactus2:comInterfacePositions>
+					<kactus2:comInterfacePosition kactus2:comRef="block_count_in">
+						<kactus2:position x="-80" y="110"/>
+					</kactus2:comInterfacePosition>
+					<kactus2:comInterfacePosition kactus2:comRef="dct_data_in">
+						<kactus2:position x="-80" y="80"/>
+					</kactus2:comInterfacePosition>
+					<kactus2:comInterfacePosition kactus2:comRef="dct_data_out">
+						<kactus2:position x="-80" y="50"/>
+					</kactus2:comInterfacePosition>
+				</kactus2:comInterfacePositions>
+			</kactus2:swInstance>
+			<kactus2:swInstance>
+				<spirit:instanceName>h.263_encoder_main</spirit:instanceName>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.application" spirit:name="h.263_encoder_main" spirit:version="1.0"/>
+				<kactus2:mapping kactus2:hwRef="PC_x86"/>
+				<kactus2:position x="0" y="40"/>
+				<kactus2:propertyValues>
+					<kactus2:propertyValue kactus2:name="node_id" kactus2:value=""/>
+				</kactus2:propertyValues>
+				<kactus2:apiInterfacePositions>
+					<kactus2:apiInterfacePosition kactus2:apiRef="mcapi">
+						<kactus2:position x="-80" y="50"/>
+					</kactus2:apiInterfacePosition>
+				</kactus2:apiInterfacePositions>
+				<kactus2:comInterfacePositions>
+					<kactus2:comInterfacePosition kactus2:comRef="block_count_out">
+						<kactus2:position x="80" y="110"/>
+					</kactus2:comInterfacePosition>
+					<kactus2:comInterfacePosition kactus2:comRef="dct_data_in">
+						<kactus2:position x="80" y="50"/>
+					</kactus2:comInterfacePosition>
+					<kactus2:comInterfacePosition kactus2:comRef="dct_data_out">
+						<kactus2:position x="80" y="80"/>
+					</kactus2:comInterfacePosition>
+				</kactus2:comInterfacePositions>
+			</kactus2:swInstance>
+			<kactus2:swInstance>
+				<spirit:instanceName>openmcapi_0</spirit:instanceName>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.swp.api" spirit:name="openmcapi" spirit:version="1.0"/>
+				<kactus2:mapping kactus2:hwRef="PC_x86"/>
+				<kactus2:position x="0" y="190"/>
+				<kactus2:apiInterfacePositions>
+					<kactus2:apiInterfacePosition kactus2:apiRef="mcapi">
+						<kactus2:position x="-80" y="40"/>
+					</kactus2:apiInterfacePosition>
+				</kactus2:apiInterfacePositions>
+			</kactus2:swInstance>
+		</kactus2:swInstances>
+		<kactus2:apiDependencies>
+			<kactus2:apiDependency>
+				<spirit:name>mcapi_transport_nios_1_mcapi_transport_to_mcapi_top_1_mcapi_transport</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeApiInterface kactus2:componentRef="mcapi_transport_nios_1" kactus2:apiRef="mcapi_transport"/>
+				<kactus2:activeApiInterface kactus2:componentRef="mcapi_top_1" kactus2:apiRef="mcapi_transport"/>
+				<kactus2:route>
+					<kactus2:position x="560" y="390"/>
+					<kactus2:position x="580" y="390"/>
+					<kactus2:position x="580" y="310"/>
+					<kactus2:position x="560" y="310"/>
+				</kactus2:route>
+			</kactus2:apiDependency>
+			<kactus2:apiDependency>
+				<spirit:name>mcapi_top_1_mcapi_to_h.263_encoder_dct_mcapi</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeApiInterface kactus2:componentRef="mcapi_top_1" kactus2:apiRef="mcapi"/>
+				<kactus2:activeApiInterface kactus2:componentRef="h.263_encoder_dct" kactus2:apiRef="mcapi"/>
+				<kactus2:route>
+					<kactus2:position x="560" y="290"/>
+					<kactus2:position x="580" y="290"/>
+					<kactus2:position x="580" y="190"/>
+					<kactus2:position x="560" y="190"/>
+				</kactus2:route>
+			</kactus2:apiDependency>
+			<kactus2:apiDependency>
+				<spirit:name>mcapi_transport_nios_1_hibi_pe_dma_to_hibi_pe_dma_1_hibi_pe_dma</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeApiInterface kactus2:componentRef="mcapi_transport_nios_1" kactus2:apiRef="hibi_pe_dma"/>
+				<kactus2:activeApiInterface kactus2:componentRef="hibi_pe_dma_1" kactus2:apiRef="hibi_pe_dma"/>
+				<kactus2:route>
+					<kactus2:position x="560" y="410"/>
+					<kactus2:position x="580" y="410"/>
+					<kactus2:position x="580" y="490"/>
+					<kactus2:position x="560" y="490"/>
+				</kactus2:route>
+			</kactus2:apiDependency>
+			<kactus2:apiDependency>
+				<spirit:name>openmcapi_0_mcapi_to_h.263_encoder_main_mcapi</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeApiInterface kactus2:componentRef="openmcapi_0" kactus2:apiRef="mcapi"/>
+				<kactus2:activeApiInterface kactus2:componentRef="h.263_encoder_main" kactus2:apiRef="mcapi"/>
+				<kactus2:route>
+					<kactus2:position x="80" y="290"/>
+					<kactus2:position x="60" y="290"/>
+					<kactus2:position x="60" y="150"/>
+					<kactus2:position x="80" y="150"/>
+				</kactus2:route>
+			</kactus2:apiDependency>
+		</kactus2:apiDependencies>
+		<kactus2:comConnections>
+			<kactus2:comConnection>
+				<spirit:name>h.263_encoder_main_dct_data_in_to_h.263_encoder_dct_dct_data_out</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeComInterface kactus2:componentRef="h.263_encoder_main" kactus2:comRef="dct_data_in"/>
+				<kactus2:activeComInterface kactus2:componentRef="h.263_encoder_dct" kactus2:comRef="dct_data_out"/>
+				<kactus2:route>
+					<kactus2:position x="240" y="150"/>
+					<kactus2:position x="400" y="150"/>
+				</kactus2:route>
+			</kactus2:comConnection>
+			<kactus2:comConnection>
+				<spirit:name>h.263_encoder_main_block_count_out_to_h.263_encoder_dct_block_count_in</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeComInterface kactus2:componentRef="h.263_encoder_main" kactus2:comRef="block_count_out"/>
+				<kactus2:activeComInterface kactus2:componentRef="h.263_encoder_dct" kactus2:comRef="block_count_in"/>
+				<kactus2:route>
+					<kactus2:position x="240" y="210"/>
+					<kactus2:position x="400" y="210"/>
+				</kactus2:route>
+			</kactus2:comConnection>
+			<kactus2:comConnection>
+				<spirit:name>h.263_encoder_main_dct_data_out_to_h.263_encoder_dct_dct_data_in</spirit:name>
+				<spirit:displayName></spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:activeComInterface kactus2:componentRef="h.263_encoder_main" kactus2:comRef="dct_data_out"/>
+				<kactus2:activeComInterface kactus2:componentRef="h.263_encoder_dct" kactus2:comRef="dct_data_in"/>
+				<kactus2:route>
+					<kactus2:position x="240" y="180"/>
+					<kactus2:position x="400" y="180"/>
+				</kactus2:route>
+			</kactus2:comConnection>
+		</kactus2:comConnections>
+		<kactus2:columnLayout>
+			<kactus2:column name="SW Components" contentType="2" allowedItems="2" minWidth="319" width="319"/>
+			<kactus2:column name="SW Components" contentType="2" allowedItems="2" minWidth="319" width="319"/>
+		</kactus2:columnLayout>
+		<kactus2:routes/>
+	</spirit:vendorExtensions>
+</spirit:design>
