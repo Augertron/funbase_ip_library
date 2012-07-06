@@ -1,2 +1,0 @@
-insmod /home/toor/pcie_to_hibi/altpciechdma.ko
-rmmod /home/toor/pcie_to_hibi/altpciechdma.ko

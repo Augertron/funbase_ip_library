@@ -1,1 +1,0 @@
-See ../../drv for files tut_n2h_regs.c and tut_n2h_regs.h.
