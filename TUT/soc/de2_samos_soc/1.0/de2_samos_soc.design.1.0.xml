@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created by Kactus2 - Open source IP-Xact toolset -->
 <!-- http://sourceforge.net/projects/kactus2/ -->
-<!-- Date: 06.07.2012 -->
-<!-- Time: 14:16:40 -->
+<!-- Date: 03.09.2012 -->
+<!-- Time: 14:00:09 -->
 <spirit:design xmlns:kactus2="http://funbase.cs.tut.fi/" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5/index.xsd">
 	<spirit:vendor>TUT</spirit:vendor>
 	<spirit:library>soc</spirit:library>
@@ -91,10 +91,10 @@
 			</spirit:vendorExtensions>
 		</spirit:componentInstance>
 		<spirit:componentInstance>
-			<spirit:instanceName>nios_ii_sdram_0</spirit:instanceName>
+			<spirit:instanceName>nios_ii_sdram_1</spirit:instanceName>
 			<spirit:displayName></spirit:displayName>
 			<spirit:description></spirit:description>
-			<spirit:componentRef spirit:vendor="TUT" spirit:library="ip.hwp.cpu" spirit:name="nios_ii_sdram" spirit:version="1.0"/>
+			<spirit:componentRef spirit:vendor="Altera" spirit:library="ip.hwp.cpu" spirit:name="nios_ii_sdram" spirit:version="1.0"/>
 			<spirit:configurableElementValues/>
 			<spirit:vendorExtensions>
 				<kactus2:position x="650" y="60"/>
@@ -141,7 +141,7 @@
 						<kactus2:position x="80" y="250"/>
 					</kactus2:portPosition>
 					<kactus2:portPosition kactus2:busRef="ip_mMaster_0">
-						<kactus2:position x="-80" y="40"/>
+						<kactus2:position x="-80" y="80"/>
 					</kactus2:portPosition>
 					<kactus2:portPosition kactus2:busRef="ip_mMaster_1">
 						<kactus2:position x="80" y="60"/>
@@ -153,7 +153,7 @@
 						<kactus2:position x="80" y="420"/>
 					</kactus2:portPosition>
 					<kactus2:portPosition kactus2:busRef="ip_mSlave_0">
-						<kactus2:position x="-80" y="60"/>
+						<kactus2:position x="-80" y="40"/>
 					</kactus2:portPosition>
 					<kactus2:portPosition kactus2:busRef="ip_mSlave_1">
 						<kactus2:position x="80" y="80"/>
@@ -166,6 +166,35 @@
 					</kactus2:portPosition>
 					<kactus2:portPosition kactus2:busRef="rst_n">
 						<kactus2:position x="80" y="330"/>
+					</kactus2:portPosition>
+				</kactus2:portPositions>
+				<kactus2:adHocVisibilities/>
+				<kactus2:propertyValues/>
+			</spirit:vendorExtensions>
+		</spirit:componentInstance>
+		<spirit:componentInstance>
+			<spirit:instanceName>nios_ii_sram_0</spirit:instanceName>
+			<spirit:displayName></spirit:displayName>
+			<spirit:description></spirit:description>
+			<spirit:componentRef spirit:vendor="Altera" spirit:library="ip.hwp.cpu" spirit:name="nios_ii_sram" spirit:version="1.0"/>
+			<spirit:configurableElementValues/>
+			<spirit:vendorExtensions>
+				<kactus2:position x="130" y="60"/>
+				<kactus2:portPositions>
+					<kactus2:portPosition kactus2:busRef="clk">
+						<kactus2:position x="-80" y="40"/>
+					</kactus2:portPosition>
+					<kactus2:portPosition kactus2:busRef="hibi_master">
+						<kactus2:position x="80" y="80"/>
+					</kactus2:portPosition>
+					<kactus2:portPosition kactus2:busRef="hibi_slave">
+						<kactus2:position x="80" y="40"/>
+					</kactus2:portPosition>
+					<kactus2:portPosition kactus2:busRef="rst_n">
+						<kactus2:position x="-80" y="70"/>
+					</kactus2:portPosition>
+					<kactus2:portPosition kactus2:busRef="sram_if">
+						<kactus2:position x="-80" y="100"/>
 					</kactus2:portPosition>
 				</kactus2:portPositions>
 				<kactus2:adHocVisibilities/>
@@ -236,37 +265,29 @@
 				<kactus2:propertyValues/>
 			</spirit:vendorExtensions>
 		</spirit:componentInstance>
-		<spirit:componentInstance>
-			<spirit:instanceName>nios_ii_sram_0</spirit:instanceName>
-			<spirit:displayName></spirit:displayName>
-			<spirit:description></spirit:description>
-			<spirit:componentRef spirit:vendor="TUT" spirit:library="ip.hwp.cpu" spirit:name="nios_ii_sram" spirit:version="1.0"/>
-			<spirit:configurableElementValues/>
-			<spirit:vendorExtensions>
-				<kactus2:position x="130" y="60"/>
-				<kactus2:portPositions>
-					<kactus2:portPosition kactus2:busRef="clk">
-						<kactus2:position x="-80" y="40"/>
-					</kactus2:portPosition>
-					<kactus2:portPosition kactus2:busRef="hibi_master">
-						<kactus2:position x="80" y="40"/>
-					</kactus2:portPosition>
-					<kactus2:portPosition kactus2:busRef="hibi_slave">
-						<kactus2:position x="80" y="60"/>
-					</kactus2:portPosition>
-					<kactus2:portPosition kactus2:busRef="rst_n">
-						<kactus2:position x="-80" y="70"/>
-					</kactus2:portPosition>
-					<kactus2:portPosition kactus2:busRef="sram_if">
-						<kactus2:position x="-80" y="100"/>
-					</kactus2:portPosition>
-				</kactus2:portPositions>
-				<kactus2:adHocVisibilities/>
-				<kactus2:propertyValues/>
-			</spirit:vendorExtensions>
-		</spirit:componentInstance>
 	</spirit:componentInstances>
 	<spirit:interconnections>
+		<spirit:interconnection>
+			<spirit:name>nios_ii_sram_0_clk_to_pll_0_ip_clk</spirit:name>
+			<spirit:displayName></spirit:displayName>
+			<spirit:description></spirit:description>
+			<spirit:activeInterface spirit:componentRef="nios_ii_sram_0" spirit:busRef="clk"/>
+			<spirit:activeInterface spirit:componentRef="pll_0" spirit:busRef="ip_clk"/>
+		</spirit:interconnection>
+		<spirit:interconnection>
+			<spirit:name>nios_ii_sram_0_hibi_slave_to_hibi_segment_0_ip_mSlave_0</spirit:name>
+			<spirit:displayName></spirit:displayName>
+			<spirit:description></spirit:description>
+			<spirit:activeInterface spirit:componentRef="nios_ii_sram_0" spirit:busRef="hibi_slave"/>
+			<spirit:activeInterface spirit:componentRef="hibi_segment_0" spirit:busRef="ip_mSlave_0"/>
+		</spirit:interconnection>
+		<spirit:interconnection>
+			<spirit:name>nios_ii_sram_0_hibi_master_to_hibi_segment_0_ip_mMaster_0</spirit:name>
+			<spirit:displayName></spirit:displayName>
+			<spirit:description></spirit:description>
+			<spirit:activeInterface spirit:componentRef="nios_ii_sram_0" spirit:busRef="hibi_master"/>
+			<spirit:activeInterface spirit:componentRef="hibi_segment_0" spirit:busRef="ip_mMaster_0"/>
+		</spirit:interconnection>
 		<spirit:interconnection>
 			<spirit:name>dct_to_hibi_0_clk_to_pll_0_ip_clk</spirit:name>
 			<spirit:displayName></spirit:displayName>
@@ -366,32 +387,18 @@
 			<spirit:activeInterface spirit:componentRef="pll_0" spirit:busRef="hibi_clk"/>
 		</spirit:interconnection>
 		<spirit:interconnection>
-			<spirit:name>nios_ii_sdram_0_hibi_master_to_hibi_segment_0_ip_mMaster_1</spirit:name>
+			<spirit:name>nios_ii_sdram_1_hibi_master_to_hibi_segment_0_ip_mMaster_1</spirit:name>
 			<spirit:displayName></spirit:displayName>
 			<spirit:description></spirit:description>
-			<spirit:activeInterface spirit:componentRef="nios_ii_sdram_0" spirit:busRef="hibi_master"/>
+			<spirit:activeInterface spirit:componentRef="nios_ii_sdram_1" spirit:busRef="hibi_master"/>
 			<spirit:activeInterface spirit:componentRef="hibi_segment_0" spirit:busRef="ip_mMaster_1"/>
 		</spirit:interconnection>
 		<spirit:interconnection>
-			<spirit:name>nios_ii_sdram_0_hibi_slave_to_hibi_segment_0_ip_mSlave_1</spirit:name>
+			<spirit:name>nios_ii_sdram_1_hibi_slave_to_hibi_segment_0_ip_mSlave_1</spirit:name>
 			<spirit:displayName></spirit:displayName>
 			<spirit:description></spirit:description>
-			<spirit:activeInterface spirit:componentRef="nios_ii_sdram_0" spirit:busRef="hibi_slave"/>
+			<spirit:activeInterface spirit:componentRef="nios_ii_sdram_1" spirit:busRef="hibi_slave"/>
 			<spirit:activeInterface spirit:componentRef="hibi_segment_0" spirit:busRef="ip_mSlave_1"/>
-		</spirit:interconnection>
-		<spirit:interconnection>
-			<spirit:name>nios_ii_sram_0_hibi_master_to_hibi_segment_0_ip_mMaster_0</spirit:name>
-			<spirit:displayName></spirit:displayName>
-			<spirit:description></spirit:description>
-			<spirit:activeInterface spirit:componentRef="nios_ii_sram_0" spirit:busRef="hibi_master"/>
-			<spirit:activeInterface spirit:componentRef="hibi_segment_0" spirit:busRef="ip_mMaster_0"/>
-		</spirit:interconnection>
-		<spirit:interconnection>
-			<spirit:name>nios_ii_sram_0_hibi_slave_to_hibi_segment_0_ip_mSlave_0</spirit:name>
-			<spirit:displayName></spirit:displayName>
-			<spirit:description></spirit:description>
-			<spirit:activeInterface spirit:componentRef="nios_ii_sram_0" spirit:busRef="hibi_slave"/>
-			<spirit:activeInterface spirit:componentRef="hibi_segment_0" spirit:busRef="ip_mSlave_0"/>
 		</spirit:interconnection>
 		<spirit:interconnection>
 			<spirit:name>pll_0_hibi_clk_to_hibi_segment_0_clocks_0</spirit:name>
@@ -408,18 +415,11 @@
 			<spirit:activeInterface spirit:componentRef="hibi_segment_0" spirit:busRef="clocks_1"/>
 		</spirit:interconnection>
 		<spirit:interconnection>
-			<spirit:name>pll_0_ip_clk_to_nios_ii_sram_0_clk</spirit:name>
+			<spirit:name>pll_0_ip_clk_to_nios_ii_sdram_1_clk</spirit:name>
 			<spirit:displayName></spirit:displayName>
 			<spirit:description></spirit:description>
 			<spirit:activeInterface spirit:componentRef="pll_0" spirit:busRef="ip_clk"/>
-			<spirit:activeInterface spirit:componentRef="nios_ii_sram_0" spirit:busRef="clk"/>
-		</spirit:interconnection>
-		<spirit:interconnection>
-			<spirit:name>pll_0_ip_clk_to_nios_ii_sdram_0_clk</spirit:name>
-			<spirit:displayName></spirit:displayName>
-			<spirit:description></spirit:description>
-			<spirit:activeInterface spirit:componentRef="pll_0" spirit:busRef="ip_clk"/>
-			<spirit:activeInterface spirit:componentRef="nios_ii_sdram_0" spirit:busRef="clk"/>
+			<spirit:activeInterface spirit:componentRef="nios_ii_sdram_1" spirit:busRef="clk"/>
 		</spirit:interconnection>
 	</spirit:interconnections>
 	<spirit:hierConnections>
@@ -430,6 +430,28 @@
 				<kactus2:direction x="-1" y="0"/>
 				<kactus2:route kactus2:offPage="true">
 					<kactus2:position x="20" y="310"/>
+					<kactus2:position x="810" y="130"/>
+				</kactus2:route>
+			</spirit:vendorExtensions>
+		</spirit:hierConnection>
+		<spirit:hierConnection spirit:interfaceRef="sram_if">
+			<spirit:interface spirit:componentRef="nios_ii_sram_0" spirit:busRef="sram_if"/>
+			<spirit:vendorExtensions>
+				<kactus2:position x="810" y="370"/>
+				<kactus2:direction x="-1" y="0"/>
+				<kactus2:route kactus2:offPage="true">
+					<kactus2:position x="20" y="160"/>
+					<kactus2:position x="810" y="370"/>
+				</kactus2:route>
+			</spirit:vendorExtensions>
+		</spirit:hierConnection>
+		<spirit:hierConnection spirit:interfaceRef="rst_n">
+			<spirit:interface spirit:componentRef="nios_ii_sram_0" spirit:busRef="rst_n"/>
+			<spirit:vendorExtensions>
+				<kactus2:position x="810" y="130"/>
+				<kactus2:direction x="-1" y="0"/>
+				<kactus2:route kactus2:offPage="true">
+					<kactus2:position x="20" y="130"/>
 					<kactus2:position x="810" y="130"/>
 				</kactus2:route>
 			</spirit:vendorExtensions>
@@ -490,23 +512,12 @@
 			</spirit:vendorExtensions>
 		</spirit:hierConnection>
 		<spirit:hierConnection spirit:interfaceRef="rst_n">
-			<spirit:interface spirit:componentRef="nios_ii_sdram_0" spirit:busRef="rst_n"/>
+			<spirit:interface spirit:componentRef="nios_ii_sdram_1" spirit:busRef="rst_n"/>
 			<spirit:vendorExtensions>
 				<kactus2:position x="810" y="130"/>
 				<kactus2:direction x="-1" y="0"/>
 				<kactus2:route kactus2:offPage="true">
 					<kactus2:position x="760" y="130"/>
-					<kactus2:position x="810" y="130"/>
-				</kactus2:route>
-			</spirit:vendorExtensions>
-		</spirit:hierConnection>
-		<spirit:hierConnection spirit:interfaceRef="rst_n">
-			<spirit:interface spirit:componentRef="nios_ii_sram_0" spirit:busRef="rst_n"/>
-			<spirit:vendorExtensions>
-				<kactus2:position x="810" y="130"/>
-				<kactus2:direction x="-1" y="0"/>
-				<kactus2:route kactus2:offPage="true">
-					<kactus2:position x="20" y="130"/>
 					<kactus2:position x="810" y="130"/>
 				</kactus2:route>
 			</spirit:vendorExtensions>
@@ -534,24 +545,13 @@
 			</spirit:vendorExtensions>
 		</spirit:hierConnection>
 		<spirit:hierConnection spirit:interfaceRef="sdram_if">
-			<spirit:interface spirit:componentRef="nios_ii_sdram_0" spirit:busRef="sdram_if"/>
+			<spirit:interface spirit:componentRef="nios_ii_sdram_1" spirit:busRef="sdram_if"/>
 			<spirit:vendorExtensions>
 				<kactus2:position x="840" y="100"/>
 				<kactus2:direction x="-1" y="0"/>
 				<kactus2:route kactus2:offPage="false">
 					<kactus2:position x="730" y="100"/>
 					<kactus2:position x="840" y="100"/>
-				</kactus2:route>
-			</spirit:vendorExtensions>
-		</spirit:hierConnection>
-		<spirit:hierConnection spirit:interfaceRef="sram_if">
-			<spirit:interface spirit:componentRef="nios_ii_sram_0" spirit:busRef="sram_if"/>
-			<spirit:vendorExtensions>
-				<kactus2:position x="810" y="370"/>
-				<kactus2:direction x="-1" y="0"/>
-				<kactus2:route kactus2:offPage="true">
-					<kactus2:position x="20" y="160"/>
-					<kactus2:position x="810" y="370"/>
 				</kactus2:route>
 			</spirit:vendorExtensions>
 		</spirit:hierConnection>
@@ -564,6 +564,18 @@
 			<kactus2:column name="IO" contentType="0" allowedItems="1" minWidth="119" width="119"/>
 		</kactus2:columnLayout>
 		<kactus2:routes>
+			<kactus2:route kactus2:connRef="nios_ii_sram_0_clk_to_pll_0_ip_clk" kactus2:offPage="true">
+				<kactus2:position x="20" y="100"/>
+				<kactus2:position x="540" y="290"/>
+			</kactus2:route>
+			<kactus2:route kactus2:connRef="nios_ii_sram_0_hibi_slave_to_hibi_segment_0_ip_mSlave_0" kactus2:offPage="false">
+				<kactus2:position x="210" y="100"/>
+				<kactus2:position x="310" y="100"/>
+			</kactus2:route>
+			<kactus2:route kactus2:connRef="nios_ii_sram_0_hibi_master_to_hibi_segment_0_ip_mMaster_0" kactus2:offPage="false">
+				<kactus2:position x="210" y="140"/>
+				<kactus2:position x="310" y="140"/>
+			</kactus2:route>
 			<kactus2:route kactus2:connRef="dct_to_hibi_0_clk_to_pll_0_ip_clk" kactus2:offPage="true">
 				<kactus2:position x="540" y="440"/>
 				<kactus2:position x="540" y="290"/>
@@ -632,21 +644,13 @@
 				<kactus2:position x="490" y="260"/>
 				<kactus2:position x="570" y="260"/>
 			</kactus2:route>
-			<kactus2:route kactus2:connRef="nios_ii_sdram_0_hibi_master_to_hibi_segment_0_ip_mMaster_1" kactus2:offPage="false">
+			<kactus2:route kactus2:connRef="nios_ii_sdram_1_hibi_master_to_hibi_segment_0_ip_mMaster_1" kactus2:offPage="false">
 				<kactus2:position x="570" y="120"/>
 				<kactus2:position x="470" y="120"/>
 			</kactus2:route>
-			<kactus2:route kactus2:connRef="nios_ii_sdram_0_hibi_slave_to_hibi_segment_0_ip_mSlave_1" kactus2:offPage="false">
+			<kactus2:route kactus2:connRef="nios_ii_sdram_1_hibi_slave_to_hibi_segment_0_ip_mSlave_1" kactus2:offPage="false">
 				<kactus2:position x="570" y="140"/>
 				<kactus2:position x="470" y="140"/>
-			</kactus2:route>
-			<kactus2:route kactus2:connRef="nios_ii_sram_0_hibi_master_to_hibi_segment_0_ip_mMaster_0" kactus2:offPage="false">
-				<kactus2:position x="210" y="100"/>
-				<kactus2:position x="310" y="100"/>
-			</kactus2:route>
-			<kactus2:route kactus2:connRef="nios_ii_sram_0_hibi_slave_to_hibi_segment_0_ip_mSlave_0" kactus2:offPage="false">
-				<kactus2:position x="210" y="120"/>
-				<kactus2:position x="310" y="120"/>
 			</kactus2:route>
 			<kactus2:route kactus2:connRef="pll_0_hibi_clk_to_hibi_segment_0_clocks_0" kactus2:offPage="false">
 				<kactus2:position x="570" y="260"/>
@@ -660,11 +664,7 @@
 				<kactus2:position x="490" y="270"/>
 				<kactus2:position x="470" y="270"/>
 			</kactus2:route>
-			<kactus2:route kactus2:connRef="pll_0_ip_clk_to_nios_ii_sram_0_clk" kactus2:offPage="true">
-				<kactus2:position x="540" y="290"/>
-				<kactus2:position x="20" y="100"/>
-			</kactus2:route>
-			<kactus2:route kactus2:connRef="pll_0_ip_clk_to_nios_ii_sdram_0_clk" kactus2:offPage="true">
+			<kactus2:route kactus2:connRef="pll_0_ip_clk_to_nios_ii_sdram_1_clk" kactus2:offPage="true">
 				<kactus2:position x="540" y="290"/>
 				<kactus2:position x="760" y="170"/>
 			</kactus2:route>

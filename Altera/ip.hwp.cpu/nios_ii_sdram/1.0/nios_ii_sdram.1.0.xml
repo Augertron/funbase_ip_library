@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created by Kactus2 - Open source IP-Xact toolset -->
 <!-- http://sourceforge.net/projects/kactus2/ -->
-<!-- Date: 16.07.2012 -->
-<!-- Time: 11:19:39 -->
+<!-- Date: 03.09.2012 -->
+<!-- Time: 13:49:00 -->
 <spirit:component xmlns:kactus2="http://funbase.cs.tut.fi/" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5/index.xsd">
-	<spirit:vendor>TUT</spirit:vendor>
+	<spirit:vendor>Altera</spirit:vendor>
 	<spirit:library>ip.hwp.cpu</spirit:library>
 	<spirit:name>nios_ii_sdram</spirit:name>
 	<spirit:version>1.0</spirit:version>
@@ -613,72 +613,72 @@
 		<spirit:fileSet>
 			<spirit:name>hdlSources</spirit:name>
 			<spirit:file>
-				<spirit:name>../hdl/cpu_1_jtag_debug_module_sysclk.v</spirit:name>
+				<spirit:name>D:/user/matilail/funbase/repos/daci_ip/trunk/ip.hwp.cpu/nios_ii_sdram/1.0/../hdl/cpu_1.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>
 			<spirit:file>
-				<spirit:name>../hdl/cpu_1_jtag_debug_module_tck.v</spirit:name>
+				<spirit:name>D:/user/matilail/funbase/repos/daci_ip/trunk/ip.hwp.cpu/nios_ii_sdram/1.0/../hdl/cpu_1_jtag_debug_module_sysclk.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>
 			<spirit:file>
-				<spirit:name>../hdl/cpu_1_jtag_debug_module_wrapper.v</spirit:name>
+				<spirit:name>D:/user/matilail/funbase/repos/daci_ip/trunk/ip.hwp.cpu/nios_ii_sdram/1.0/../hdl/cpu_1_jtag_debug_module_tck.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>
 			<spirit:file>
-				<spirit:name>../hdl/cpu_1_mult_cell.v</spirit:name>
+				<spirit:name>D:/user/matilail/funbase/repos/daci_ip/trunk/ip.hwp.cpu/nios_ii_sdram/1.0/../hdl/cpu_1_jtag_debug_module_wrapper.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>
 			<spirit:file>
-				<spirit:name>../hdl/hibi_pe_dma_1.vhd</spirit:name>
+				<spirit:name>D:/user/matilail/funbase/repos/daci_ip/trunk/ip.hwp.cpu/nios_ii_sdram/1.0/../hdl/cpu_1_mult_cell.v</spirit:name>
+				<spirit:fileType>verilogSource</spirit:fileType>
+				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
+			</spirit:file>
+			<spirit:file>
+				<spirit:name>D:/user/matilail/funbase/repos/daci_ip/trunk/ip.hwp.cpu/nios_ii_sdram/1.0/../hdl/hibi_pe_dma_1.vhd</spirit:name>
 				<spirit:fileType>vhdlSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>
 			<spirit:file>
-				<spirit:name>../hdl/jtag_uart_1.v</spirit:name>
+				<spirit:name>D:/user/matilail/funbase/repos/daci_ip/trunk/ip.hwp.cpu/nios_ii_sdram/1.0/../hdl/jtag_uart_1.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>
 			<spirit:file>
-				<spirit:name>../hdl/nios_ii_sdram.qip</spirit:name>
+				<spirit:name>D:/user/matilail/funbase/repos/daci_ip/trunk/ip.hwp.cpu/nios_ii_sdram/1.0/../hdl/nios_ii_sdram.qip</spirit:name>
 				<spirit:userFileType>quartusIPFile</spirit:userFileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>
 			<spirit:file>
-				<spirit:name>../hdl/nios_ii_sdram.v</spirit:name>
+				<spirit:name>D:/user/matilail/funbase/repos/daci_ip/trunk/ip.hwp.cpu/nios_ii_sdram/1.0/../hdl/nios_ii_sdram.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>
 			<spirit:file>
-				<spirit:name>../hdl/onchip_memory_1.v</spirit:name>
+				<spirit:name>D:/user/matilail/funbase/repos/daci_ip/trunk/ip.hwp.cpu/nios_ii_sdram/1.0/../hdl/onchip_memory_1.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>
 			<spirit:file>
-				<spirit:name>../hdl/sdram_1.v</spirit:name>
+				<spirit:name>D:/user/matilail/funbase/repos/daci_ip/trunk/ip.hwp.cpu/nios_ii_sdram/1.0/../hdl/sdram_1.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>
 			<spirit:file>
-				<spirit:name>../hdl/timer_1.v</spirit:name>
+				<spirit:name>D:/user/matilail/funbase/repos/daci_ip/trunk/ip.hwp.cpu/nios_ii_sdram/1.0/../hdl/timer_1.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>
 			<spirit:file>
-				<spirit:name>../hdl/cpu_1_oci_test_bench.v</spirit:name>
+				<spirit:name>D:/user/matilail/funbase/repos/daci_ip/trunk/ip.hwp.cpu/nios_ii_sdram/1.0/../hdl/cpu_1_oci_test_bench.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>
 			<spirit:file>
-				<spirit:name>../hdl/cpu_1_test_bench.v</spirit:name>
-				<spirit:fileType>verilogSource</spirit:fileType>
-				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
-			</spirit:file>
-			<spirit:file>
-				<spirit:name>../hdl/cpu1.v</spirit:name>
+				<spirit:name>D:/user/matilail/funbase/repos/daci_ip/trunk/ip.hwp.cpu/nios_ii_sdram/1.0/../hdl/cpu_1_test_bench.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>
@@ -695,7 +695,7 @@
 			<kactus2:kts_attributes>
 				<kactus2:kts_productHier>IP</kactus2:kts_productHier>
 				<kactus2:kts_implementation>HW</kactus2:kts_implementation>
-				<kactus2:kts_firmness>Mutable</kactus2:kts_firmness>
+				<kactus2:kts_firmness>Fixed</kactus2:kts_firmness>
 			</kactus2:kts_attributes>
 			<kactus2:swViews>
 				<kactus2:swView>

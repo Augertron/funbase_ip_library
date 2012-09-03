@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created by Kactus2 - Open source IP-Xact toolset -->
 <!-- http://sourceforge.net/projects/kactus2/ -->
-<!-- Date: 06.07.2012 -->
-<!-- Time: 14:16:40 -->
+<!-- Date: 03.09.2012 -->
+<!-- Time: 14:00:09 -->
 <spirit:component xmlns:kactus2="http://funbase.cs.tut.fi/" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5/index.xsd">
 	<spirit:vendor>TUT</spirit:vendor>
 	<spirit:library>soc</spirit:library>
@@ -11,6 +11,33 @@
 	<spirit:description>Altera de2 template soc
 </spirit:description>
 	<spirit:busInterfaces>
+		<spirit:busInterface>
+			<spirit:name>rst_n</spirit:name>
+			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="reset.busdef" spirit:version="1.0"/>
+			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="reset.absDef" spirit:version="1.0"/>
+			<spirit:slave/>
+			<spirit:connectionRequired>false</spirit:connectionRequired>
+			<spirit:portMaps>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>RESETn</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>SW_17</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+			</spirit:portMaps>
+			<spirit:bitsInLau>8</spirit:bitsInLau>
+			<spirit:endianness>little</spirit:endianness>
+		</spirit:busInterface>
 		<spirit:busInterface>
 			<spirit:name>DM9000A</spirit:name>
 			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="ethernet_dm9000a" spirit:version="1.0"/>
@@ -167,33 +194,6 @@
 					</spirit:logicalPort>
 					<spirit:physicalPort>
 						<spirit:name>CLOCK_50</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-			</spirit:portMaps>
-			<spirit:bitsInLau>8</spirit:bitsInLau>
-			<spirit:endianness>little</spirit:endianness>
-		</spirit:busInterface>
-		<spirit:busInterface>
-			<spirit:name>rst_n</spirit:name>
-			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="reset.busdef" spirit:version="1.0"/>
-			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="reset.absDef" spirit:version="1.0"/>
-			<spirit:slave/>
-			<spirit:connectionRequired>false</spirit:connectionRequired>
-			<spirit:portMaps>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>RESETn</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>SW_17</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -520,11 +520,23 @@
 				<spirit:name>structural</spirit:name>
 				<spirit:envIdentifier></spirit:envIdentifier>
 				<spirit:hierarchyRef spirit:vendor="TUT" spirit:library="soc" spirit:name="de2_samos_soc.designcfg" spirit:version="1.0"/>
+				<spirit:vendorExtensions>
+					<kactus2:topLevelViewRef>structural_vhd</kactus2:topLevelViewRef>
+				</spirit:vendorExtensions>
 			</spirit:view>
 			<spirit:view>
 				<spirit:name>acc_only</spirit:name>
 				<spirit:envIdentifier></spirit:envIdentifier>
 				<spirit:hierarchyRef spirit:vendor="TUT" spirit:library="soc" spirit:name="mjpeg_de2_soc.acc_only.designcfg" spirit:version="1.0"/>
+			</spirit:view>
+			<spirit:view>
+				<spirit:name>structural_vhd</spirit:name>
+				<spirit:envIdentifier>VHDL:Kactus2:</spirit:envIdentifier>
+				<spirit:language spirit:strict="false">vhdl</spirit:language>
+				<spirit:modelName>de2_samos_soc(structural)</spirit:modelName>
+				<spirit:fileSetRef>
+					<spirit:localName>structural_vhdlSource</spirit:localName>
+				</spirit:fileSetRef>
 			</spirit:view>
 		</spirit:views>
 		<spirit:ports>
@@ -835,6 +847,39 @@
 				<spirit:userFileType>quartusPinmap</spirit:userFileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>
+		</spirit:fileSet>
+		<spirit:fileSet>
+			<spirit:name>structural_vhdlSource</spirit:name>
+			<spirit:group>sourceFiles</spirit:group>
+			<spirit:file>
+				<spirit:name>de2_samos_soc.vhd</spirit:name>
+				<spirit:fileType>vhdlSource</spirit:fileType>
+				<spirit:isIncludeFile spirit:externalDeclarations="false">true</spirit:isIncludeFile>
+				<spirit:logicalName spirit:default="false">work</spirit:logicalName>
+				<spirit:buildCommand>
+					<spirit:command>vcom</spirit:command>
+					<spirit:flags>-quiet -check_synthesis -work work</spirit:flags>
+					<spirit:replaceDefaultFlags>true</spirit:replaceDefaultFlags>
+				</spirit:buildCommand>
+			</spirit:file>
+			<spirit:defaultFileBuilder>
+				<spirit:fileType>vhdlSource</spirit:fileType>
+				<spirit:command>vcom</spirit:command>
+				<spirit:flags>-quiet -check_synthesis -work work</spirit:flags>
+				<spirit:replaceDefaultFlags>true</spirit:replaceDefaultFlags>
+			</spirit:defaultFileBuilder>
+			<spirit:defaultFileBuilder>
+				<spirit:fileType>vhdlSource-87</spirit:fileType>
+				<spirit:command>vcom</spirit:command>
+				<spirit:flags>-quiet -check_synthesis -work work</spirit:flags>
+				<spirit:replaceDefaultFlags>true</spirit:replaceDefaultFlags>
+			</spirit:defaultFileBuilder>
+			<spirit:defaultFileBuilder>
+				<spirit:fileType>vhdlSource-93</spirit:fileType>
+				<spirit:command>vcom</spirit:command>
+				<spirit:flags>-quiet -check_synthesis -work work</spirit:flags>
+				<spirit:replaceDefaultFlags>true</spirit:replaceDefaultFlags>
+			</spirit:defaultFileBuilder>
 		</spirit:fileSet>
 	</spirit:fileSets>
 	<spirit:vendorExtensions>

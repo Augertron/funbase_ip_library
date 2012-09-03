@@ -6,7 +6,7 @@
 -- Author     : Lasse Lehtonen
 -- Company    : 
 -- Created    : 2011-10-12
--- Last update: 2012-03-19
+-- Last update: 2012-05-04
 -- Platform   : 
 -- Standard   : VHDL'87
 -------------------------------------------------------------------------------
@@ -47,7 +47,8 @@ entity addr_translation is
     agents_g       : positive;
     agent_ports_g  : positive;
     addr_flit_en_g : natural;
-    noc_type_g     : natural
+    noc_type_g     : natural;
+    len_width_g    : natural            -- 2012-05-04
     );
   port (
     clk           : in  std_logic;
@@ -56,6 +57,7 @@ entity addr_translation is
     ip_cmd_in     : in  std_logic_vector(cmd_width_g-1 downto 0);
     ip_data_in    : in  std_logic_vector(data_width_g-1 downto 0);
     ip_stall_out  : out std_logic;
+    ip_len_in     : in  std_logic_vector(len_width_g-1 downto 0);  -- 2012-05-04
     -- to NET
     net_cmd_out   : out std_logic_vector(cmd_width_g-1 downto 0);
     net_data_out  : out std_logic_vector(data_width_g-1 downto 0);
@@ -67,13 +69,13 @@ end addr_translation;
 
 architecture rtl of addr_translation is
 
-  signal addr_to_lut : std_logic_vector(data_width_g-1 downto 0);
+  signal addr_to_lut   : std_logic_vector(data_width_g-1 downto 0);
   signal addr_from_lut : std_logic_vector(data_width_g-1 downto 0);
   signal orig_addr_r   : std_logic_vector(data_width_g-1 downto 0);
   
 begin  -- rtl
 
-  safe_p: process (ip_cmd_in, ip_data_in)
+  safe_p : process (ip_cmd_in, ip_data_in)
   begin  -- process safe_p
     if ip_cmd_in = "01" then
       addr_to_lut <= ip_data_in;
@@ -81,7 +83,7 @@ begin  -- rtl
       addr_to_lut <= (others => '0');
     end if;
   end process safe_p;
-  
+
   addr_lut_1 : entity work.address_lut
     generic map (
       my_id_g        => my_id_g,
@@ -91,10 +93,12 @@ begin  -- rtl
       rows_g         => rows_g,
       agent_ports_g  => agent_ports_g,
       agents_g       => agents_g,
-      noc_type_g     => noc_type_g
+      noc_type_g     => noc_type_g,
+      len_width_g    => len_width_g     -- 2012-05-04
       )
     port map (
       addr_in  => addr_to_lut,
+      len_in   => ip_len_in,            -- 2012-05-04
       addr_out => addr_from_lut
       );
 
@@ -104,7 +108,7 @@ begin  -- rtl
 
   oa_p : process (clk, rst_n)
   begin  -- process oa_p
-    if rst_n = '0' then                -- asynchronous reset (active low)
+    if rst_n = '0' then                 -- asynchronous reset (active low)
       orig_addr_r <= (others => '0');
     elsif clk'event and clk = '1' then  -- rising clock edge
       if ip_cmd_in = "01" then

@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created by Kactus2 - Open source IP-Xact toolset -->
 <!-- http://sourceforge.net/projects/kactus2/ -->
-<!-- Date: 06.07.2012 -->
-<!-- Time: 16:25:31 -->
+<!-- Date: 28.08.2012 -->
+<!-- Time: 13:41:06 -->
 <spirit:design xmlns:kactus2="http://funbase.cs.tut.fi/" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5/index.xsd">
 	<spirit:vendor>TUT</spirit:vendor>
 	<spirit:library>product</spirit:library>
 	<spirit:name>samos_2012.pc_dct_acc_mjpeg.design</spirit:name>
 	<spirit:version>1.0</spirit:version>
 	<spirit:componentInstances>
+		<spirit:componentInstance>
+			<spirit:instanceName>de2_samos_soc_nios_ii_sdram_0</spirit:instanceName>
+			<spirit:displayName>nios_II_sdram</spirit:displayName>
+			<spirit:description></spirit:description>
+			<spirit:componentRef spirit:vendor="Altera" spirit:library="ip.hwp.cpu" spirit:name="nios_ii_sdram" spirit:version="1.0"/>
+			<spirit:configurableElementValues/>
+			<spirit:vendorExtensions>
+				<kactus2:position x="480" y="260"/>
+				<kactus2:imported kactus2:importRef="de2_samos_soc_nios_ii_sdram_0"/>
+				<kactus2:propertyValues/>
+			</spirit:vendorExtensions>
+		</spirit:componentInstance>
 		<spirit:componentInstance>
 			<spirit:instanceName>de2_samos_soc_dct_to_hibi_0</spirit:instanceName>
 			<spirit:displayName>dct_acc</spirit:displayName>
@@ -22,42 +34,6 @@
 			</spirit:vendorExtensions>
 		</spirit:componentInstance>
 		<spirit:componentInstance>
-			<spirit:instanceName>de2_samos_soc_nios_ii_sdram_0</spirit:instanceName>
-			<spirit:displayName>nios_II_sdram</spirit:displayName>
-			<spirit:description></spirit:description>
-			<spirit:componentRef spirit:vendor="TUT" spirit:library="ip.hwp.cpu" spirit:name="nios_ii_sdram" spirit:version="1.0"/>
-			<spirit:configurableElementValues/>
-			<spirit:vendorExtensions>
-				<kactus2:position x="480" y="220"/>
-				<kactus2:imported kactus2:importRef="de2_samos_soc_nios_ii_sdram_0"/>
-				<kactus2:propertyValues/>
-			</spirit:vendorExtensions>
-		</spirit:componentInstance>
-		<spirit:componentInstance>
-			<spirit:instanceName>de2_samos_soc_nios_ii_sram_0</spirit:instanceName>
-			<spirit:displayName>nios_II_sram</spirit:displayName>
-			<spirit:description></spirit:description>
-			<spirit:componentRef spirit:vendor="TUT" spirit:library="ip.hwp.cpu" spirit:name="nios_ii_sram" spirit:version="1.0"/>
-			<spirit:configurableElementValues/>
-			<spirit:vendorExtensions>
-				<kactus2:position x="160" y="360"/>
-				<kactus2:imported kactus2:importRef="de2_samos_soc_nios_ii_sram_0"/>
-				<kactus2:propertyValues/>
-			</spirit:vendorExtensions>
-		</spirit:componentInstance>
-		<spirit:componentInstance>
-			<spirit:instanceName>xilinx_spartan_xc3S500e_ublaze</spirit:instanceName>
-			<spirit:displayName>ublaze</spirit:displayName>
-			<spirit:description></spirit:description>
-			<spirit:componentRef spirit:vendor="TUT" spirit:library="ip.hwp.cpu" spirit:name="ublaze" spirit:version="1.0"/>
-			<spirit:configurableElementValues/>
-			<spirit:vendorExtensions>
-				<kactus2:position x="160" y="520"/>
-				<kactus2:imported kactus2:importRef="xilinx_spartan_xc3S500e_ublaze"/>
-				<kactus2:propertyValues/>
-			</spirit:vendorExtensions>
-		</spirit:componentInstance>
-		<spirit:componentInstance>
 			<spirit:instanceName>PC_x86</spirit:instanceName>
 			<spirit:displayName></spirit:displayName>
 			<spirit:description></spirit:description>
@@ -66,6 +42,30 @@
 			<spirit:vendorExtensions>
 				<kactus2:position x="160" y="60"/>
 				<kactus2:imported kactus2:importRef="PC_x86"/>
+				<kactus2:propertyValues/>
+			</spirit:vendorExtensions>
+		</spirit:componentInstance>
+		<spirit:componentInstance>
+			<spirit:instanceName>xilinx_spartan_xc3S500e_ublaze</spirit:instanceName>
+			<spirit:displayName>ublaze</spirit:displayName>
+			<spirit:description></spirit:description>
+			<spirit:componentRef spirit:vendor="Xilinx" spirit:library="ip.hwp.cpu" spirit:name="ublaze" spirit:version="1.0"/>
+			<spirit:configurableElementValues/>
+			<spirit:vendorExtensions>
+				<kactus2:position x="160" y="520"/>
+				<kactus2:imported kactus2:importRef="xilinx_spartan_xc3S500e_ublaze"/>
+				<kactus2:propertyValues/>
+			</spirit:vendorExtensions>
+		</spirit:componentInstance>
+		<spirit:componentInstance>
+			<spirit:instanceName>de2_samos_soc_nios_ii_sram_0</spirit:instanceName>
+			<spirit:displayName>nios_II_sram</spirit:displayName>
+			<spirit:description></spirit:description>
+			<spirit:componentRef spirit:vendor="Altera" spirit:library="ip.hwp.cpu" spirit:name="nios_ii_sram" spirit:version="1.0"/>
+			<spirit:configurableElementValues/>
+			<spirit:vendorExtensions>
+				<kactus2:position x="160" y="360"/>
+				<kactus2:imported kactus2:importRef="de2_samos_soc_nios_ii_sram_0"/>
 				<kactus2:propertyValues/>
 			</spirit:vendorExtensions>
 		</spirit:componentInstance>
@@ -87,27 +87,12 @@
 				</kactus2:apiInterfacePositions>
 			</kactus2:swInstance>
 			<kactus2:swInstance>
-				<spirit:instanceName>de2_samos_soc_nios_ii_sram_0_mcapi_nios_0</spirit:instanceName>
-				<spirit:displayName>mcapi_nios_0</spirit:displayName>
+				<spirit:instanceName>openmcapi_1</spirit:instanceName>
+				<spirit:displayName></spirit:displayName>
 				<spirit:description></spirit:description>
-				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.swp.stack" spirit:name="mcapi_nios" spirit:version="1.0"/>
-				<kactus2:mapping kactus2:hwRef="de2_samos_soc_nios_ii_sram_0"/>
-				<kactus2:position x="0" y="40"/>
-				<kactus2:imported kactus2:importRef="mcapi_nios_0"/>
-				<kactus2:apiInterfacePositions>
-					<kactus2:apiInterfacePosition kactus2:apiRef="mcapi">
-						<kactus2:position x="-80" y="40"/>
-					</kactus2:apiInterfacePosition>
-				</kactus2:apiInterfacePositions>
-			</kactus2:swInstance>
-			<kactus2:swInstance>
-				<spirit:instanceName>xilinx_spartan_xc3S500e_ublaze_mcapi_ublaze_0</spirit:instanceName>
-				<spirit:displayName>mcapi_ublaze_0</spirit:displayName>
-				<spirit:description></spirit:description>
-				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.swp.stack" spirit:name="mcapi_ublaze" spirit:version="1.0"/>
-				<kactus2:mapping kactus2:hwRef="xilinx_spartan_xc3S500e_ublaze"/>
-				<kactus2:position x="0" y="40"/>
-				<kactus2:imported kactus2:importRef="mcapi_ublaze_0"/>
+				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.swp.api" spirit:name="openmcapi" spirit:version="1.0"/>
+				<kactus2:mapping kactus2:hwRef="PC_x86"/>
+				<kactus2:position x="0" y="180"/>
 				<kactus2:apiInterfacePositions>
 					<kactus2:apiInterfacePosition kactus2:apiRef="mcapi">
 						<kactus2:position x="-80" y="40"/>
@@ -142,12 +127,27 @@
 				</kactus2:comInterfacePositions>
 			</kactus2:swInstance>
 			<kactus2:swInstance>
-				<spirit:instanceName>openmcapi_1</spirit:instanceName>
-				<spirit:displayName></spirit:displayName>
+				<spirit:instanceName>xilinx_spartan_xc3S500e_ublaze_mcapi_ublaze_0</spirit:instanceName>
+				<spirit:displayName>mcapi_ublaze_0</spirit:displayName>
 				<spirit:description></spirit:description>
-				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.swp.api" spirit:name="openmcapi" spirit:version="1.0"/>
-				<kactus2:mapping kactus2:hwRef="PC_x86"/>
-				<kactus2:position x="0" y="180"/>
+				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.swp.stack" spirit:name="mcapi_ublaze" spirit:version="1.0"/>
+				<kactus2:mapping kactus2:hwRef="xilinx_spartan_xc3S500e_ublaze"/>
+				<kactus2:position x="0" y="40"/>
+				<kactus2:imported kactus2:importRef="mcapi_ublaze_0"/>
+				<kactus2:apiInterfacePositions>
+					<kactus2:apiInterfacePosition kactus2:apiRef="mcapi">
+						<kactus2:position x="-80" y="40"/>
+					</kactus2:apiInterfacePosition>
+				</kactus2:apiInterfacePositions>
+			</kactus2:swInstance>
+			<kactus2:swInstance>
+				<spirit:instanceName>de2_samos_soc_nios_ii_sram_0_mcapi_nios_0</spirit:instanceName>
+				<spirit:displayName>mcapi_nios_0</spirit:displayName>
+				<spirit:description></spirit:description>
+				<kactus2:componentRef spirit:vendor="TUT" spirit:library="ip.swp.stack" spirit:name="mcapi_nios" spirit:version="1.0"/>
+				<kactus2:mapping kactus2:hwRef="de2_samos_soc_nios_ii_sram_0"/>
+				<kactus2:position x="0" y="40"/>
+				<kactus2:imported kactus2:importRef="mcapi_nios_0"/>
 				<kactus2:apiInterfacePositions>
 					<kactus2:apiInterfacePosition kactus2:apiRef="mcapi">
 						<kactus2:position x="-80" y="40"/>
@@ -162,7 +162,7 @@
 				<spirit:description></spirit:description>
 				<kactus2:activeApiInterface kactus2:componentRef="openmcapi_1" kactus2:apiRef="mcapi"/>
 				<kactus2:activeApiInterface kactus2:componentRef="h.263_encoder_main" kactus2:apiRef="mcapi"/>
-				<kactus2:route>
+				<kactus2:route kactus2:offPage="false">
 					<kactus2:position x="80" y="280"/>
 					<kactus2:position x="60" y="280"/>
 					<kactus2:position x="60" y="150"/>
@@ -172,16 +172,16 @@
 		</kactus2:apiDependencies>
 		<kactus2:comConnections>
 			<kactus2:comConnection>
-				<spirit:name>h.263_encoder_main_block_count_out_to_de2_samos_soc_dct_to_hibi_0_block_count_in</spirit:name>
+				<spirit:name>h.263_encoder_main_dct_data_out_to_de2_samos_soc_dct_to_hibi_0_dct_data_in</spirit:name>
 				<spirit:displayName></spirit:displayName>
 				<spirit:description></spirit:description>
-				<kactus2:activeComInterface kactus2:componentRef="h.263_encoder_main" kactus2:comRef="block_count_out"/>
-				<kactus2:activeComInterface kactus2:componentRef="de2_samos_soc_dct_to_hibi_0" kactus2:comRef="block_count_in"/>
-				<kactus2:route>
-					<kactus2:position x="240" y="180"/>
-					<kactus2:position x="370" y="180"/>
-					<kactus2:position x="370" y="160"/>
-					<kactus2:position x="390" y="160"/>
+				<kactus2:activeComInterface kactus2:componentRef="h.263_encoder_main" kactus2:comRef="dct_data_out"/>
+				<kactus2:activeComInterface kactus2:componentRef="de2_samos_soc_dct_to_hibi_0" kactus2:comRef="dct_data_in"/>
+				<kactus2:route kactus2:offPage="false">
+					<kactus2:position x="240" y="140"/>
+					<kactus2:position x="370" y="140"/>
+					<kactus2:position x="370" y="130"/>
+					<kactus2:position x="390" y="130"/>
 				</kactus2:route>
 			</kactus2:comConnection>
 			<kactus2:comConnection>
@@ -190,24 +190,20 @@
 				<spirit:description></spirit:description>
 				<kactus2:activeComInterface kactus2:componentRef="h.263_encoder_main" kactus2:comRef="dct_data_in"/>
 				<kactus2:activeComInterface kactus2:componentRef="de2_samos_soc_dct_to_hibi_0" kactus2:comRef="dct_data_out"/>
-				<kactus2:route>
+				<kactus2:route kactus2:offPage="false">
 					<kactus2:position x="240" y="200"/>
-					<kactus2:position x="590" y="200"/>
-					<kactus2:position x="590" y="130"/>
-					<kactus2:position x="570" y="130"/>
+					<kactus2:position x="390" y="200"/>
 				</kactus2:route>
 			</kactus2:comConnection>
 			<kactus2:comConnection>
-				<spirit:name>h.263_encoder_main_dct_data_out_to_de2_samos_soc_dct_to_hibi_0_dct_data_in</spirit:name>
+				<spirit:name>h.263_encoder_main_block_count_out_to_de2_samos_soc_dct_to_hibi_0_block_count_in</spirit:name>
 				<spirit:displayName></spirit:displayName>
 				<spirit:description></spirit:description>
-				<kactus2:activeComInterface kactus2:componentRef="h.263_encoder_main" kactus2:comRef="dct_data_out"/>
-				<kactus2:activeComInterface kactus2:componentRef="de2_samos_soc_dct_to_hibi_0" kactus2:comRef="dct_data_in"/>
-				<kactus2:route>
-					<kactus2:position x="240" y="140"/>
-					<kactus2:position x="370" y="140"/>
-					<kactus2:position x="370" y="130"/>
-					<kactus2:position x="390" y="130"/>
+				<kactus2:activeComInterface kactus2:componentRef="h.263_encoder_main" kactus2:comRef="block_count_out"/>
+				<kactus2:activeComInterface kactus2:componentRef="de2_samos_soc_dct_to_hibi_0" kactus2:comRef="block_count_in"/>
+				<kactus2:route kactus2:offPage="false">
+					<kactus2:position x="240" y="180"/>
+					<kactus2:position x="390" y="180"/>
 				</kactus2:route>
 			</kactus2:comConnection>
 		</kactus2:comConnections>

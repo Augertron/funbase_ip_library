@@ -25,7 +25,7 @@
 			<spirit:instanceName>xilinx_spartan_xc3S500e_ublaze</spirit:instanceName>
 			<spirit:displayName></spirit:displayName>
 			<spirit:description></spirit:description>
-			<spirit:componentRef spirit:vendor="TUT" spirit:library="ip.hwp.cpu" spirit:name="ublaze" spirit:version="1.0"/>
+			<spirit:componentRef spirit:vendor="Xilinx" spirit:library="ip.hwp.cpu" spirit:name="ublaze" spirit:version="1.0"/>
 			<spirit:configurableElementValues/>
 			<spirit:vendorExtensions>
 				<kactus2:position x="160" y="610"/>
@@ -37,7 +37,7 @@
 			<spirit:instanceName>nios_ii_sram</spirit:instanceName>
 			<spirit:displayName></spirit:displayName>
 			<spirit:description></spirit:description>
-			<spirit:componentRef spirit:vendor="TUT" spirit:library="ip.hwp.cpu" spirit:name="nios_ii_sram" spirit:version="1.0"/>
+			<spirit:componentRef spirit:vendor="Altera" spirit:library="ip.hwp.cpu" spirit:name="nios_ii_sram" spirit:version="1.0"/>
 			<spirit:configurableElementValues/>
 			<spirit:vendorExtensions>
 				<kactus2:position x="160" y="480"/>
@@ -49,7 +49,7 @@
 			<spirit:instanceName>nios_ii_sdram</spirit:instanceName>
 			<spirit:displayName></spirit:displayName>
 			<spirit:description></spirit:description>
-			<spirit:componentRef spirit:vendor="TUT" spirit:library="ip.hwp.cpu" spirit:name="nios_ii_sdram" spirit:version="1.0"/>
+			<spirit:componentRef spirit:vendor="Altera" spirit:library="ip.hwp.cpu" spirit:name="nios_ii_sdram" spirit:version="1.0"/>
 			<spirit:configurableElementValues/>
 			<spirit:vendorExtensions>
 				<kactus2:position x="160" y="350"/>
