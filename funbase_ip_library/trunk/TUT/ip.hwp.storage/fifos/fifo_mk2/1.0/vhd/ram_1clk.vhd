@@ -6,7 +6,7 @@
 -- Author     : Lasse Lehtonen
 -- Company    : 
 -- Created    : 2011-01-13
--- Last update: 2011-10-19
+-- Last update: 2012-06-14
 -- Platform   : 
 -- Standard   : VHDL'93
 -------------------------------------------------------------------------------
@@ -51,7 +51,7 @@ architecture rtl of ram_1clk is
   type ram_type is array (0 to depth_g-1)
     of std_logic_vector(data_width_g-1 downto 0);
 
-  signal ram_r       : ram_type;
+  signal ram_r       : ram_type := (others => (others => '0'));
   signal read_addr_r : integer range 0 to depth_g-1;
   
 begin  -- architecture rtl

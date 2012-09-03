@@ -6,7 +6,7 @@
 -- Author     : Lasse Lehtonen
 -- Company    : 
 -- Created    : 2011-10-12
--- Last update: 2011-10-25
+-- Last update: 2012-05-10
 -- Platform   : 
 -- Standard   : VHDL'87
 -------------------------------------------------------------------------------
@@ -31,7 +31,8 @@ entity addr_gen is
   generic (
     cmd_width_g    : positive;
     data_width_g   : positive;
-    addr_flit_en_g : natural);
+    addr_flit_en_g : natural;
+    noc_type_g     : natural);
 
   port (
     clk          : in  std_logic;
@@ -76,102 +77,114 @@ begin  -- rtl
       net_data_out <= (others => '0');
     elsif clk'event and clk = '1' then  -- rising clock edge
 
-      -- default
-      if net_stall_in = '0' then
-        stall_r <= '0';
-      end if;      
+      -- FH mesh
+      if noc_type_g = 3 then
+        if net_stall_in = '0' then
+          net_cmd_out <= ip_cmd_in;
+          net_data_out <= ip_data_in;
+        end if;
+      end if;
 
-      case state_r is
-        -----------------------------------------------------------------------
-        -- IDLE
-        -----------------------------------------------------------------------
-        when idle =>
-          if net_stall_in = '0' then
-            if ip_cmd_in = "00" then
-              net_cmd_out  <= "00";
-              first_data_r <= '0';
-            elsif ip_cmd_in = "01" then
-              net_cmd_out  <= "00";
-              first_data_r <= '1';
-              addr_r       <= ip_data_in;
-              state_r      <= addr;
-            else
-              first_data_r <= '1';
-              data_r       <= ip_data_in;
-              net_cmd_out  <= "01";
-              net_data_out <= addr_r;
-              state_r      <= data;
-            end if;
-          end if;
+      -- ase nocs
+      if noc_type_g /= 3 then
 
-          ---------------------------------------------------------------------
-          -- ADDR
-          ---------------------------------------------------------------------
-        when addr =>
-          if net_stall_in = '0' then
-            if ip_cmd_in = "00" then
-              state_r      <= idle;
-              net_cmd_out  <= "00";
-              first_data_r <= '0';
-            elsif ip_cmd_in = "01" then
-              addr_r       <= ip_data_in;
-              state_r      <= addr;
-              net_cmd_out  <= "00";
-              first_data_r <= '1';
-            else
-              net_cmd_out  <= "01";
-              net_data_out <= addr_r;
-              data_r       <= ip_data_in;
-              state_r      <= data;
-            end if;
-          end if;
+        -- default
+        if net_stall_in = '0' then
+          stall_r <= '0';
+        end if;
 
+        case state_r is
           ---------------------------------------------------------------------
-          -- DATA
+          -- IDLE
           ---------------------------------------------------------------------
-        when data =>
-          if net_stall_in = '0' then
-            if ip_cmd_in = "00" then
-              if first_data_r = '1' and addr_flit_en_g = 1 then
-                stall_r      <= '1';
-                net_cmd_out  <= "10";
-                net_data_out <= orig_addr_in;
+          when idle =>
+            if net_stall_in = '0' then
+              if ip_cmd_in = "00" then
+                net_cmd_out  <= "00";
                 first_data_r <= '0';
-              else
-                net_data_out <= data_r;
-                net_cmd_out  <= "10";
-                state_r      <= idle;
-              end if;
-            elsif ip_cmd_in = "01" then
-              if first_data_r = '1' and addr_flit_en_g = 1 then
-                stall_r      <= '1';
-                net_cmd_out  <= "10";
-                net_data_out <= orig_addr_in;
-                first_data_r <= '0';
-              else
-                net_data_out <= data_r;
-                net_cmd_out  <= "10";
+              elsif ip_cmd_in = "01" then
+                net_cmd_out  <= "00";
+                first_data_r <= '1';
                 addr_r       <= ip_data_in;
                 state_r      <= addr;
-                first_data_r <= '1';    -- ase 25-10-2011
-              end if;
-            else
-              if first_data_r = '1' and addr_flit_en_g = 1 then
-                stall_r      <= '1';
-                net_cmd_out  <= "10";
-                net_data_out <= orig_addr_in;
-                first_data_r <= '0';
               else
-                net_data_out <= data_r;
-                net_cmd_out  <= "10";
+                first_data_r <= '1';
                 data_r       <= ip_data_in;
+                net_cmd_out  <= "01";
+                net_data_out <= addr_r;
+                state_r      <= data;
               end if;
             end if;
-          end if;
-          
-        when others => null;
-      end case;
 
+            -------------------------------------------------------------------
+            -- ADDR
+            -------------------------------------------------------------------
+          when addr =>
+            if net_stall_in = '0' then
+              if ip_cmd_in = "00" then
+                state_r      <= idle;
+                net_cmd_out  <= "00";
+                first_data_r <= '0';
+              elsif ip_cmd_in = "01" then
+                addr_r       <= ip_data_in;
+                state_r      <= addr;
+                net_cmd_out  <= "00";
+                first_data_r <= '1';
+              else
+                net_cmd_out  <= "01";
+                net_data_out <= addr_r;
+                data_r       <= ip_data_in;
+                state_r      <= data;
+              end if;
+            end if;
+
+            -------------------------------------------------------------------
+            -- DATA
+            -------------------------------------------------------------------
+          when data =>
+            if net_stall_in = '0' then
+              if ip_cmd_in = "00" then
+                if first_data_r = '1' and addr_flit_en_g = 1 then
+                  stall_r      <= '1';
+                  net_cmd_out  <= "10";
+                  net_data_out <= orig_addr_in;
+                  first_data_r <= '0';
+                else
+                  net_data_out <= data_r;
+                  net_cmd_out  <= "10";
+                  state_r      <= idle;
+                end if;
+              elsif ip_cmd_in = "01" then
+                if first_data_r = '1' and addr_flit_en_g = 1 then
+                  stall_r      <= '1';
+                  net_cmd_out  <= "10";
+                  net_data_out <= orig_addr_in;
+                  first_data_r <= '0';
+                else
+                  net_data_out <= data_r;
+                  net_cmd_out  <= "10";
+                  addr_r       <= ip_data_in;
+                  state_r      <= addr;
+                  first_data_r <= '1';  -- ase 25-10-2011
+                end if;
+              else
+                if first_data_r = '1' and addr_flit_en_g = 1 then
+                  stall_r      <= '1';
+                  net_cmd_out  <= "10";
+                  net_data_out <= orig_addr_in;
+                  first_data_r <= '0';
+                else
+                  net_data_out <= data_r;
+                  net_cmd_out  <= "10";
+                  data_r       <= ip_data_in;
+                end if;
+              end if;
+            end if;
+            
+          when others => null;
+        end case;
+
+      end if;
       
     end if;
   end process fsm_p;

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created by Kactus2 - Open source IP-Xact toolset -->
 <!-- http://sourceforge.net/projects/kactus2/ -->
-<!-- Date: 16.07.2012 -->
-<!-- Time: 11:19:41 -->
+<!-- Date: 03.09.2012 -->
+<!-- Time: 13:49:33 -->
 <spirit:component xmlns:kactus2="http://funbase.cs.tut.fi/" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5/index.xsd">
-	<spirit:vendor>TUT</spirit:vendor>
+	<spirit:vendor>Altera</spirit:vendor>
 	<spirit:library>ip.hwp.cpu</spirit:library>
 	<spirit:name>nios_ii_sram</spirit:name>
 	<spirit:version>1.0</spirit:version>
@@ -565,6 +565,11 @@
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>
 			<spirit:file>
+				<spirit:name>hdl/cpu_0.v</spirit:name>
+				<spirit:fileType>verilogSource</spirit:fileType>
+				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
+			</spirit:file>
+			<spirit:file>
 				<spirit:name>hdl/cpu_0_jtag_debug_module_sysclk.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
@@ -659,11 +664,6 @@
 				<spirit:fileType>verilogSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>
-			<spirit:file>
-				<spirit:name>hdl/cpu0.v</spirit:name>
-				<spirit:fileType>verilogSource</spirit:fileType>
-				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
-			</spirit:file>
 		</spirit:fileSet>
 	</spirit:fileSets>
 	<spirit:cpus>
@@ -677,7 +677,7 @@
 			<kactus2:kts_attributes>
 				<kactus2:kts_productHier>IP</kactus2:kts_productHier>
 				<kactus2:kts_implementation>HW</kactus2:kts_implementation>
-				<kactus2:kts_firmness>Mutable</kactus2:kts_firmness>
+				<kactus2:kts_firmness>Fixed</kactus2:kts_firmness>
 			</kactus2:kts_attributes>
 			<kactus2:swViews>
 				<kactus2:swView>
