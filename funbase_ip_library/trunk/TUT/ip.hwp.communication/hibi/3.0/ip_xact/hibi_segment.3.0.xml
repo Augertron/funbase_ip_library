@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created by Kactus2 - Open source IP-Xact toolset -->
 <!-- http://sourceforge.net/projects/kactus2/ -->
-<!-- Date: 21.11.2012 -->
-<!-- Time: 16:02:34 -->
+<!-- Date: 23.11.2012 -->
+<!-- Time: 16:44:08 -->
 <spirit:component xmlns:kactus2="http://funbase.cs.tut.fi/" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5/index.xsd">
 	<spirit:vendor>TUT</spirit:vendor>
 	<spirit:library>ip.hwp.communication</spirit:library>
@@ -1254,7 +1254,7 @@
 				<spirit:name>structural_vhd</spirit:name>
 				<spirit:envIdentifier>VHDL:Kactus2:</spirit:envIdentifier>
 				<spirit:language spirit:strict="false">vhdl</spirit:language>
-				<spirit:modelName>hibi_segment(structural)</spirit:modelName>
+				<spirit:modelName>hibi_segment</spirit:modelName>
 				<spirit:fileSetRef>
 					<spirit:localName>structural_vhdlSource</spirit:localName>
 				</spirit:fileSetRef>
@@ -1852,6 +1852,9 @@
 						<spirit:left>0</spirit:left>
 						<spirit:right>0</spirit:right>
 					</spirit:vector>
+					<spirit:driver>
+						<spirit:defaultValue>'0'</spirit:defaultValue>
+					</spirit:driver>
 				</spirit:wire>
 				<spirit:vendorExtensions/>
 			</spirit:port>
@@ -1859,6 +1862,9 @@
 				<spirit:name>agent_sync_clk</spirit:name>
 				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
 					<spirit:direction>in</spirit:direction>
+					<spirit:driver>
+						<spirit:defaultValue>'0'</spirit:defaultValue>
+					</spirit:driver>
 				</spirit:wire>
 				<spirit:vendorExtensions/>
 			</spirit:port>
@@ -1870,6 +1876,9 @@
 						<spirit:left>0</spirit:left>
 						<spirit:right>0</spirit:right>
 					</spirit:vector>
+					<spirit:driver>
+						<spirit:defaultValue>'0'</spirit:defaultValue>
+					</spirit:driver>
 				</spirit:wire>
 				<spirit:vendorExtensions/>
 			</spirit:port>
@@ -1891,6 +1900,9 @@
 						<spirit:left>0</spirit:left>
 						<spirit:right>0</spirit:right>
 					</spirit:vector>
+					<spirit:driver>
+						<spirit:defaultValue>'0'</spirit:defaultValue>
+					</spirit:driver>
 				</spirit:wire>
 				<spirit:vendorExtensions/>
 			</spirit:port>
@@ -1898,6 +1910,9 @@
 				<spirit:name>agent_sync_clk_1</spirit:name>
 				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
 					<spirit:direction>in</spirit:direction>
+					<spirit:driver>
+						<spirit:defaultValue>'0'</spirit:defaultValue>
+					</spirit:driver>
 				</spirit:wire>
 				<spirit:vendorExtensions/>
 			</spirit:port>
@@ -1909,6 +1924,9 @@
 						<spirit:left>0</spirit:left>
 						<spirit:right>0</spirit:right>
 					</spirit:vector>
+					<spirit:driver>
+						<spirit:defaultValue>'0'</spirit:defaultValue>
+					</spirit:driver>
 				</spirit:wire>
 				<spirit:vendorExtensions/>
 			</spirit:port>
@@ -1930,6 +1948,9 @@
 						<spirit:left>0</spirit:left>
 						<spirit:right>0</spirit:right>
 					</spirit:vector>
+					<spirit:driver>
+						<spirit:defaultValue>'0'</spirit:defaultValue>
+					</spirit:driver>
 				</spirit:wire>
 				<spirit:vendorExtensions/>
 			</spirit:port>
@@ -1937,6 +1958,9 @@
 				<spirit:name>agent_sync_clk_2</spirit:name>
 				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
 					<spirit:direction>in</spirit:direction>
+					<spirit:driver>
+						<spirit:defaultValue>'0'</spirit:defaultValue>
+					</spirit:driver>
 				</spirit:wire>
 				<spirit:vendorExtensions/>
 			</spirit:port>
@@ -1948,6 +1972,9 @@
 						<spirit:left>0</spirit:left>
 						<spirit:right>0</spirit:right>
 					</spirit:vector>
+					<spirit:driver>
+						<spirit:defaultValue>'0'</spirit:defaultValue>
+					</spirit:driver>
 				</spirit:wire>
 				<spirit:vendorExtensions/>
 			</spirit:port>
@@ -1969,6 +1996,9 @@
 						<spirit:left>0</spirit:left>
 						<spirit:right>0</spirit:right>
 					</spirit:vector>
+					<spirit:driver>
+						<spirit:defaultValue>'0'</spirit:defaultValue>
+					</spirit:driver>
 				</spirit:wire>
 				<spirit:vendorExtensions/>
 			</spirit:port>
@@ -1976,6 +2006,9 @@
 				<spirit:name>agent_sync_clk_3</spirit:name>
 				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
 					<spirit:direction>in</spirit:direction>
+					<spirit:driver>
+						<spirit:defaultValue>'0'</spirit:defaultValue>
+					</spirit:driver>
 				</spirit:wire>
 				<spirit:vendorExtensions/>
 			</spirit:port>
@@ -1987,6 +2020,9 @@
 						<spirit:left>0</spirit:left>
 						<spirit:right>0</spirit:right>
 					</spirit:vector>
+					<spirit:driver>
+						<spirit:defaultValue>'0'</spirit:defaultValue>
+					</spirit:driver>
 				</spirit:wire>
 				<spirit:vendorExtensions/>
 			</spirit:port>
