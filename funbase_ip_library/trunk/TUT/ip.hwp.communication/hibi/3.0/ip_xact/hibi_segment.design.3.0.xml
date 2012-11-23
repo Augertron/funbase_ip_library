@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created by Kactus2 - Open source IP-Xact toolset -->
 <!-- http://sourceforge.net/projects/kactus2/ -->
-<!-- Date: 28.08.2012 -->
-<!-- Time: 12:53:15 -->
+<!-- Date: 21.11.2012 -->
+<!-- Time: 16:02:34 -->
 <spirit:design xmlns:kactus2="http://funbase.cs.tut.fi/" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5/index.xsd">
 	<spirit:vendor>TUT</spirit:vendor>
 	<spirit:library>ip.hwp.communication</spirit:library>
@@ -14,7 +14,10 @@
 			<spirit:displayName></spirit:displayName>
 			<spirit:description></spirit:description>
 			<spirit:componentRef spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_wrapper_r4" spirit:version="3.0"/>
-			<spirit:configurableElementValues/>
+			<spirit:configurableElementValues>
+				<spirit:configurableElementValue spirit:referenceId="addr_g">ip_mSlave_3_addr_start</spirit:configurableElementValue>
+				<spirit:configurableElementValue spirit:referenceId="addr_limit_g">ip_mSlave_3_addr_end</spirit:configurableElementValue>
+			</spirit:configurableElementValues>
 			<spirit:vendorExtensions>
 				<kactus2:position x="770" y="240"/>
 				<kactus2:portPositions>
@@ -22,7 +25,7 @@
 						<kactus2:position x="-80" y="40"/>
 					</kactus2:portPosition>
 					<kactus2:portPosition kactus2:busRef="bus_mSlave">
-						<kactus2:position x="-80" y="160"/>
+						<kactus2:position x="-80" y="170"/>
 					</kactus2:portPosition>
 					<kactus2:portPosition kactus2:busRef="clocks">
 						<kactus2:position x="-80" y="90"/>
@@ -38,7 +41,6 @@
 					</kactus2:portPosition>
 				</kactus2:portPositions>
 				<kactus2:adHocVisibilities>
-					<kactus2:adHocVisible portName="debug_in" x="-80" y="220"/>
 					<kactus2:adHocVisible portName="debug_out" x="-80" y="240"/>
 				</kactus2:adHocVisibilities>
 				<kactus2:propertyValues/>
@@ -49,7 +51,10 @@
 			<spirit:displayName></spirit:displayName>
 			<spirit:description></spirit:description>
 			<spirit:componentRef spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_wrapper_r4" spirit:version="3.0"/>
-			<spirit:configurableElementValues/>
+			<spirit:configurableElementValues>
+				<spirit:configurableElementValue spirit:referenceId="addr_g">ip_mSlave_2_addr_start</spirit:configurableElementValue>
+				<spirit:configurableElementValue spirit:referenceId="addr_limit_g">ip_mSlave_2_addr_end</spirit:configurableElementValue>
+			</spirit:configurableElementValues>
 			<spirit:vendorExtensions>
 				<kactus2:position x="770" y="60"/>
 				<kactus2:portPositions>
@@ -73,7 +78,6 @@
 					</kactus2:portPosition>
 				</kactus2:portPositions>
 				<kactus2:adHocVisibilities>
-					<kactus2:adHocVisible portName="debug_in" x="-80" y="130"/>
 					<kactus2:adHocVisible portName="debug_out" x="80" y="130"/>
 				</kactus2:adHocVisibilities>
 				<kactus2:propertyValues/>
@@ -114,7 +118,8 @@
 			<spirit:description></spirit:description>
 			<spirit:componentRef spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_wrapper_r4" spirit:version="3.0"/>
 			<spirit:configurableElementValues>
-				<spirit:configurableElementValue spirit:referenceId="addr_g">hibi_addr_0_g</spirit:configurableElementValue>
+				<spirit:configurableElementValue spirit:referenceId="addr_g">ip_mSlave_0_addr_start</spirit:configurableElementValue>
+				<spirit:configurableElementValue spirit:referenceId="addr_limit_g">ip_mSlave_0_addr_end</spirit:configurableElementValue>
 			</spirit:configurableElementValues>
 			<spirit:vendorExtensions>
 				<kactus2:position x="250" y="60"/>
@@ -139,7 +144,6 @@
 					</kactus2:portPosition>
 				</kactus2:portPositions>
 				<kactus2:adHocVisibilities>
-					<kactus2:adHocVisible portName="debug_in" x="-80" y="200"/>
 					<kactus2:adHocVisible portName="debug_out" x="-80" y="180"/>
 				</kactus2:adHocVisibilities>
 				<kactus2:propertyValues/>
@@ -151,10 +155,11 @@
 			<spirit:description></spirit:description>
 			<spirit:componentRef spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_wrapper_r4" spirit:version="3.0"/>
 			<spirit:configurableElementValues>
-				<spirit:configurableElementValue spirit:referenceId="addr_g">hibi_addr_1_g</spirit:configurableElementValue>
+				<spirit:configurableElementValue spirit:referenceId="addr_g">ip_mSlave_1_addr_start</spirit:configurableElementValue>
+				<spirit:configurableElementValue spirit:referenceId="addr_limit_g">ip_mSlave_1_addr_end</spirit:configurableElementValue>
 			</spirit:configurableElementValues>
 			<spirit:vendorExtensions>
-				<kactus2:position x="250" y="310"/>
+				<kactus2:position x="250" y="290"/>
 				<kactus2:portPositions>
 					<kactus2:portPosition kactus2:busRef="bus_mMaster">
 						<kactus2:position x="80" y="40"/>
@@ -176,7 +181,6 @@
 					</kactus2:portPosition>
 				</kactus2:portPositions>
 				<kactus2:adHocVisibilities>
-					<kactus2:adHocVisible portName="debug_in" x="-80" y="220"/>
 					<kactus2:adHocVisible portName="debug_out" x="-80" y="200"/>
 				</kactus2:adHocVisibilities>
 				<kactus2:propertyValues/>
@@ -245,68 +249,68 @@
 		<spirit:hierConnection spirit:interfaceRef="clocks_2">
 			<spirit:interface spirit:componentRef="hibi_wrapper_r4_2" spirit:busRef="clocks"/>
 			<spirit:vendorExtensions>
-				<kactus2:position x="90" y="160"/>
+				<kactus2:position x="90" y="400"/>
 				<kactus2:direction x="1" y="0"/>
 				<kactus2:route kactus2:offPage="true">
 					<kactus2:position x="880" y="160"/>
-					<kactus2:position x="90" y="160"/>
+					<kactus2:position x="90" y="400"/>
 				</kactus2:route>
 			</spirit:vendorExtensions>
 		</spirit:hierConnection>
 		<spirit:hierConnection spirit:interfaceRef="ip_mSlave_2">
 			<spirit:interface spirit:componentRef="hibi_wrapper_r4_2" spirit:busRef="ip_mSlave"/>
 			<spirit:vendorExtensions>
-				<kactus2:position x="90" y="310"/>
+				<kactus2:position x="90" y="530"/>
 				<kactus2:direction x="1" y="0"/>
 				<kactus2:route kactus2:offPage="true">
 					<kactus2:position x="880" y="130"/>
-					<kactus2:position x="90" y="310"/>
+					<kactus2:position x="90" y="530"/>
 				</kactus2:route>
 			</spirit:vendorExtensions>
 		</spirit:hierConnection>
 		<spirit:hierConnection spirit:interfaceRef="clocks_3">
 			<spirit:interface spirit:componentRef="hibi_wrapper_r4_3" spirit:busRef="clocks"/>
 			<spirit:vendorExtensions>
-				<kactus2:position x="90" y="130"/>
+				<kactus2:position x="90" y="160"/>
 				<kactus2:direction x="1" y="0"/>
 				<kactus2:route kactus2:offPage="true">
 					<kactus2:position x="660" y="330"/>
-					<kactus2:position x="90" y="130"/>
+					<kactus2:position x="90" y="160"/>
 				</kactus2:route>
 			</spirit:vendorExtensions>
 		</spirit:hierConnection>
 		<spirit:hierConnection spirit:interfaceRef="ip_mSlave_3">
 			<spirit:interface spirit:componentRef="hibi_wrapper_r4_3" spirit:busRef="ip_mSlave"/>
 			<spirit:vendorExtensions>
-				<kactus2:position x="60" y="280"/>
+				<kactus2:position x="60" y="340"/>
 				<kactus2:direction x="1" y="0"/>
 				<kactus2:route kactus2:offPage="false">
 					<kactus2:position x="690" y="310"/>
 					<kactus2:position x="80" y="310"/>
-					<kactus2:position x="80" y="280"/>
-					<kactus2:position x="60" y="280"/>
+					<kactus2:position x="80" y="340"/>
+					<kactus2:position x="60" y="340"/>
 				</kactus2:route>
 			</spirit:vendorExtensions>
 		</spirit:hierConnection>
 		<spirit:hierConnection spirit:interfaceRef="ip_mMaster_2">
 			<spirit:interface spirit:componentRef="hibi_wrapper_r4_2" spirit:busRef="ip_mMaster"/>
 			<spirit:vendorExtensions>
-				<kactus2:position x="90" y="370"/>
+				<kactus2:position x="90" y="460"/>
 				<kactus2:direction x="1" y="0"/>
 				<kactus2:route kactus2:offPage="true">
 					<kactus2:position x="660" y="150"/>
-					<kactus2:position x="90" y="370"/>
+					<kactus2:position x="90" y="460"/>
 				</kactus2:route>
 			</spirit:vendorExtensions>
 		</spirit:hierConnection>
 		<spirit:hierConnection spirit:interfaceRef="ip_mMaster_3">
 			<spirit:interface spirit:componentRef="hibi_wrapper_r4_3" spirit:busRef="ip_mMaster"/>
 			<spirit:vendorExtensions>
-				<kactus2:position x="90" y="340"/>
+				<kactus2:position x="90" y="430"/>
 				<kactus2:direction x="1" y="0"/>
 				<kactus2:route kactus2:offPage="true">
 					<kactus2:position x="660" y="350"/>
-					<kactus2:position x="90" y="340"/>
+					<kactus2:position x="90" y="430"/>
 				</kactus2:route>
 			</spirit:vendorExtensions>
 		</spirit:hierConnection>
@@ -335,11 +339,11 @@
 		<spirit:hierConnection spirit:interfaceRef="ip_mSlave_1">
 			<spirit:interface spirit:componentRef="hibi_wrapper_r4_1" spirit:busRef="ip_mSlave"/>
 			<spirit:vendorExtensions>
-				<kactus2:position x="90" y="250"/>
+				<kactus2:position x="90" y="280"/>
 				<kactus2:direction x="1" y="0"/>
 				<kactus2:route kactus2:offPage="true">
-					<kactus2:position x="140" y="350"/>
-					<kactus2:position x="90" y="250"/>
+					<kactus2:position x="140" y="330"/>
+					<kactus2:position x="90" y="280"/>
 				</kactus2:route>
 			</spirit:vendorExtensions>
 		</spirit:hierConnection>
@@ -349,7 +353,7 @@
 				<kactus2:position x="90" y="190"/>
 				<kactus2:direction x="1" y="0"/>
 				<kactus2:route kactus2:offPage="true">
-					<kactus2:position x="140" y="380"/>
+					<kactus2:position x="140" y="360"/>
 					<kactus2:position x="90" y="190"/>
 				</kactus2:route>
 			</spirit:vendorExtensions>
@@ -360,7 +364,7 @@
 				<kactus2:position x="90" y="610"/>
 				<kactus2:direction x="1" y="0"/>
 				<kactus2:route kactus2:offPage="true">
-					<kactus2:position x="140" y="490"/>
+					<kactus2:position x="140" y="470"/>
 					<kactus2:position x="90" y="610"/>
 				</kactus2:route>
 			</spirit:vendorExtensions>
@@ -379,11 +383,11 @@
 		<spirit:hierConnection spirit:interfaceRef="ip_mMaster_0">
 			<spirit:interface spirit:componentRef="hibi_wrapper_r4_0" spirit:busRef="ip_mMaster"/>
 			<spirit:vendorExtensions>
-				<kactus2:position x="90" y="220"/>
+				<kactus2:position x="90" y="370"/>
 				<kactus2:direction x="1" y="0"/>
 				<kactus2:route kactus2:offPage="true">
 					<kactus2:position x="140" y="140"/>
-					<kactus2:position x="90" y="220"/>
+					<kactus2:position x="90" y="370"/>
 				</kactus2:route>
 			</spirit:vendorExtensions>
 		</spirit:hierConnection>
@@ -404,7 +408,7 @@
 				<kactus2:position x="90" y="640"/>
 				<kactus2:direction x="1" y="0"/>
 				<kactus2:route kactus2:offPage="true">
-					<kactus2:position x="140" y="450"/>
+					<kactus2:position x="140" y="430"/>
 					<kactus2:position x="90" y="640"/>
 				</kactus2:route>
 			</spirit:vendorExtensions>
@@ -432,7 +436,9 @@
 		</kactus2:columnLayout>
 		<kactus2:routes>
 			<kactus2:route kactus2:connRef="hibi_wrapper_r4_3_bus_mSlave_to_hibi_orbus_0_slave_3" kactus2:offPage="false">
-				<kactus2:position x="690" y="400"/>
+				<kactus2:position x="690" y="410"/>
+				<kactus2:position x="610" y="410"/>
+				<kactus2:position x="610" y="400"/>
 				<kactus2:position x="590" y="400"/>
 			</kactus2:route>
 			<kactus2:route kactus2:connRef="hibi_wrapper_r4_2_bus_mSlave_to_hibi_orbus_0_slave_2" kactus2:offPage="false">
@@ -454,8 +460,8 @@
 			<kactus2:route kactus2:connRef="hibi_orbus_0_master_to_hibi_wrapper_r4_1_bus_mMaster" kactus2:offPage="false">
 				<kactus2:position x="430" y="220"/>
 				<kactus2:position x="350" y="220"/>
-				<kactus2:position x="350" y="350"/>
-				<kactus2:position x="330" y="350"/>
+				<kactus2:position x="350" y="330"/>
+				<kactus2:position x="330" y="330"/>
 			</kactus2:route>
 			<kactus2:route kactus2:connRef="hibi_orbus_0_master_to_hibi_wrapper_r4_0_bus_mMaster" kactus2:offPage="false">
 				<kactus2:position x="430" y="220"/>
@@ -468,7 +474,9 @@
 				<kactus2:position x="330" y="100"/>
 			</kactus2:route>
 			<kactus2:route kactus2:connRef="hibi_wrapper_r4_1_bus_mSlave_to_hibi_orbus_0_slave_1" kactus2:offPage="false">
-				<kactus2:position x="330" y="420"/>
+				<kactus2:position x="330" y="400"/>
+				<kactus2:position x="410" y="400"/>
+				<kactus2:position x="410" y="420"/>
 				<kactus2:position x="430" y="420"/>
 			</kactus2:route>
 		</kactus2:routes>
