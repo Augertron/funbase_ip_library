@@ -1,7 +1,7 @@
 -- ***************************************************
 -- File: basic_tester_hibi_example.vhd
--- Creation date: 21.11.2012
--- Creation time: 14:28:17
+-- Creation date: 23.11.2012
+-- Creation time: 16:44:19
 -- Description: Simple example on how to use basic_tester with hibi.
 -- Hibi is instantiated a) as a segment, b) from 4 wrappers and an OR-network. 
 -- 
