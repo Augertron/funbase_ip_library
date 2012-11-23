@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created by Kactus2 - Open source IP-Xact toolset -->
 <!-- http://sourceforge.net/projects/kactus2/ -->
-<!-- Date: 04.07.2012 -->
-<!-- Time: 14:04:47 -->
+<!-- Date: 21.11.2012 -->
+<!-- Time: 16:10:19 -->
 <spirit:component xmlns:kactus2="http://funbase.cs.tut.fi/" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5/index.xsd">
 	<spirit:vendor>TUT</spirit:vendor>
 	<spirit:library>soc</spirit:library>
@@ -58,6 +58,12 @@ Graphical block diagram view. Hence, its type is &quot;hierarchical&quot;.</spir
 				<spirit:description>Add necessary signals to wave window and formats them. 
 
 This works with both versions (seg and wra)</spirit:description>
+			</spirit:file>
+			<spirit:file>
+				<spirit:name>../sim/basic_tester_hibi_example.structural.create_makefile.do</spirit:name>
+				<spirit:userFileType>ModelsimScript</spirit:userFileType>
+				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
+				<spirit:description>Script file for Modelsim that compiles all files for view structural_seg.</spirit:description>
 			</spirit:file>
 			<spirit:defaultFileBuilder>
 				<spirit:userFileType>Modelsim script</spirit:userFileType>

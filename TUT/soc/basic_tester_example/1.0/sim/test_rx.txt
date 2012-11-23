@@ -12,9 +12,9 @@
 # Moreover, comm (last param) can simply be omitted 
 # and then no checking is done.
 
-0025   03000000 00000100  02
-0050   03000001 00000101  02
-0012   03000002 00000102  03
+0025   00000003 00000100  02
+0050   00000003 00000101  02
+0012   00000003 00000102  03
 # There can be empty lines as shown below
 
 # Address 0...0 means that it must not change from previous transfer

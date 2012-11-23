@@ -4,9 +4,9 @@
 #  delay_in_cycles addr data cmd(optional) 
 # The values are in hexadecimal format
 
-000A  03000000 00000100  02
-0005  03000001 00000101  02
-0008  03000002 00000102  03
+000A  00000003 00000100  02
+0005  00000003 00000101  02
+0008  00000003 00000102  03
 
 # There can be empty lines as shown below
 
