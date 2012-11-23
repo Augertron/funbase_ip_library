@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created by Kactus2 - Open source IP-Xact toolset -->
 <!-- http://sourceforge.net/projects/kactus2/ -->
-<!-- Date: 02.07.2012 -->
-<!-- Time: 13:24:30 -->
+<!-- Date: 21.11.2012 -->
+<!-- Time: 16:02:29 -->
 <spirit:component xmlns:kactus2="http://funbase.cs.tut.fi/" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5/index.xsd">
 	<spirit:vendor>TUT</spirit:vendor>
 	<spirit:library>ip.hwp.communication</spirit:library>
@@ -848,25 +848,6 @@
 				<spirit:vendorExtensions/>
 			</spirit:port>
 			<spirit:port>
-				<spirit:name>debug_in</spirit:name>
-				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
-					<spirit:direction>in</spirit:direction>
-					<spirit:wireTypeDefs>
-						<spirit:wireTypeDef>
-							<spirit:typeName spirit:constrained="false">std_logic_vector</spirit:typeName>
-							<spirit:typeDefinition>IEEE.std_logic_1164.all</spirit:typeDefinition>
-							<spirit:viewNameRef>rtl</spirit:viewNameRef>
-						</spirit:wireTypeDef>
-					</spirit:wireTypeDefs>
-					<spirit:driver>
-						<spirit:defaultValue>(others =&gt; '0')</spirit:defaultValue>
-					</spirit:driver>
-				</spirit:wire>
-				<spirit:vendorExtensions>
-					<kactus2:adHocVisible/>
-				</spirit:vendorExtensions>
-			</spirit:port>
-			<spirit:port>
 				<spirit:name>debug_out</spirit:name>
 				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
 					<spirit:direction>out</spirit:direction>
@@ -890,6 +871,27 @@
 						<spirit:left>0</spirit:left>
 						<spirit:right>0</spirit:right>
 					</spirit:vector>
+				</spirit:wire>
+				<spirit:vendorExtensions/>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>debug_in</spirit:name>
+				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
+					<spirit:direction>in</spirit:direction>
+					<spirit:vector>
+						<spirit:left>1</spirit:left>
+						<spirit:right>0</spirit:right>
+					</spirit:vector>
+					<spirit:wireTypeDefs>
+						<spirit:wireTypeDef>
+							<spirit:typeName spirit:constrained="false">std_logic_vector</spirit:typeName>
+							<spirit:typeDefinition>IEEE.std_logic_1164.all</spirit:typeDefinition>
+							<spirit:viewNameRef>rtl</spirit:viewNameRef>
+						</spirit:wireTypeDef>
+					</spirit:wireTypeDefs>
+					<spirit:driver>
+						<spirit:defaultValue>(others =&gt; '0')</spirit:defaultValue>
+					</spirit:driver>
 				</spirit:wire>
 				<spirit:vendorExtensions/>
 			</spirit:port>
@@ -943,7 +945,7 @@
 			<spirit:modelParameter spirit:dataType="integer" spirit:usageType="nontyped">
 				<spirit:name>debug_width_g</spirit:name>
 				<spirit:description>For special monitors</spirit:description>
-				<spirit:value>0</spirit:value>
+				<spirit:value>2</spirit:value>
 			</spirit:modelParameter>
 			<spirit:modelParameter spirit:dataType="integer" spirit:usageType="nontyped">
 				<spirit:name>fifo_sel_g</spirit:name>
@@ -993,7 +995,7 @@
 			<spirit:modelParameter spirit:dataType="integer" spirit:usageType="nontyped">
 				<spirit:name>n_cfg_pages_g</spirit:name>
 				<spirit:description>Having multiple pages allows fast reconfig. Note that cfg memory initialization is done with separate package if you have many time slots or configuration pages</spirit:description>
-				<spirit:value>0</spirit:value>
+				<spirit:value>1</spirit:value>
 			</spirit:modelParameter>
 			<spirit:modelParameter spirit:dataType="integer" spirit:usageType="nontyped">
 				<spirit:name>n_extra_params_g</spirit:name>
