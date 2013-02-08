@@ -8,6 +8,7 @@
 	<spirit:library>ip.hwp.cpu</spirit:library>
 	<spirit:name>nios_ii_sram</spirit:name>
 	<spirit:version>1.0</spirit:version>
+	<spirit:description>Nios2 SRAM subsystem</spirit:description>
 	<spirit:busInterfaces>
 		<spirit:busInterface>
 			<spirit:name>clk</spirit:name>
@@ -40,7 +41,9 @@
 			<spirit:name>hibi_master</spirit:name>
 			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.busdef" spirit:version="3.0"/>
 			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.absdef" spirit:version="3.0"/>
-			<spirit:master/>
+			<spirit:master>
+				<spirit:addressSpaceRef spirit:addressSpaceRef="hibi_addr_space"/>
+			</spirit:master>
 			<spirit:connectionRequired>false</spirit:connectionRequired>
 			<spirit:portMaps>
 				<spirit:portMap>
@@ -281,7 +284,9 @@
 			<spirit:name>hibi_slave</spirit:name>
 			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.busdef" spirit:version="3.0"/>
 			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.absdef" spirit:version="3.0"/>
-			<spirit:slave/>
+			<spirit:slave>
+				<spirit:memoryMapRef spirit:memoryMapRef="hibi_mem_map"/>
+			</spirit:slave>
 			<spirit:connectionRequired>false</spirit:connectionRequired>
 			<spirit:portMaps>
 				<spirit:portMap>
@@ -371,12 +376,118 @@
 	</spirit:busInterfaces>
 	<spirit:addressSpaces>
 		<spirit:addressSpace>
-			<spirit:name>instr_mem</spirit:name>
-			<spirit:range>64K</spirit:range>
+			<spirit:name>avalon_addr_space</spirit:name>
+			<spirit:description>Avalon address space. (local)</spirit:description>
+			<spirit:range>4G</spirit:range>
+			<spirit:width>32</spirit:width>
+			<spirit:segments>
+				<spirit:segment>
+					<spirit:name>.bss</spirit:name>
+					<spirit:addressOffset>0x00800000</spirit:addressOffset>
+					<spirit:range>512</spirit:range>
+				</spirit:segment>
+				<spirit:segment>
+					<spirit:name>.entry</spirit:name>
+					<spirit:addressOffset>0x00800400</spirit:addressOffset>
+					<spirit:range>512</spirit:range>
+				</spirit:segment>
+				<spirit:segment>
+					<spirit:name>.exceptions</spirit:name>
+					<spirit:addressOffset>0x00800200</spirit:addressOffset>
+					<spirit:range>512</spirit:range>
+				</spirit:segment>
+				<spirit:segment>
+					<spirit:name>.heap</spirit:name>
+					<spirit:addressOffset>0x00800800</spirit:addressOffset>
+					<spirit:range>512</spirit:range>
+				</spirit:segment>
+				<spirit:segment>
+					<spirit:name>.rodata</spirit:name>
+					<spirit:addressOffset>0x00800E00</spirit:addressOffset>
+					<spirit:range>512</spirit:range>
+				</spirit:segment>
+				<spirit:segment>
+					<spirit:name>.rwdata</spirit:name>
+					<spirit:addressOffset>0x00800A00</spirit:addressOffset>
+					<spirit:range>512</spirit:range>
+				</spirit:segment>
+				<spirit:segment>
+					<spirit:name>.stack</spirit:name>
+					<spirit:addressOffset>0x00800600</spirit:addressOffset>
+					<spirit:range>512</spirit:range>
+				</spirit:segment>
+				<spirit:segment>
+					<spirit:name>.text</spirit:name>
+					<spirit:addressOffset>0x00800C00</spirit:addressOffset>
+					<spirit:range>512</spirit:range>
+				</spirit:segment>
+				<spirit:segment>
+					<spirit:name>Shared_memory</spirit:name>
+					<spirit:addressOffset>0x1000000</spirit:addressOffset>
+					<spirit:range>4K</spirit:range>
+				</spirit:segment>
+			</spirit:segments>
+			<spirit:addressUnitBits>8</spirit:addressUnitBits>
+			<spirit:localMemoryMap>
+				<spirit:name>avalon_addr_space</spirit:name>
+				<spirit:addressBlock>
+					<spirit:name>HIBI_PE_DMA</spirit:name>
+					<spirit:baseAddress>0x0</spirit:baseAddress>
+					<spirit:range>4</spirit:range>
+					<spirit:width>32</spirit:width>
+					<spirit:usage>reserved</spirit:usage>
+				</spirit:addressBlock>
+				<spirit:addressBlock>
+					<spirit:name>JTAG_UART</spirit:name>
+					<spirit:baseAddress>0x4</spirit:baseAddress>
+					<spirit:range>4</spirit:range>
+					<spirit:width>32</spirit:width>
+					<spirit:usage>reserved</spirit:usage>
+				</spirit:addressBlock>
+				<spirit:addressBlock>
+					<spirit:name>TIMER</spirit:name>
+					<spirit:baseAddress>0x8</spirit:baseAddress>
+					<spirit:range>4</spirit:range>
+					<spirit:width>32</spirit:width>
+					<spirit:usage>reserved</spirit:usage>
+				</spirit:addressBlock>
+				<spirit:addressBlock>
+					<spirit:name>SRAM</spirit:name>
+					<spirit:baseAddress>0x00800000</spirit:baseAddress>
+					<spirit:range>8M</spirit:range>
+					<spirit:width>32</spirit:width>
+					<spirit:usage>memory</spirit:usage>
+				</spirit:addressBlock>
+				<spirit:addressBlock>
+					<spirit:name>SYSID</spirit:name>
+					<spirit:baseAddress>0x10</spirit:baseAddress>
+					<spirit:range>4</spirit:range>
+					<spirit:width>32</spirit:width>
+					<spirit:usage>reserved</spirit:usage>
+				</spirit:addressBlock>
+				<spirit:addressBlock>
+					<spirit:name>ONCHIP_MEM</spirit:name>
+					<spirit:baseAddress>0x1000000</spirit:baseAddress>
+					<spirit:range>4K</spirit:range>
+					<spirit:width>32</spirit:width>
+					<spirit:usage>memory</spirit:usage>
+				</spirit:addressBlock>
+			</spirit:localMemoryMap>
+		</spirit:addressSpace>
+		<spirit:addressSpace>
+			<spirit:name>hibi_addr_space</spirit:name>
+			<spirit:description>HIBI address space</spirit:description>
+			<spirit:range>4G</spirit:range>
 			<spirit:width>32</spirit:width>
 			<spirit:addressUnitBits>8</spirit:addressUnitBits>
 		</spirit:addressSpace>
 	</spirit:addressSpaces>
+	<spirit:memoryMaps>
+		<spirit:memoryMap>
+			<spirit:name>hibi_mem_map</spirit:name>
+			<spirit:addressUnitBits>32</spirit:addressUnitBits>
+		</spirit:memoryMap>
+	</spirit:memoryMaps>
 	<spirit:model>
 		<spirit:views>
 			<spirit:view>
@@ -669,7 +780,7 @@
 	<spirit:cpus>
 		<spirit:cpu>
 			<spirit:name>nios2</spirit:name>
-			<spirit:addressSpaceRef spirit:addressSpaceRef="instr_mem"/>
+			<spirit:addressSpaceRef spirit:addressSpaceRef="avalon_addr_space"/>
 		</spirit:cpu>
 	</spirit:cpus>
 	<spirit:vendorExtensions>

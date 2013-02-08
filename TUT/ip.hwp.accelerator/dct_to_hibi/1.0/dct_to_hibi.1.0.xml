@@ -418,7 +418,9 @@ Outputs:
 			<spirit:name>hibi_slave</spirit:name>
 			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.busdef" spirit:version="3.0"/>
 			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.absdef" spirit:version="3.0"/>
-			<spirit:slave/>
+			<spirit:slave>
+				<spirit:memoryMapRef spirit:memoryMapRef="dct_mem_map"/>
+			</spirit:slave>
 			<spirit:connectionRequired>false</spirit:connectionRequired>
 			<spirit:portMaps>
 				<spirit:portMap>
@@ -506,6 +508,67 @@ Outputs:
 			<spirit:endianness>little</spirit:endianness>
 		</spirit:busInterface>
 	</spirit:busInterfaces>
+	<spirit:memoryMaps>
+		<spirit:memoryMap>
+			<spirit:name>dct_mem_map</spirit:name>
+			<spirit:addressBlock>
+				<spirit:name>dct_regs</spirit:name>
+				<spirit:baseAddress>0x0</spirit:baseAddress>
+				<spirit:range>1</spirit:range>
+				<spirit:width>32</spirit:width>
+				<spirit:usage>register</spirit:usage>
+				<spirit:register>
+					<spirit:name>quant_result_addr</spirit:name>
+					<spirit:dim>0</spirit:dim>
+					<spirit:addressOffset>0x0</spirit:addressOffset>
+					<spirit:size>32</spirit:size>
+				</spirit:register>
+				<spirit:register>
+					<spirit:name>idct_result_addr</spirit:name>
+					<spirit:dim>0</spirit:dim>
+					<spirit:addressOffset>0x1</spirit:addressOffset>
+					<spirit:size>32</spirit:size>
+				</spirit:register>
+				<spirit:register>
+					<spirit:name>ctrl_reg</spirit:name>
+					<spirit:dim>0</spirit:dim>
+					<spirit:addressOffset>0x2</spirit:addressOffset>
+					<spirit:size>32</spirit:size>
+					<spirit:field>
+						<spirit:name>QP</spirit:name>
+						<spirit:description>Quant parameter</spirit:description>
+						<spirit:bitOffset>0</spirit:bitOffset>
+						<spirit:bitWidth>5</spirit:bitWidth>
+						<spirit:volatile>false</spirit:volatile>
+						<spirit:testable spirit:testConstraint="unConstrained">true</spirit:testable>
+					</spirit:field>
+					<spirit:field>
+						<spirit:name>intra_or_inter</spirit:name>
+						<spirit:description>0=intra, 1=inter</spirit:description>
+						<spirit:bitOffset>5</spirit:bitOffset>
+						<spirit:bitWidth>1</spirit:bitWidth>
+						<spirit:volatile>false</spirit:volatile>
+						<spirit:testable spirit:testConstraint="unConstrained">true</spirit:testable>
+					</spirit:field>
+					<spirit:field>
+						<spirit:name>chroma_luma</spirit:name>
+						<spirit:description>0=luma, 1=chroma</spirit:description>
+						<spirit:bitOffset>6</spirit:bitOffset>
+						<spirit:bitWidth>1</spirit:bitWidth>
+						<spirit:volatile>false</spirit:volatile>
+						<spirit:testable spirit:testConstraint="unConstrained">true</spirit:testable>
+					</spirit:field>
+				</spirit:register>
+				<spirit:register>
+					<spirit:name>dct_data</spirit:name>
+					<spirit:dim>0</spirit:dim>
+					<spirit:addressOffset>0x3</spirit:addressOffset>
+					<spirit:size>32</spirit:size>
+				</spirit:register>
+			</spirit:addressBlock>
+			<spirit:addressUnitBits>32</spirit:addressUnitBits>
+		</spirit:memoryMap>
+	</spirit:memoryMaps>
 	<spirit:model>
 		<spirit:views>
 			<spirit:view>

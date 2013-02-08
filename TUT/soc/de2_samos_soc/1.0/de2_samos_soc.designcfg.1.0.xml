@@ -34,6 +34,10 @@
 		<spirit:viewName>rtl</spirit:viewName>
 	</spirit:viewConfiguration>
 	<spirit:viewConfiguration>
+		<spirit:instanceName>nios_ii_sdram_1</spirit:instanceName>
+		<spirit:viewName>rtl</spirit:viewName>
+	</spirit:viewConfiguration>
+	<spirit:viewConfiguration>
 		<spirit:instanceName>nios_ii_sram_0</spirit:instanceName>
 		<spirit:viewName>rtl</spirit:viewName>
 	</spirit:viewConfiguration>

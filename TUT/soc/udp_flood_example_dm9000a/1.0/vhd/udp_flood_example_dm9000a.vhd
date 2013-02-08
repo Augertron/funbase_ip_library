@@ -1,11 +1,11 @@
 -- ***************************************************
 -- File: udp_flood_example_dm9000a.vhd
--- Creation date: 05.04.2012
--- Creation time: 13:38:38
+-- Creation date: 18.01.2013
+-- Creation time: 12:46:22
 -- Description: Simple example to test the connection FPGA -> PC.
 -- 
 -- Flooder unit sends all the time, UDP/IP block transfers them to PC. Designer can use netstat, netcat, wireshark or similar to catch the packet at the PC's end.
--- Created by: ege
+-- Created by: matilail
 -- This file was generated with Kactus2 vhdl generator.
 -- ***************************************************
 library IEEE;
