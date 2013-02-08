@@ -8,6 +8,7 @@
 	<spirit:library>ip.hwp.cpu</spirit:library>
 	<spirit:name>nios_ii_sdram</spirit:name>
 	<spirit:version>1.0</spirit:version>
+	<spirit:description>Nios2 SDRAM subsystem.</spirit:description>
 	<spirit:busInterfaces>
 		<spirit:busInterface>
 			<spirit:name>clk</spirit:name>
@@ -313,7 +314,9 @@
 			<spirit:name>hibi_slave</spirit:name>
 			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.busdef" spirit:version="3.0"/>
 			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.absdef" spirit:version="3.0"/>
-			<spirit:slave/>
+			<spirit:slave>
+				<spirit:memoryMapRef spirit:memoryMapRef="hibi_mem_map"/>
+			</spirit:slave>
 			<spirit:connectionRequired>false</spirit:connectionRequired>
 			<spirit:portMaps>
 				<spirit:portMap>
@@ -403,12 +406,118 @@
 	</spirit:busInterfaces>
 	<spirit:addressSpaces>
 		<spirit:addressSpace>
-			<spirit:name>instr_mem</spirit:name>
-			<spirit:range>64K</spirit:range>
-			<spirit:width>0</spirit:width>
+			<spirit:name>avalon_addr_space</spirit:name>
+			<spirit:description>Avalon address space. (local)</spirit:description>
+			<spirit:range>4G</spirit:range>
+			<spirit:width>32</spirit:width>
+			<spirit:segments>
+				<spirit:segment>
+					<spirit:name>.bss</spirit:name>
+					<spirit:addressOffset>0x00800000</spirit:addressOffset>
+					<spirit:range>512</spirit:range>
+				</spirit:segment>
+				<spirit:segment>
+					<spirit:name>.exceptions</spirit:name>
+					<spirit:addressOffset>0x00800200</spirit:addressOffset>
+					<spirit:range>512</spirit:range>
+				</spirit:segment>
+				<spirit:segment>
+					<spirit:name>.entry</spirit:name>
+					<spirit:addressOffset>0x00800400</spirit:addressOffset>
+					<spirit:range>512</spirit:range>
+				</spirit:segment>
+				<spirit:segment>
+					<spirit:name>.stack</spirit:name>
+					<spirit:addressOffset>0x00800600</spirit:addressOffset>
+					<spirit:range>512</spirit:range>
+				</spirit:segment>
+				<spirit:segment>
+					<spirit:name>.heap</spirit:name>
+					<spirit:addressOffset>0x00800800</spirit:addressOffset>
+					<spirit:range>512</spirit:range>
+				</spirit:segment>
+				<spirit:segment>
+					<spirit:name>.rwdata</spirit:name>
+					<spirit:addressOffset>0x00800A00</spirit:addressOffset>
+					<spirit:range>512</spirit:range>
+				</spirit:segment>
+				<spirit:segment>
+					<spirit:name>.text</spirit:name>
+					<spirit:addressOffset>0x00800C00</spirit:addressOffset>
+					<spirit:range>512</spirit:range>
+				</spirit:segment>
+				<spirit:segment>
+					<spirit:name>.rodata</spirit:name>
+					<spirit:addressOffset>0x00800E00</spirit:addressOffset>
+					<spirit:range>512</spirit:range>
+				</spirit:segment>
+				<spirit:segment>
+					<spirit:name>Shared_memory</spirit:name>
+					<spirit:addressOffset>0x1000000</spirit:addressOffset>
+					<spirit:range>4K</spirit:range>
+				</spirit:segment>
+			</spirit:segments>
+			<spirit:addressUnitBits>8</spirit:addressUnitBits>
+			<spirit:localMemoryMap>
+				<spirit:name>avalon_addr_space</spirit:name>
+				<spirit:addressBlock>
+					<spirit:name>HIBI_PE_DMA</spirit:name>
+					<spirit:baseAddress>0x0</spirit:baseAddress>
+					<spirit:range>4</spirit:range>
+					<spirit:width>32</spirit:width>
+					<spirit:usage>reserved</spirit:usage>
+				</spirit:addressBlock>
+				<spirit:addressBlock>
+					<spirit:name>JTAG_UART</spirit:name>
+					<spirit:baseAddress>0x4</spirit:baseAddress>
+					<spirit:range>4</spirit:range>
+					<spirit:width>32</spirit:width>
+					<spirit:usage>reserved</spirit:usage>
+				</spirit:addressBlock>
+				<spirit:addressBlock>
+					<spirit:name>TIMER</spirit:name>
+					<spirit:baseAddress>0x8</spirit:baseAddress>
+					<spirit:range>4</spirit:range>
+					<spirit:width>32</spirit:width>
+					<spirit:usage>reserved</spirit:usage>
+				</spirit:addressBlock>
+				<spirit:addressBlock>
+					<spirit:name>SYSID</spirit:name>
+					<spirit:baseAddress>0x10</spirit:baseAddress>
+					<spirit:range>4</spirit:range>
+					<spirit:width>32</spirit:width>
+					<spirit:usage>reserved</spirit:usage>
+				</spirit:addressBlock>
+				<spirit:addressBlock>
+					<spirit:name>ONCHIP_MEM</spirit:name>
+					<spirit:baseAddress>0x1000000</spirit:baseAddress>
+					<spirit:range>4K</spirit:range>
+					<spirit:width>32</spirit:width>
+					<spirit:usage>memory</spirit:usage>
+				</spirit:addressBlock>
+				<spirit:addressBlock>
+					<spirit:name>SDRAM</spirit:name>
+					<spirit:baseAddress>0x00800000</spirit:baseAddress>
+					<spirit:range>8M</spirit:range>
+					<spirit:width>32</spirit:width>
+					<spirit:usage>memory</spirit:usage>
+				</spirit:addressBlock>
+			</spirit:localMemoryMap>
+		</spirit:addressSpace>
+		<spirit:addressSpace>
+			<spirit:name>hibi_addr_space</spirit:name>
+			<spirit:description>HIBI address space</spirit:description>
+			<spirit:range>4G</spirit:range>
+			<spirit:width>32</spirit:width>
 			<spirit:addressUnitBits>8</spirit:addressUnitBits>
 		</spirit:addressSpace>
 	</spirit:addressSpaces>
+	<spirit:memoryMaps>
+		<spirit:memoryMap>
+			<spirit:name>hibi_mem_map</spirit:name>
+			<spirit:addressUnitBits>32</spirit:addressUnitBits>
+		</spirit:memoryMap>
+	</spirit:memoryMaps>
 	<spirit:model>
 		<spirit:views>
 			<spirit:view>
@@ -613,72 +722,72 @@
 		<spirit:fileSet>
 			<spirit:name>hdlSources</spirit:name>
 			<spirit:file>
-				<spirit:name>D:/user/matilail/funbase/repos/daci_ip/trunk/ip.hwp.cpu/nios_ii_sdram/1.0/../hdl/cpu_1.v</spirit:name>
+				<spirit:name>../hdl/cpu_1.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>
 			<spirit:file>
-				<spirit:name>D:/user/matilail/funbase/repos/daci_ip/trunk/ip.hwp.cpu/nios_ii_sdram/1.0/../hdl/cpu_1_jtag_debug_module_sysclk.v</spirit:name>
+				<spirit:name>../hdl/cpu_1_jtag_debug_module_sysclk.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>
 			<spirit:file>
-				<spirit:name>D:/user/matilail/funbase/repos/daci_ip/trunk/ip.hwp.cpu/nios_ii_sdram/1.0/../hdl/cpu_1_jtag_debug_module_tck.v</spirit:name>
+				<spirit:name>../hdl/cpu_1_jtag_debug_module_tck.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>
 			<spirit:file>
-				<spirit:name>D:/user/matilail/funbase/repos/daci_ip/trunk/ip.hwp.cpu/nios_ii_sdram/1.0/../hdl/cpu_1_jtag_debug_module_wrapper.v</spirit:name>
+				<spirit:name>../hdl/cpu_1_jtag_debug_module_wrapper.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>
 			<spirit:file>
-				<spirit:name>D:/user/matilail/funbase/repos/daci_ip/trunk/ip.hwp.cpu/nios_ii_sdram/1.0/../hdl/cpu_1_mult_cell.v</spirit:name>
+				<spirit:name>../hdl/cpu_1_mult_cell.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>
 			<spirit:file>
-				<spirit:name>D:/user/matilail/funbase/repos/daci_ip/trunk/ip.hwp.cpu/nios_ii_sdram/1.0/../hdl/hibi_pe_dma_1.vhd</spirit:name>
+				<spirit:name>../hdl/cpu_1_oci_test_bench.v</spirit:name>
+				<spirit:fileType>verilogSource</spirit:fileType>
+				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
+			</spirit:file>
+			<spirit:file>
+				<spirit:name>../hdl/cpu_1_test_bench.v</spirit:name>
+				<spirit:fileType>verilogSource</spirit:fileType>
+				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
+			</spirit:file>
+			<spirit:file>
+				<spirit:name>../hdl/hibi_pe_dma_1.vhd</spirit:name>
 				<spirit:fileType>vhdlSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>
 			<spirit:file>
-				<spirit:name>D:/user/matilail/funbase/repos/daci_ip/trunk/ip.hwp.cpu/nios_ii_sdram/1.0/../hdl/jtag_uart_1.v</spirit:name>
+				<spirit:name>../hdl/jtag_uart_1.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>
 			<spirit:file>
-				<spirit:name>D:/user/matilail/funbase/repos/daci_ip/trunk/ip.hwp.cpu/nios_ii_sdram/1.0/../hdl/nios_ii_sdram.qip</spirit:name>
+				<spirit:name>../hdl/nios_ii_sdram.qip</spirit:name>
 				<spirit:userFileType>quartusIPFile</spirit:userFileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>
 			<spirit:file>
-				<spirit:name>D:/user/matilail/funbase/repos/daci_ip/trunk/ip.hwp.cpu/nios_ii_sdram/1.0/../hdl/nios_ii_sdram.v</spirit:name>
+				<spirit:name>../hdl/nios_ii_sdram.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>
 			<spirit:file>
-				<spirit:name>D:/user/matilail/funbase/repos/daci_ip/trunk/ip.hwp.cpu/nios_ii_sdram/1.0/../hdl/onchip_memory_1.v</spirit:name>
+				<spirit:name>../hdl/onchip_memory_1.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>
 			<spirit:file>
-				<spirit:name>D:/user/matilail/funbase/repos/daci_ip/trunk/ip.hwp.cpu/nios_ii_sdram/1.0/../hdl/sdram_1.v</spirit:name>
+				<spirit:name>../hdl/sdram_1.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>
 			<spirit:file>
-				<spirit:name>D:/user/matilail/funbase/repos/daci_ip/trunk/ip.hwp.cpu/nios_ii_sdram/1.0/../hdl/timer_1.v</spirit:name>
-				<spirit:fileType>verilogSource</spirit:fileType>
-				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
-			</spirit:file>
-			<spirit:file>
-				<spirit:name>D:/user/matilail/funbase/repos/daci_ip/trunk/ip.hwp.cpu/nios_ii_sdram/1.0/../hdl/cpu_1_oci_test_bench.v</spirit:name>
-				<spirit:fileType>verilogSource</spirit:fileType>
-				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
-			</spirit:file>
-			<spirit:file>
-				<spirit:name>D:/user/matilail/funbase/repos/daci_ip/trunk/ip.hwp.cpu/nios_ii_sdram/1.0/../hdl/cpu_1_test_bench.v</spirit:name>
+				<spirit:name>../hdl/timer_1.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>
@@ -687,7 +796,7 @@
 	<spirit:cpus>
 		<spirit:cpu>
 			<spirit:name>nios2</spirit:name>
-			<spirit:addressSpaceRef spirit:addressSpaceRef="instr_mem"/>
+			<spirit:addressSpaceRef spirit:addressSpaceRef="avalon_addr_space"/>
 		</spirit:cpu>
 	</spirit:cpus>
 	<spirit:vendorExtensions>
