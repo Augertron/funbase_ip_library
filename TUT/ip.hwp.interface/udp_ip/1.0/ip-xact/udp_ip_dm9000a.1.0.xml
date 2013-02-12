@@ -768,9 +768,6 @@
 						<spirit:left>47</spirit:left>
 						<spirit:right>0</spirit:right>
 					</spirit:vector>
-					<spirit:driver>
-						<spirit:defaultValue>0</spirit:defaultValue>
-					</spirit:driver>
 				</spirit:wire>
 				<spirit:vendorExtensions/>
 			</spirit:port>
