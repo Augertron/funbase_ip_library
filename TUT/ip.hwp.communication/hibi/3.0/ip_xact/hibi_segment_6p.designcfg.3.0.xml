@@ -14,6 +14,10 @@
 		<spirit:viewName>rtl</spirit:viewName>
 	</spirit:viewConfiguration>
 	<spirit:viewConfiguration>
+		<spirit:instanceName>hibi_orbus_6p_0</spirit:instanceName>
+		<spirit:viewName>rtl</spirit:viewName>
+	</spirit:viewConfiguration>
+	<spirit:viewConfiguration>
 		<spirit:instanceName>hibi_wrapper_r4_0</spirit:instanceName>
 		<spirit:viewName>rtl</spirit:viewName>
 	</spirit:viewConfiguration>
@@ -27,6 +31,14 @@
 	</spirit:viewConfiguration>
 	<spirit:viewConfiguration>
 		<spirit:instanceName>hibi_wrapper_r4_3</spirit:instanceName>
+		<spirit:viewName>rtl</spirit:viewName>
+	</spirit:viewConfiguration>
+	<spirit:viewConfiguration>
+		<spirit:instanceName>hibi_wrapper_r4_4</spirit:instanceName>
+		<spirit:viewName>rtl</spirit:viewName>
+	</spirit:viewConfiguration>
+	<spirit:viewConfiguration>
+		<spirit:instanceName>hibi_wrapper_r4_5</spirit:instanceName>
 		<spirit:viewName>rtl</spirit:viewName>
 	</spirit:viewConfiguration>
 </spirit:designConfiguration>

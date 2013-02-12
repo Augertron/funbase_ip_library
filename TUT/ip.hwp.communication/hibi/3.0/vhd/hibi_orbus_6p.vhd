@@ -37,7 +37,7 @@ use ieee.std_logic_arith.all;
 use ieee.std_logic_unsigned.all;
 --use work.hibiv3_pkg.all;                -- hibi v3 commands
 
-entity hibi_orbus_small is
+entity hibi_orbus_6p is
   generic (
     data_width_g           : integer := 32;
     comm_width_g           : integer := 5
@@ -72,13 +72,13 @@ entity hibi_orbus_small is
     bus_data_3_in : in std_logic_vector(data_width_g-1 downto 0);
     bus_comm_3_in : in std_logic_vector (comm_width_g-1 downto 0);
     bus_lock_3_in : in std_logic;
-    bus_full_3_in : in std_logic
+    bus_full_3_in : in std_logic;
     
     bus_av_4_in   : in std_logic;
     bus_data_4_in : in std_logic_vector(data_width_g-1 downto 0);
     bus_comm_4_in : in std_logic_vector (comm_width_g-1 downto 0);
     bus_lock_4_in : in std_logic;
-    bus_full_4_in : in std_logic
+    bus_full_4_in : in std_logic;
 
     bus_av_5_in   : in std_logic;
     bus_data_5_in : in std_logic_vector(data_width_g-1 downto 0);
@@ -86,9 +86,9 @@ entity hibi_orbus_small is
     bus_lock_5_in : in std_logic;
     bus_full_5_in : in std_logic
     );
-end hibi_orbus_small;
+end hibi_orbus_6p;
 
-architecture structural of hibi_orbus_small is
+architecture structural of hibi_orbus_6p is
   
 begin  -- structural
   

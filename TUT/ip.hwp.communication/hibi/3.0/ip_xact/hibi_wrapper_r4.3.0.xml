@@ -874,27 +874,6 @@
 				</spirit:wire>
 				<spirit:vendorExtensions/>
 			</spirit:port>
-			<spirit:port>
-				<spirit:name>debug_in</spirit:name>
-				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
-					<spirit:direction>in</spirit:direction>
-					<spirit:vector>
-						<spirit:left>1</spirit:left>
-						<spirit:right>0</spirit:right>
-					</spirit:vector>
-					<spirit:wireTypeDefs>
-						<spirit:wireTypeDef>
-							<spirit:typeName spirit:constrained="false">std_logic_vector</spirit:typeName>
-							<spirit:typeDefinition>IEEE.std_logic_1164.all</spirit:typeDefinition>
-							<spirit:viewNameRef>rtl</spirit:viewNameRef>
-						</spirit:wireTypeDef>
-					</spirit:wireTypeDefs>
-					<spirit:driver>
-						<spirit:defaultValue>(others =&gt; '0')</spirit:defaultValue>
-					</spirit:driver>
-				</spirit:wire>
-				<spirit:vendorExtensions/>
-			</spirit:port>
 		</spirit:ports>
 		<spirit:modelParameters>
 			<spirit:modelParameter spirit:dataType="integer" spirit:usageType="nontyped">

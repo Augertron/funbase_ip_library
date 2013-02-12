@@ -503,7 +503,7 @@
 			<spirit:view>
 				<spirit:name>rtl</spirit:name>
 				<spirit:envIdentifier>::</spirit:envIdentifier>
-				<spirit:modelName>hibi_orbus_small</spirit:modelName>
+				<spirit:modelName>hibi_orbus_6p</spirit:modelName>
 				<spirit:fileSetRef>
 					<spirit:localName>hdlSources</spirit:localName>
 				</spirit:fileSetRef>
@@ -832,7 +832,7 @@
 			<spirit:name>hdlSources</spirit:name>
 			<spirit:description>VHDL for HIBI orbus to connect four hibi wrappers</spirit:description>
 			<spirit:file>
-				<spirit:name>D:/user/matilail/funbase/repos/opencores_lib/trunk/TUT/ip.hwp.communication/hibi_orbus_6p/1.0/../../hibi/3.0/vhd/hibi_orbus_6p.vhd</spirit:name>
+				<spirit:name>../vhd/hibi_orbus_6p.vhd</spirit:name>
 				<spirit:fileType>vhdlSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 			</spirit:file>

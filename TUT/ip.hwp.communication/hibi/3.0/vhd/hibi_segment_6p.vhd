@@ -1,7 +1,7 @@
 -- ***************************************************
--- File: hibi_segment.vhd
--- Creation date: 21.11.2012
--- Creation time: 16:02:46
+-- File: hibi_segment_6p.vhd
+-- Creation date: 12.02.2013
+-- Creation time: 10:29:59
 -- Description: 
 -- Created by: matilail
 -- This file was generated with Kactus2 vhdl generator.
@@ -13,7 +13,7 @@ use hibi.all;
 use work.all;
 use IEEE.std_logic_1164.all;
 
-entity hibi_segment is
+entity hibi_segment_6p is
 
 	generic (
 		ip_mslave_0_addr_end : integer := 2; -- HIBI end address for interface 0
@@ -56,6 +56,18 @@ entity hibi_segment is
 		bus_clk_3 : in std_logic;
 		bus_sync_clk_3 : in std_logic;
 
+		-- Interface: clocks_4
+		agent_clk_4 : in std_logic;
+		agent_sync_clk_4 : in std_logic;
+		bus_clk_4 : in std_logic;
+		bus_sync_clk_4 : in std_logic;
+
+		-- Interface: clocks_5
+		agent_clk_5 : in std_logic;
+		agent_sync_clk_5 : in std_logic;
+		bus_clk_5 : in std_logic;
+		bus_sync_clk_5 : in std_logic;
+
 		-- Interface: ip_mMaster_0
 		-- HIBI ip mirrored master agent interface 0 (r4 wrapper)
 		agent_av_in : in std_logic;
@@ -87,6 +99,20 @@ entity hibi_segment is
 		agent_data_in_3 : in std_logic_vector(31 downto 0);
 		agent_re_in_3 : in std_logic;
 		agent_we_in_3 : in std_logic;
+
+		-- Interface: ip_mMaster_4
+		agent_av_in_4 : in std_logic;
+		agent_comm_in_4 : in std_logic_vector(4 downto 0);
+		agent_data_in_4 : in std_logic_vector(31 downto 0);
+		agent_re_in_4 : in std_logic;
+		agent_we_in_4 : in std_logic;
+
+		-- Interface: ip_mMaster_5
+		agent_av_in_5 : in std_logic;
+		agent_comm_in_5 : in std_logic_vector(4 downto 0);
+		agent_data_in_5 : in std_logic_vector(31 downto 0);
+		agent_re_in_5 : in std_logic;
+		agent_we_in_5 : in std_logic;
 
 		-- Interface: ip_mSlave_0
 		-- HIBI ip mirrored slave agent interface 0 (r4 wrapper)
@@ -128,43 +154,61 @@ entity hibi_segment is
 		agent_one_d_out_3 : out std_logic;
 		agent_one_p_out_3 : out std_logic;
 
+		-- Interface: ip_mSlave_4
+		agent_av_out_4 : out std_logic;
+		agent_comm_out_4 : out std_logic_vector(4 downto 0);
+		agent_data_out_4 : out std_logic_vector(31 downto 0);
+		agent_empty_out_4 : out std_logic;
+		agent_full_out_4 : out std_logic;
+		agent_one_d_out_4 : out std_logic;
+		agent_one_p_out_4 : out std_logic;
+
+		-- Interface: ip_mSlave_5
+		agent_av_out_5 : out std_logic;
+		agent_comm_out_5 : out std_logic_vector(4 downto 0);
+		agent_data_out_5 : out std_logic_vector(31 downto 0);
+		agent_empty_out_5 : out std_logic;
+		agent_full_out_5 : out std_logic;
+		agent_one_d_out_5 : out std_logic;
+		agent_one_p_out_5 : out std_logic;
+
 		-- Interface: rst_n
 		-- Active low reset interface.
 		rst_n : in std_logic
 	);
 
-end hibi_segment;
+end hibi_segment_6p;
 
 
-architecture structural of hibi_segment is
+architecture structural of hibi_segment_6p is
 
-	signal hibi_orbus_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveAV : std_logic;
-	signal hibi_wrapper_r4_1_bus_mSlave_to_hibi_orbus_0_slave_1AV : std_logic;
-	signal hibi_wrapper_r4_2_bus_mSlave_to_hibi_orbus_0_slave_2AV : std_logic;
-	signal hibi_wrapper_r4_3_bus_mSlave_to_hibi_orbus_0_slave_3AV : std_logic;
-	signal hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterAV : std_logic;
-	signal hibi_orbus_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveCOMM : std_logic_vector(4 downto 0);
-	signal hibi_wrapper_r4_1_bus_mSlave_to_hibi_orbus_0_slave_1COMM : std_logic_vector(4 downto 0);
-	signal hibi_wrapper_r4_2_bus_mSlave_to_hibi_orbus_0_slave_2COMM : std_logic_vector(4 downto 0);
-	signal hibi_wrapper_r4_3_bus_mSlave_to_hibi_orbus_0_slave_3COMM : std_logic_vector(4 downto 0);
-	signal hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterCOMM : std_logic_vector(4 downto 0);
-	signal hibi_orbus_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveDATA : std_logic_vector(31 downto 0);
-	signal hibi_wrapper_r4_1_bus_mSlave_to_hibi_orbus_0_slave_1DATA : std_logic_vector(31 downto 0);
-	signal hibi_wrapper_r4_2_bus_mSlave_to_hibi_orbus_0_slave_2DATA : std_logic_vector(31 downto 0);
-	signal hibi_wrapper_r4_3_bus_mSlave_to_hibi_orbus_0_slave_3DATA : std_logic_vector(31 downto 0);
-	signal hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterDATA : std_logic_vector(31 downto 0);
-	signal hibi_orbus_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveFULL : std_logic;
-	signal hibi_wrapper_r4_1_bus_mSlave_to_hibi_orbus_0_slave_1FULL : std_logic;
-	signal hibi_wrapper_r4_2_bus_mSlave_to_hibi_orbus_0_slave_2FULL : std_logic;
-	signal hibi_wrapper_r4_3_bus_mSlave_to_hibi_orbus_0_slave_3FULL : std_logic;
-	signal hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterFULL : std_logic;
-	signal hibi_orbus_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveLOCK : std_logic;
-	signal hibi_wrapper_r4_1_bus_mSlave_to_hibi_orbus_0_slave_1LOCK : std_logic;
-	signal hibi_wrapper_r4_2_bus_mSlave_to_hibi_orbus_0_slave_2LOCK : std_logic;
-	signal hibi_wrapper_r4_3_bus_mSlave_to_hibi_orbus_0_slave_3LOCK : std_logic;
-	signal hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterLOCK : std_logic;
+	signal hibi_orbus_6p_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveAV : std_logic;
+	signal hibi_orbus_6p_0_slave_1_to_hibi_wrapper_r4_1_bus_mSlaveAV : std_logic;
+	signal hibi_orbus_6p_0_slave_2_to_hibi_wrapper_r4_2_bus_mSlaveAV : std_logic;
+	signal hibi_orbus_6p_0_slave_3_to_hibi_wrapper_r4_3_bus_mSlaveAV : std_logic;
+	signal hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterAV : std_logic;
+	signal hibi_orbus_6p_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveCOMM : std_logic_vector(4 downto 0);
+	signal hibi_orbus_6p_0_slave_1_to_hibi_wrapper_r4_1_bus_mSlaveCOMM : std_logic_vector(4 downto 0);
+	signal hibi_orbus_6p_0_slave_2_to_hibi_wrapper_r4_2_bus_mSlaveCOMM : std_logic_vector(4 downto 0);
+	signal hibi_orbus_6p_0_slave_3_to_hibi_wrapper_r4_3_bus_mSlaveCOMM : std_logic_vector(4 downto 0);
+	signal hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterCOMM : std_logic_vector(4 downto 0);
+	signal hibi_orbus_6p_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveDATA : std_logic_vector(31 downto 0);
+	signal hibi_orbus_6p_0_slave_1_to_hibi_wrapper_r4_1_bus_mSlaveDATA : std_logic_vector(31 downto 0);
+	signal hibi_orbus_6p_0_slave_2_to_hibi_wrapper_r4_2_bus_mSlaveDATA : std_logic_vector(31 downto 0);
+	signal hibi_orbus_6p_0_slave_3_to_hibi_wrapper_r4_3_bus_mSlaveDATA : std_logic_vector(31 downto 0);
+	signal hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterDATA : std_logic_vector(31 downto 0);
+	signal hibi_orbus_6p_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveFULL : std_logic;
+	signal hibi_orbus_6p_0_slave_1_to_hibi_wrapper_r4_1_bus_mSlaveFULL : std_logic;
+	signal hibi_orbus_6p_0_slave_2_to_hibi_wrapper_r4_2_bus_mSlaveFULL : std_logic;
+	signal hibi_orbus_6p_0_slave_3_to_hibi_wrapper_r4_3_bus_mSlaveFULL : std_logic;
+	signal hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterFULL : std_logic;
+	signal hibi_orbus_6p_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveLOCK : std_logic;
+	signal hibi_orbus_6p_0_slave_1_to_hibi_wrapper_r4_1_bus_mSlaveLOCK : std_logic;
+	signal hibi_orbus_6p_0_slave_2_to_hibi_wrapper_r4_2_bus_mSlaveLOCK : std_logic;
+	signal hibi_orbus_6p_0_slave_3_to_hibi_wrapper_r4_3_bus_mSlaveLOCK : std_logic;
+	signal hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterLOCK : std_logic;
 
-	component hibi_orbus_small
+	component hibi_orbus_6p
 		generic (
 			comm_width_g : integer := 5; -- HIBI command width
 			data_width_g : integer := 32 -- HIBI data width
@@ -293,7 +337,6 @@ architecture structural of hibi_segment is
 			agent_one_p_out : out std_logic;
 
 			-- These ports are not in any interface
-			--debug_in : in std_logic_vector(1 downto 0);
 			-- debug_out : out std_logic_vector(0 downto 0);
 
 			-- Interface: rst_n
@@ -315,33 +358,33 @@ begin
 	-- ##KACTUS2_BLACK_BOX_ASSIGNMENTS_END##
 	-- Stop writing your code after this tag.
 
-	hibi_orbus_0 : hibi_orbus_small
+	hibi_orbus_6p_0 : hibi_orbus_6p
 		port map (
-			bus_av_0_in => hibi_orbus_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveAV,
-			bus_av_1_in => hibi_wrapper_r4_1_bus_mSlave_to_hibi_orbus_0_slave_1AV,
-			bus_av_2_in => hibi_wrapper_r4_2_bus_mSlave_to_hibi_orbus_0_slave_2AV,
-			bus_av_3_in => hibi_wrapper_r4_3_bus_mSlave_to_hibi_orbus_0_slave_3AV,
-			bus_av_out => hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterAV,
-			bus_comm_0_in(4 downto 0) => hibi_orbus_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveCOMM(4 downto 0),
-			bus_comm_1_in(4 downto 0) => hibi_wrapper_r4_1_bus_mSlave_to_hibi_orbus_0_slave_1COMM(4 downto 0),
-			bus_comm_2_in(4 downto 0) => hibi_wrapper_r4_2_bus_mSlave_to_hibi_orbus_0_slave_2COMM(4 downto 0),
-			bus_comm_3_in(4 downto 0) => hibi_wrapper_r4_3_bus_mSlave_to_hibi_orbus_0_slave_3COMM(4 downto 0),
-			bus_comm_out(4 downto 0) => hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterCOMM(4 downto 0),
-			bus_data_0_in(31 downto 0) => hibi_orbus_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveDATA(31 downto 0),
-			bus_data_1_in(31 downto 0) => hibi_wrapper_r4_1_bus_mSlave_to_hibi_orbus_0_slave_1DATA(31 downto 0),
-			bus_data_2_in(31 downto 0) => hibi_wrapper_r4_2_bus_mSlave_to_hibi_orbus_0_slave_2DATA(31 downto 0),
-			bus_data_3_in(31 downto 0) => hibi_wrapper_r4_3_bus_mSlave_to_hibi_orbus_0_slave_3DATA(31 downto 0),
-			bus_data_out(31 downto 0) => hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterDATA(31 downto 0),
-			bus_full_0_in => hibi_orbus_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveFULL,
-			bus_full_1_in => hibi_wrapper_r4_1_bus_mSlave_to_hibi_orbus_0_slave_1FULL,
-			bus_full_2_in => hibi_wrapper_r4_2_bus_mSlave_to_hibi_orbus_0_slave_2FULL,
-			bus_full_3_in => hibi_wrapper_r4_3_bus_mSlave_to_hibi_orbus_0_slave_3FULL,
-			bus_full_out => hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterFULL,
-			bus_lock_0_in => hibi_orbus_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveLOCK,
-			bus_lock_1_in => hibi_wrapper_r4_1_bus_mSlave_to_hibi_orbus_0_slave_1LOCK,
-			bus_lock_2_in => hibi_wrapper_r4_2_bus_mSlave_to_hibi_orbus_0_slave_2LOCK,
-			bus_lock_3_in => hibi_wrapper_r4_3_bus_mSlave_to_hibi_orbus_0_slave_3LOCK,
-			bus_lock_out => hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterLOCK
+			bus_av_0_in => hibi_orbus_6p_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveAV,
+			bus_av_1_in => hibi_orbus_6p_0_slave_1_to_hibi_wrapper_r4_1_bus_mSlaveAV,
+			bus_av_2_in => hibi_orbus_6p_0_slave_2_to_hibi_wrapper_r4_2_bus_mSlaveAV,
+			bus_av_3_in => hibi_orbus_6p_0_slave_3_to_hibi_wrapper_r4_3_bus_mSlaveAV,
+			bus_av_out => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterAV,
+			bus_comm_0_in(4 downto 0) => hibi_orbus_6p_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveCOMM(4 downto 0),
+			bus_comm_1_in(4 downto 0) => hibi_orbus_6p_0_slave_1_to_hibi_wrapper_r4_1_bus_mSlaveCOMM(4 downto 0),
+			bus_comm_2_in(4 downto 0) => hibi_orbus_6p_0_slave_2_to_hibi_wrapper_r4_2_bus_mSlaveCOMM(4 downto 0),
+			bus_comm_3_in(4 downto 0) => hibi_orbus_6p_0_slave_3_to_hibi_wrapper_r4_3_bus_mSlaveCOMM(4 downto 0),
+			bus_comm_out(4 downto 0) => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterCOMM(4 downto 0),
+			bus_data_0_in(31 downto 0) => hibi_orbus_6p_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveDATA(31 downto 0),
+			bus_data_1_in(31 downto 0) => hibi_orbus_6p_0_slave_1_to_hibi_wrapper_r4_1_bus_mSlaveDATA(31 downto 0),
+			bus_data_2_in(31 downto 0) => hibi_orbus_6p_0_slave_2_to_hibi_wrapper_r4_2_bus_mSlaveDATA(31 downto 0),
+			bus_data_3_in(31 downto 0) => hibi_orbus_6p_0_slave_3_to_hibi_wrapper_r4_3_bus_mSlaveDATA(31 downto 0),
+			bus_data_out(31 downto 0) => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterDATA(31 downto 0),
+			bus_full_0_in => hibi_orbus_6p_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveFULL,
+			bus_full_1_in => hibi_orbus_6p_0_slave_1_to_hibi_wrapper_r4_1_bus_mSlaveFULL,
+			bus_full_2_in => hibi_orbus_6p_0_slave_2_to_hibi_wrapper_r4_2_bus_mSlaveFULL,
+			bus_full_3_in => hibi_orbus_6p_0_slave_3_to_hibi_wrapper_r4_3_bus_mSlaveFULL,
+			bus_full_out => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterFULL,
+			bus_lock_0_in => hibi_orbus_6p_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveLOCK,
+			bus_lock_1_in => hibi_orbus_6p_0_slave_1_to_hibi_wrapper_r4_1_bus_mSlaveLOCK,
+			bus_lock_2_in => hibi_orbus_6p_0_slave_2_to_hibi_wrapper_r4_2_bus_mSlaveLOCK,
+			bus_lock_3_in => hibi_orbus_6p_0_slave_3_to_hibi_wrapper_r4_3_bus_mSlaveLOCK,
+			bus_lock_out => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterLOCK
 		);
 
 	hibi_wrapper_r4_0 : hibi_wrapper_r4
@@ -364,19 +407,18 @@ begin
 			agent_re_in => agent_re_in,
 			agent_sync_clk => agent_sync_clk,
 			agent_we_in => agent_we_in,
-			bus_av_in => hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterAV,
-			bus_av_out => hibi_orbus_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveAV,
+			bus_av_in => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterAV,
+			bus_av_out => hibi_orbus_6p_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveAV,
 			bus_clk => bus_clk,
-			bus_comm_in(4 downto 0) => hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterCOMM(4 downto 0),
-			bus_comm_out(4 downto 0) => hibi_orbus_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveCOMM(4 downto 0),
-			bus_data_in(31 downto 0) => hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterDATA(31 downto 0),
-			bus_data_out(31 downto 0) => hibi_orbus_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveDATA(31 downto 0),
-			bus_full_in => hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterFULL,
-			bus_full_out => hibi_orbus_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveFULL,
-			bus_lock_in => hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterLOCK,
-			bus_lock_out => hibi_orbus_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveLOCK,
+			bus_comm_in(4 downto 0) => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterCOMM(4 downto 0),
+			bus_comm_out(4 downto 0) => hibi_orbus_6p_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveCOMM(4 downto 0),
+			bus_data_in(31 downto 0) => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterDATA(31 downto 0),
+			bus_data_out(31 downto 0) => hibi_orbus_6p_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveDATA(31 downto 0),
+			bus_full_in => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterFULL,
+			bus_full_out => hibi_orbus_6p_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveFULL,
+			bus_lock_in => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterLOCK,
+			bus_lock_out => hibi_orbus_6p_0_slave_0_to_hibi_wrapper_r4_0_bus_mSlaveLOCK,
 			bus_sync_clk => bus_sync_clk,
-			--debug_in => (others => '0'),
 			rst_n => rst_n
 		);
 
@@ -400,19 +442,18 @@ begin
 			agent_re_in => agent_re_in_1,
 			agent_sync_clk => agent_sync_clk_1,
 			agent_we_in => agent_we_in_1,
-			bus_av_in => hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterAV,
-			bus_av_out => hibi_wrapper_r4_1_bus_mSlave_to_hibi_orbus_0_slave_1AV,
+			bus_av_in => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterAV,
+			bus_av_out => hibi_orbus_6p_0_slave_1_to_hibi_wrapper_r4_1_bus_mSlaveAV,
 			bus_clk => bus_clk_1,
-			bus_comm_in(4 downto 0) => hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterCOMM(4 downto 0),
-			bus_comm_out(4 downto 0) => hibi_wrapper_r4_1_bus_mSlave_to_hibi_orbus_0_slave_1COMM(4 downto 0),
-			bus_data_in(31 downto 0) => hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterDATA(31 downto 0),
-			bus_data_out(31 downto 0) => hibi_wrapper_r4_1_bus_mSlave_to_hibi_orbus_0_slave_1DATA(31 downto 0),
-			bus_full_in => hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterFULL,
-			bus_full_out => hibi_wrapper_r4_1_bus_mSlave_to_hibi_orbus_0_slave_1FULL,
-			bus_lock_in => hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterLOCK,
-			bus_lock_out => hibi_wrapper_r4_1_bus_mSlave_to_hibi_orbus_0_slave_1LOCK,
+			bus_comm_in(4 downto 0) => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterCOMM(4 downto 0),
+			bus_comm_out(4 downto 0) => hibi_orbus_6p_0_slave_1_to_hibi_wrapper_r4_1_bus_mSlaveCOMM(4 downto 0),
+			bus_data_in(31 downto 0) => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterDATA(31 downto 0),
+			bus_data_out(31 downto 0) => hibi_orbus_6p_0_slave_1_to_hibi_wrapper_r4_1_bus_mSlaveDATA(31 downto 0),
+			bus_full_in => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterFULL,
+			bus_full_out => hibi_orbus_6p_0_slave_1_to_hibi_wrapper_r4_1_bus_mSlaveFULL,
+			bus_lock_in => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterLOCK,
+			bus_lock_out => hibi_orbus_6p_0_slave_1_to_hibi_wrapper_r4_1_bus_mSlaveLOCK,
 			bus_sync_clk => bus_sync_clk_1,
-			--debug_in => (others => '0'),
 			rst_n => rst_n
 		);
 
@@ -436,19 +477,18 @@ begin
 			agent_re_in => agent_re_in_2,
 			agent_sync_clk => agent_sync_clk_2,
 			agent_we_in => agent_we_in_2,
-			bus_av_in => hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterAV,
-			bus_av_out => hibi_wrapper_r4_2_bus_mSlave_to_hibi_orbus_0_slave_2AV,
+			bus_av_in => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterAV,
+			bus_av_out => hibi_orbus_6p_0_slave_2_to_hibi_wrapper_r4_2_bus_mSlaveAV,
 			bus_clk => bus_clk_2,
-			bus_comm_in(4 downto 0) => hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterCOMM(4 downto 0),
-			bus_comm_out(4 downto 0) => hibi_wrapper_r4_2_bus_mSlave_to_hibi_orbus_0_slave_2COMM(4 downto 0),
-			bus_data_in(31 downto 0) => hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterDATA(31 downto 0),
-			bus_data_out(31 downto 0) => hibi_wrapper_r4_2_bus_mSlave_to_hibi_orbus_0_slave_2DATA(31 downto 0),
-			bus_full_in => hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterFULL,
-			bus_full_out => hibi_wrapper_r4_2_bus_mSlave_to_hibi_orbus_0_slave_2FULL,
-			bus_lock_in => hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterLOCK,
-			bus_lock_out => hibi_wrapper_r4_2_bus_mSlave_to_hibi_orbus_0_slave_2LOCK,
+			bus_comm_in(4 downto 0) => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterCOMM(4 downto 0),
+			bus_comm_out(4 downto 0) => hibi_orbus_6p_0_slave_2_to_hibi_wrapper_r4_2_bus_mSlaveCOMM(4 downto 0),
+			bus_data_in(31 downto 0) => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterDATA(31 downto 0),
+			bus_data_out(31 downto 0) => hibi_orbus_6p_0_slave_2_to_hibi_wrapper_r4_2_bus_mSlaveDATA(31 downto 0),
+			bus_full_in => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterFULL,
+			bus_full_out => hibi_orbus_6p_0_slave_2_to_hibi_wrapper_r4_2_bus_mSlaveFULL,
+			bus_lock_in => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterLOCK,
+			bus_lock_out => hibi_orbus_6p_0_slave_2_to_hibi_wrapper_r4_2_bus_mSlaveLOCK,
 			bus_sync_clk => bus_sync_clk_2,
-			--debug_in => (others => '0'),
 			rst_n => rst_n
 		);
 
@@ -472,19 +512,70 @@ begin
 			agent_re_in => agent_re_in_3,
 			agent_sync_clk => agent_sync_clk_3,
 			agent_we_in => agent_we_in_3,
-			bus_av_in => hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterAV,
-			bus_av_out => hibi_wrapper_r4_3_bus_mSlave_to_hibi_orbus_0_slave_3AV,
+			bus_av_in => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterAV,
+			bus_av_out => hibi_orbus_6p_0_slave_3_to_hibi_wrapper_r4_3_bus_mSlaveAV,
 			bus_clk => bus_clk_3,
-			bus_comm_in(4 downto 0) => hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterCOMM(4 downto 0),
-			bus_comm_out(4 downto 0) => hibi_wrapper_r4_3_bus_mSlave_to_hibi_orbus_0_slave_3COMM(4 downto 0),
-			bus_data_in(31 downto 0) => hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterDATA(31 downto 0),
-			bus_data_out(31 downto 0) => hibi_wrapper_r4_3_bus_mSlave_to_hibi_orbus_0_slave_3DATA(31 downto 0),
-			bus_full_in => hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterFULL,
-			bus_full_out => hibi_wrapper_r4_3_bus_mSlave_to_hibi_orbus_0_slave_3FULL,
-			bus_lock_in => hibi_wrapper_r4_2_bus_mMaster_to_hibi_orbus_0_masterLOCK,
-			bus_lock_out => hibi_wrapper_r4_3_bus_mSlave_to_hibi_orbus_0_slave_3LOCK,
+			bus_comm_in(4 downto 0) => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterCOMM(4 downto 0),
+			bus_comm_out(4 downto 0) => hibi_orbus_6p_0_slave_3_to_hibi_wrapper_r4_3_bus_mSlaveCOMM(4 downto 0),
+			bus_data_in(31 downto 0) => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterDATA(31 downto 0),
+			bus_data_out(31 downto 0) => hibi_orbus_6p_0_slave_3_to_hibi_wrapper_r4_3_bus_mSlaveDATA(31 downto 0),
+			bus_full_in => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterFULL,
+			bus_full_out => hibi_orbus_6p_0_slave_3_to_hibi_wrapper_r4_3_bus_mSlaveFULL,
+			bus_lock_in => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterLOCK,
+			bus_lock_out => hibi_orbus_6p_0_slave_3_to_hibi_wrapper_r4_3_bus_mSlaveLOCK,
 			bus_sync_clk => bus_sync_clk_3,
-			--debug_in => (others => '0'),
+			rst_n => rst_n
+		);
+
+	hibi_wrapper_r4_4 : hibi_wrapper_r4
+		port map (
+			agent_av_in => agent_av_in_4,
+			agent_av_out => agent_av_out_4,
+			agent_clk => agent_clk_4,
+			agent_comm_in(4 downto 0) => agent_comm_in_4(4 downto 0),
+			agent_comm_out(4 downto 0) => agent_comm_out_4(4 downto 0),
+			agent_data_in(31 downto 0) => agent_data_in_4(31 downto 0),
+			agent_data_out(31 downto 0) => agent_data_out_4(31 downto 0),
+			agent_empty_out => agent_empty_out_4,
+			agent_full_out => agent_full_out_4,
+			agent_one_d_out => agent_one_d_out_4,
+			agent_one_p_out => agent_one_p_out_4,
+			agent_re_in => agent_re_in_4,
+			agent_sync_clk => agent_sync_clk_4,
+			agent_we_in => agent_we_in_4,
+			bus_av_in => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterAV,
+			bus_clk => bus_clk_4,
+			bus_comm_in(4 downto 0) => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterCOMM(4 downto 0),
+			bus_data_in(31 downto 0) => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterDATA(31 downto 0),
+			bus_full_in => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterFULL,
+			bus_lock_in => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterLOCK,
+			bus_sync_clk => bus_sync_clk_4,
+			rst_n => rst_n
+		);
+
+	hibi_wrapper_r4_5 : hibi_wrapper_r4
+		port map (
+			agent_av_in => agent_av_in_5,
+			agent_av_out => agent_av_out_5,
+			agent_clk => agent_clk_5,
+			agent_comm_in(4 downto 0) => agent_comm_in_5(4 downto 0),
+			agent_comm_out(4 downto 0) => agent_comm_out_5(4 downto 0),
+			agent_data_in(31 downto 0) => agent_data_in_5(31 downto 0),
+			agent_data_out(31 downto 0) => agent_data_out_5(31 downto 0),
+			agent_empty_out => agent_empty_out_5,
+			agent_full_out => agent_full_out_5,
+			agent_one_d_out => agent_one_d_out_5,
+			agent_one_p_out => agent_one_p_out_5,
+			agent_re_in => agent_re_in_5,
+			agent_sync_clk => agent_sync_clk_5,
+			agent_we_in => agent_we_in_5,
+			bus_av_in => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterAV,
+			bus_clk => bus_clk_5,
+			bus_comm_in(4 downto 0) => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterCOMM(4 downto 0),
+			bus_data_in(31 downto 0) => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterDATA(31 downto 0),
+			bus_full_in => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterFULL,
+			bus_lock_in => hibi_orbus_6p_0_master_to_hibi_wrapper_r4_5_bus_mMasterLOCK,
+			bus_sync_clk => bus_sync_clk_5,
 			rst_n => rst_n
 		);
 
