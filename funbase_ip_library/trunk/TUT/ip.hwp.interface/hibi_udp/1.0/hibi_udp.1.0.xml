@@ -426,7 +426,7 @@
 				<spirit:name>structural_vhd</spirit:name>
 				<spirit:envIdentifier>VHDL:Kactus2:</spirit:envIdentifier>
 				<spirit:language spirit:strict="false">vhdl</spirit:language>
-				<spirit:modelName>hibi_udp(structural)</spirit:modelName>
+				<spirit:modelName>hibi_udp</spirit:modelName>
 				<spirit:fileSetRef>
 					<spirit:localName>structural_vhdlSource</spirit:localName>
 				</spirit:fileSetRef>
