@@ -600,6 +600,9 @@ Outputs:
 						<spirit:left>0</spirit:left>
 						<spirit:right>0</spirit:right>
 					</spirit:vector>
+					<spirit:driver>
+						<spirit:defaultValue>'0'</spirit:defaultValue>
+					</spirit:driver>
 				</spirit:wire>
 				<spirit:vendorExtensions/>
 			</spirit:port>
@@ -607,6 +610,9 @@ Outputs:
 				<spirit:name>clk</spirit:name>
 				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
 					<spirit:direction>in</spirit:direction>
+					<spirit:driver>
+						<spirit:defaultValue>'0'</spirit:defaultValue>
+					</spirit:driver>
 				</spirit:wire>
 				<spirit:vendorExtensions/>
 			</spirit:port>
@@ -629,6 +635,9 @@ Outputs:
 						<spirit:left>8</spirit:left>
 						<spirit:right>0</spirit:right>
 					</spirit:vector>
+					<spirit:driver>
+						<spirit:defaultValue>(others =&gt; '0')</spirit:defaultValue>
+					</spirit:driver>
 				</spirit:wire>
 				<spirit:vendorExtensions/>
 			</spirit:port>
@@ -640,6 +649,9 @@ Outputs:
 						<spirit:left>7</spirit:left>
 						<spirit:right>0</spirit:right>
 					</spirit:vector>
+					<spirit:driver>
+						<spirit:defaultValue>(others =&gt; '0')</spirit:defaultValue>
+					</spirit:driver>
 				</spirit:wire>
 				<spirit:vendorExtensions/>
 			</spirit:port>
@@ -647,6 +659,9 @@ Outputs:
 				<spirit:name>dct_ready4col_in</spirit:name>
 				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
 					<spirit:direction>in</spirit:direction>
+					<spirit:driver>
+						<spirit:defaultValue>'0'</spirit:defaultValue>
+					</spirit:driver>
 				</spirit:wire>
 				<spirit:vendorExtensions/>
 			</spirit:port>
@@ -665,6 +680,9 @@ Outputs:
 				<spirit:name>hibi_av_in</spirit:name>
 				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
 					<spirit:direction>in</spirit:direction>
+					<spirit:driver>
+						<spirit:defaultValue>'0'</spirit:defaultValue>
+					</spirit:driver>
 				</spirit:wire>
 				<spirit:vendorExtensions/>
 			</spirit:port>
@@ -684,7 +702,7 @@ Outputs:
 						<spirit:right>0</spirit:right>
 					</spirit:vector>
 					<spirit:driver>
-						<spirit:defaultValue>&quot;000&quot;</spirit:defaultValue>
+						<spirit:defaultValue>(others =&gt; '0')</spirit:defaultValue>
 					</spirit:driver>
 				</spirit:wire>
 				<spirit:vendorExtensions/>
@@ -740,7 +758,7 @@ Outputs:
 				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
 					<spirit:direction>in</spirit:direction>
 					<spirit:driver>
-						<spirit:defaultValue>0</spirit:defaultValue>
+						<spirit:defaultValue>'0'</spirit:defaultValue>
 					</spirit:driver>
 				</spirit:wire>
 				<spirit:vendorExtensions/>
@@ -799,6 +817,9 @@ Outputs:
 				<spirit:name>rst_n</spirit:name>
 				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
 					<spirit:direction>in</spirit:direction>
+					<spirit:driver>
+						<spirit:defaultValue>'0'</spirit:defaultValue>
+					</spirit:driver>
 				</spirit:wire>
 				<spirit:vendorExtensions/>
 			</spirit:port>
@@ -821,6 +842,9 @@ Outputs:
 						<spirit:left>0</spirit:left>
 						<spirit:right>0</spirit:right>
 					</spirit:vector>
+					<spirit:driver>
+						<spirit:defaultValue>'0'</spirit:defaultValue>
+					</spirit:driver>
 				</spirit:wire>
 				<spirit:vendorExtensions/>
 			</spirit:port>
@@ -832,6 +856,9 @@ Outputs:
 						<spirit:left>0</spirit:left>
 						<spirit:right>0</spirit:right>
 					</spirit:vector>
+					<spirit:driver>
+						<spirit:defaultValue>'0'</spirit:defaultValue>
+					</spirit:driver>
 				</spirit:wire>
 				<spirit:vendorExtensions/>
 			</spirit:port>

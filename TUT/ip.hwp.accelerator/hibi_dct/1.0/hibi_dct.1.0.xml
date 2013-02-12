@@ -74,86 +74,22 @@ Outputs:
 			<spirit:endianness>little</spirit:endianness>
 		</spirit:busInterface>
 		<spirit:busInterface>
-			<spirit:name>hibi_master</spirit:name>
-			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.busdef" spirit:version="3.0"/>
-			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.absdef" spirit:version="3.0"/>
-			<spirit:master/>
+			<spirit:name>clk</spirit:name>
+			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="clock.busdef" spirit:version="1.0"/>
+			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="clock.absDef" spirit:version="1.0"/>
+			<spirit:slave/>
 			<spirit:connectionRequired>false</spirit:connectionRequired>
 			<spirit:portMaps>
 				<spirit:portMap>
 					<spirit:logicalPort>
-						<spirit:name>AV</spirit:name>
+						<spirit:name>CLK</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>hibi_av_out</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>COMM</spirit:name>
-						<spirit:vector>
-							<spirit:left>4</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>hibi_comm_out</spirit:name>
-						<spirit:vector>
-							<spirit:left>4</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>DATA</spirit:name>
-						<spirit:vector>
-							<spirit:left>31</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>hibi_data_out</spirit:name>
-						<spirit:vector>
-							<spirit:left>31</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>RE</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>hibi_re_out</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>WE</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>hibi_we_out</spirit:name>
+						<spirit:name>clk</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -256,22 +192,86 @@ Outputs:
 			<spirit:endianness>little</spirit:endianness>
 		</spirit:busInterface>
 		<spirit:busInterface>
-			<spirit:name>clk</spirit:name>
-			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="clock.busdef" spirit:version="1.0"/>
-			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="clock.absDef" spirit:version="1.0"/>
-			<spirit:slave/>
+			<spirit:name>hibi_master</spirit:name>
+			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.busdef" spirit:version="3.0"/>
+			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.absdef" spirit:version="3.0"/>
+			<spirit:master/>
 			<spirit:connectionRequired>false</spirit:connectionRequired>
 			<spirit:portMaps>
 				<spirit:portMap>
 					<spirit:logicalPort>
-						<spirit:name>CLK</spirit:name>
+						<spirit:name>AV</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>clk</spirit:name>
+						<spirit:name>hibi_av_out</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>COMM</spirit:name>
+						<spirit:vector>
+							<spirit:left>4</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>hibi_comm_out</spirit:name>
+						<spirit:vector>
+							<spirit:left>4</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>DATA</spirit:name>
+						<spirit:vector>
+							<spirit:left>31</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>hibi_data_out</spirit:name>
+						<spirit:vector>
+							<spirit:left>31</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>RE</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>hibi_re_out</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>WE</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>hibi_we_out</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -289,6 +289,18 @@ Outputs:
 				<spirit:name>structural</spirit:name>
 				<spirit:envIdentifier>::</spirit:envIdentifier>
 				<spirit:hierarchyRef spirit:vendor="TUT" spirit:library="ip.hwp.accelerator" spirit:name="hibi_dct.designcfg" spirit:version="1.0"/>
+				<spirit:vendorExtensions>
+					<kactus2:topLevelViewRef>structural_vhd</kactus2:topLevelViewRef>
+				</spirit:vendorExtensions>
+			</spirit:view>
+			<spirit:view>
+				<spirit:name>structural_vhd</spirit:name>
+				<spirit:envIdentifier>VHDL:Kactus2:</spirit:envIdentifier>
+				<spirit:language spirit:strict="false">vhdl</spirit:language>
+				<spirit:modelName>hibi_dct</spirit:modelName>
+				<spirit:fileSetRef>
+					<spirit:localName>structural_vhdlSource</spirit:localName>
+				</spirit:fileSetRef>
 			</spirit:view>
 		</spirit:views>
 		<spirit:ports>
@@ -414,6 +426,41 @@ Outputs:
 			</spirit:port>
 		</spirit:ports>
 	</spirit:model>
+	<spirit:fileSets>
+		<spirit:fileSet>
+			<spirit:name>structural_vhdlSource</spirit:name>
+			<spirit:group>sourceFiles</spirit:group>
+			<spirit:file>
+				<spirit:name>vhd/hibi_dct.vhd</spirit:name>
+				<spirit:fileType>vhdlSource</spirit:fileType>
+				<spirit:isIncludeFile spirit:externalDeclarations="false">true</spirit:isIncludeFile>
+				<spirit:logicalName spirit:default="false">work</spirit:logicalName>
+				<spirit:buildCommand>
+					<spirit:command>vcom</spirit:command>
+					<spirit:flags>-quiet -check_synthesis -work work</spirit:flags>
+					<spirit:replaceDefaultFlags>true</spirit:replaceDefaultFlags>
+				</spirit:buildCommand>
+			</spirit:file>
+			<spirit:defaultFileBuilder>
+				<spirit:fileType>vhdlSource</spirit:fileType>
+				<spirit:command>vcom</spirit:command>
+				<spirit:flags>-quiet -check_synthesis -work work</spirit:flags>
+				<spirit:replaceDefaultFlags>true</spirit:replaceDefaultFlags>
+			</spirit:defaultFileBuilder>
+			<spirit:defaultFileBuilder>
+				<spirit:fileType>vhdlSource-87</spirit:fileType>
+				<spirit:command>vcom</spirit:command>
+				<spirit:flags>-quiet -check_synthesis -work work</spirit:flags>
+				<spirit:replaceDefaultFlags>true</spirit:replaceDefaultFlags>
+			</spirit:defaultFileBuilder>
+			<spirit:defaultFileBuilder>
+				<spirit:fileType>vhdlSource-93</spirit:fileType>
+				<spirit:command>vcom</spirit:command>
+				<spirit:flags>-quiet -check_synthesis -work work</spirit:flags>
+				<spirit:replaceDefaultFlags>true</spirit:replaceDefaultFlags>
+			</spirit:defaultFileBuilder>
+		</spirit:fileSet>
+	</spirit:fileSets>
 	<spirit:vendorExtensions>
 		<kactus2:extensions>
 			<kactus2:kts_attributes>
