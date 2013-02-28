@@ -482,8 +482,92 @@
 			<spirit:description>HIBI bus &lt;---&gt; wrapper slave interface</spirit:description>
 			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_bus.busdef" spirit:version="3.0"/>
 			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_bus.absdef" spirit:version="3.0"/>
-			<spirit:slave/>
+			<spirit:slave>
+				<spirit:bridge spirit:masterRef="master" spirit:opaque="false"/>
+			</spirit:slave>
 			<spirit:connectionRequired>false</spirit:connectionRequired>
+			<spirit:portMaps>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>AV</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>bus_av_4_in</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>COMM</spirit:name>
+						<spirit:vector>
+							<spirit:left>4</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>bus_comm_4_in</spirit:name>
+						<spirit:vector>
+							<spirit:left>4</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>DATA</spirit:name>
+						<spirit:vector>
+							<spirit:left>31</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>bus_data_4_in</spirit:name>
+						<spirit:vector>
+							<spirit:left>31</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>FULL</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>bus_full_4_in</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>LOCK</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>bus_lock_4_in</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+			</spirit:portMaps>
 			<spirit:bitsInLau>8</spirit:bitsInLau>
 			<spirit:endianness>little</spirit:endianness>
 		</spirit:busInterface>
@@ -492,8 +576,92 @@
 			<spirit:description>HIBI bus &lt;---&gt; wrapper slave interface</spirit:description>
 			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_bus.busdef" spirit:version="3.0"/>
 			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_bus.absdef" spirit:version="3.0"/>
-			<spirit:slave/>
+			<spirit:slave>
+				<spirit:bridge spirit:masterRef="master" spirit:opaque="false"/>
+			</spirit:slave>
 			<spirit:connectionRequired>false</spirit:connectionRequired>
+			<spirit:portMaps>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>AV</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>bus_av_5_in</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>COMM</spirit:name>
+						<spirit:vector>
+							<spirit:left>4</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>bus_comm_5_in</spirit:name>
+						<spirit:vector>
+							<spirit:left>4</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>DATA</spirit:name>
+						<spirit:vector>
+							<spirit:left>31</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>bus_data_5_in</spirit:name>
+						<spirit:vector>
+							<spirit:left>31</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>FULL</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>bus_full_5_in</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>LOCK</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>bus_lock_5_in</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+			</spirit:portMaps>
 			<spirit:bitsInLau>8</spirit:bitsInLau>
 			<spirit:endianness>little</spirit:endianness>
 		</spirit:busInterface>
@@ -810,6 +978,142 @@
 						<spirit:left>0</spirit:left>
 						<spirit:right>0</spirit:right>
 					</spirit:vector>
+				</spirit:wire>
+				<spirit:vendorExtensions/>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>bus_lock_4_in</spirit:name>
+				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
+					<spirit:direction>in</spirit:direction>
+					<spirit:driver>
+						<spirit:defaultValue>'0'</spirit:defaultValue>
+					</spirit:driver>
+				</spirit:wire>
+				<spirit:vendorExtensions/>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>bus_lock_5_in</spirit:name>
+				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
+					<spirit:direction>in</spirit:direction>
+					<spirit:vector>
+						<spirit:left>0</spirit:left>
+						<spirit:right>0</spirit:right>
+					</spirit:vector>
+					<spirit:driver>
+						<spirit:defaultValue>'0'</spirit:defaultValue>
+					</spirit:driver>
+				</spirit:wire>
+				<spirit:vendorExtensions/>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>bus_full_4_in</spirit:name>
+				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
+					<spirit:direction>in</spirit:direction>
+					<spirit:vector>
+						<spirit:left>0</spirit:left>
+						<spirit:right>0</spirit:right>
+					</spirit:vector>
+					<spirit:driver>
+						<spirit:defaultValue>'0'</spirit:defaultValue>
+					</spirit:driver>
+				</spirit:wire>
+				<spirit:vendorExtensions/>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>bus_full_5_in</spirit:name>
+				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
+					<spirit:direction>in</spirit:direction>
+					<spirit:vector>
+						<spirit:left>0</spirit:left>
+						<spirit:right>0</spirit:right>
+					</spirit:vector>
+					<spirit:driver>
+						<spirit:defaultValue>'0'</spirit:defaultValue>
+					</spirit:driver>
+				</spirit:wire>
+				<spirit:vendorExtensions/>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>bus_data_4_in</spirit:name>
+				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
+					<spirit:direction>in</spirit:direction>
+					<spirit:vector>
+						<spirit:left>31</spirit:left>
+						<spirit:right>0</spirit:right>
+					</spirit:vector>
+					<spirit:driver>
+						<spirit:defaultValue>(others =&gt; '0')</spirit:defaultValue>
+					</spirit:driver>
+				</spirit:wire>
+				<spirit:vendorExtensions/>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>bus_data_5_in</spirit:name>
+				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
+					<spirit:direction>in</spirit:direction>
+					<spirit:vector>
+						<spirit:left>31</spirit:left>
+						<spirit:right>0</spirit:right>
+					</spirit:vector>
+					<spirit:driver>
+						<spirit:defaultValue>(others =&gt; '0')</spirit:defaultValue>
+					</spirit:driver>
+				</spirit:wire>
+				<spirit:vendorExtensions/>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>bus_comm_4_in</spirit:name>
+				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
+					<spirit:direction>in</spirit:direction>
+					<spirit:vector>
+						<spirit:left>4</spirit:left>
+						<spirit:right>0</spirit:right>
+					</spirit:vector>
+					<spirit:driver>
+						<spirit:defaultValue>(others =&gt; '0')</spirit:defaultValue>
+					</spirit:driver>
+				</spirit:wire>
+				<spirit:vendorExtensions/>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>bus_comm_5_in</spirit:name>
+				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
+					<spirit:direction>in</spirit:direction>
+					<spirit:vector>
+						<spirit:left>4</spirit:left>
+						<spirit:right>0</spirit:right>
+					</spirit:vector>
+					<spirit:driver>
+						<spirit:defaultValue>(others =&gt; '0')</spirit:defaultValue>
+					</spirit:driver>
+				</spirit:wire>
+				<spirit:vendorExtensions/>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>bus_av_4_in</spirit:name>
+				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
+					<spirit:direction>in</spirit:direction>
+					<spirit:vector>
+						<spirit:left>0</spirit:left>
+						<spirit:right>0</spirit:right>
+					</spirit:vector>
+					<spirit:driver>
+						<spirit:defaultValue>'0'</spirit:defaultValue>
+					</spirit:driver>
+				</spirit:wire>
+				<spirit:vendorExtensions/>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>bus_av_5_in</spirit:name>
+				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
+					<spirit:direction>in</spirit:direction>
+					<spirit:vector>
+						<spirit:left>0</spirit:left>
+						<spirit:right>0</spirit:right>
+					</spirit:vector>
+					<spirit:driver>
+						<spirit:defaultValue>'0'</spirit:defaultValue>
+					</spirit:driver>
 				</spirit:wire>
 				<spirit:vendorExtensions/>
 			</spirit:port>
