@@ -1792,6 +1792,8 @@
 			<spirit:busInterfaceRef>ip_mSlave_2</spirit:busInterfaceRef>
 			<spirit:busInterfaceRef>ip_mSlave_1</spirit:busInterfaceRef>
 			<spirit:busInterfaceRef>ip_mSlave_0</spirit:busInterfaceRef>
+			<spirit:busInterfaceRef>ip_mSlave_4</spirit:busInterfaceRef>
+			<spirit:busInterfaceRef>ip_mSlave_5</spirit:busInterfaceRef>
 		</spirit:channel>
 		<spirit:channel>
 			<spirit:name>HIBI_channel_1</spirit:name>
@@ -1800,6 +1802,8 @@
 			<spirit:busInterfaceRef>ip_mSlave_2</spirit:busInterfaceRef>
 			<spirit:busInterfaceRef>ip_mSlave_1</spirit:busInterfaceRef>
 			<spirit:busInterfaceRef>ip_mSlave_0</spirit:busInterfaceRef>
+			<spirit:busInterfaceRef>ip_mSlave_4</spirit:busInterfaceRef>
+			<spirit:busInterfaceRef>ip_mSlave_5</spirit:busInterfaceRef>
 		</spirit:channel>
 		<spirit:channel>
 			<spirit:name>HIBI_channel_2</spirit:name>
@@ -1808,6 +1812,8 @@
 			<spirit:busInterfaceRef>ip_mSlave_2</spirit:busInterfaceRef>
 			<spirit:busInterfaceRef>ip_mSlave_1</spirit:busInterfaceRef>
 			<spirit:busInterfaceRef>ip_mSlave_0</spirit:busInterfaceRef>
+			<spirit:busInterfaceRef>ip_mSlave_4</spirit:busInterfaceRef>
+			<spirit:busInterfaceRef>ip_mSlave_5</spirit:busInterfaceRef>
 		</spirit:channel>
 		<spirit:channel>
 			<spirit:name>HIBI_channel_3</spirit:name>
@@ -1816,6 +1822,28 @@
 			<spirit:busInterfaceRef>ip_mSlave_2</spirit:busInterfaceRef>
 			<spirit:busInterfaceRef>ip_mSlave_1</spirit:busInterfaceRef>
 			<spirit:busInterfaceRef>ip_mSlave_0</spirit:busInterfaceRef>
+			<spirit:busInterfaceRef>ip_mSlave_4</spirit:busInterfaceRef>
+			<spirit:busInterfaceRef>ip_mSlave_5</spirit:busInterfaceRef>
+		</spirit:channel>
+		<spirit:channel>
+			<spirit:name>HIBI_channel_4</spirit:name>
+			<spirit:busInterfaceRef>ip_mMaster_4</spirit:busInterfaceRef>
+			<spirit:busInterfaceRef>ip_mSlave_3</spirit:busInterfaceRef>
+			<spirit:busInterfaceRef>ip_mSlave_2</spirit:busInterfaceRef>
+			<spirit:busInterfaceRef>ip_mSlave_1</spirit:busInterfaceRef>
+			<spirit:busInterfaceRef>ip_mSlave_0</spirit:busInterfaceRef>
+			<spirit:busInterfaceRef>ip_mSlave_4</spirit:busInterfaceRef>
+			<spirit:busInterfaceRef>ip_mSlave_5</spirit:busInterfaceRef>
+		</spirit:channel>
+		<spirit:channel>
+			<spirit:name>HIBI_channel_5</spirit:name>
+			<spirit:busInterfaceRef>ip_mMaster_5</spirit:busInterfaceRef>
+			<spirit:busInterfaceRef>ip_mSlave_3</spirit:busInterfaceRef>
+			<spirit:busInterfaceRef>ip_mSlave_2</spirit:busInterfaceRef>
+			<spirit:busInterfaceRef>ip_mSlave_1</spirit:busInterfaceRef>
+			<spirit:busInterfaceRef>ip_mSlave_0</spirit:busInterfaceRef>
+			<spirit:busInterfaceRef>ip_mSlave_4</spirit:busInterfaceRef>
+			<spirit:busInterfaceRef>ip_mSlave_5</spirit:busInterfaceRef>
 		</spirit:channel>
 	</spirit:channels>
 	<spirit:model>
@@ -3001,6 +3029,26 @@
 				<spirit:name>ip_mslave_3_addr_end</spirit:name>
 				<spirit:description>HIBI end address for interface 3</spirit:description>
 				<spirit:value>8</spirit:value>
+			</spirit:modelParameter>
+			<spirit:modelParameter spirit:dataType="integer" spirit:usageType="nontyped">
+				<spirit:name>ip_mslave_4_addr_start</spirit:name>
+				<spirit:description>HIBI address for interface 3</spirit:description>
+				<spirit:value>9</spirit:value>
+			</spirit:modelParameter>
+			<spirit:modelParameter spirit:dataType="integer" spirit:usageType="nontyped">
+				<spirit:name>ip_mslave_4_addr_end</spirit:name>
+				<spirit:description>HIBI end address for interface 3</spirit:description>
+				<spirit:value>10</spirit:value>
+			</spirit:modelParameter>
+			<spirit:modelParameter spirit:dataType="integer" spirit:usageType="nontyped">
+				<spirit:name>ip_mslave_5_addr_end</spirit:name>
+				<spirit:description>HIBI end address for interface 3</spirit:description>
+				<spirit:value>12</spirit:value>
+			</spirit:modelParameter>
+			<spirit:modelParameter spirit:dataType="integer" spirit:usageType="nontyped">
+				<spirit:name>ip_mslave_5_addr_start</spirit:name>
+				<spirit:description>HIBI address for interface 3</spirit:description>
+				<spirit:value>11</spirit:value>
 			</spirit:modelParameter>
 		</spirit:modelParameters>
 	</spirit:model>
