@@ -10,7 +10,8 @@
 	<spirit:version>3.0</spirit:version>
 	<spirit:busInterfaces>
 		<spirit:busInterface>
-			<spirit:name>ip_mSlave_5</spirit:name>
+			<spirit:name>ip_mSlave_3</spirit:name>
+			<spirit:description>HIBI ip mirrored slave agent interface_3 (r4 wrapper)</spirit:description>
 			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.busdef" spirit:version="3.0"/>
 			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.absdef" spirit:version="3.0"/>
 			<spirit:mirroredSlave/>
@@ -25,7 +26,7 @@
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>agent_av_out_5</spirit:name>
+						<spirit:name>agent_av_out_3</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -41,7 +42,7 @@
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>agent_comm_out_5</spirit:name>
+						<spirit:name>agent_comm_out_3</spirit:name>
 						<spirit:vector>
 							<spirit:left>4</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -57,7 +58,7 @@
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>agent_data_out_5</spirit:name>
+						<spirit:name>agent_data_out_3</spirit:name>
 						<spirit:vector>
 							<spirit:left>31</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -73,7 +74,7 @@
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>agent_empty_out_5</spirit:name>
+						<spirit:name>agent_empty_out_3</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -89,7 +90,7 @@
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>agent_full_out_5</spirit:name>
+						<spirit:name>agent_full_out_3</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -105,7 +106,7 @@
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>agent_one_d_out_5</spirit:name>
+						<spirit:name>agent_one_d_out_3</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -121,7 +122,7 @@
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>agent_one_p_out_5</spirit:name>
+						<spirit:name>agent_one_p_out_3</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -133,706 +134,7 @@
 			<spirit:endianness>little</spirit:endianness>
 		</spirit:busInterface>
 		<spirit:busInterface>
-			<spirit:name>ip_mMaster_5</spirit:name>
-			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.busdef" spirit:version="3.0"/>
-			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.absdef" spirit:version="3.0"/>
-			<spirit:mirroredMaster/>
-			<spirit:connectionRequired>false</spirit:connectionRequired>
-			<spirit:portMaps>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>AV</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_av_in_5</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>COMM</spirit:name>
-						<spirit:vector>
-							<spirit:left>4</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_comm_in_5</spirit:name>
-						<spirit:vector>
-							<spirit:left>4</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>DATA</spirit:name>
-						<spirit:vector>
-							<spirit:left>31</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_data_in_5</spirit:name>
-						<spirit:vector>
-							<spirit:left>31</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>RE</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_re_in_5</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>WE</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_we_in_5</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-			</spirit:portMaps>
-			<spirit:bitsInLau>8</spirit:bitsInLau>
-			<spirit:endianness>little</spirit:endianness>
-		</spirit:busInterface>
-		<spirit:busInterface>
-			<spirit:name>clocks_5</spirit:name>
-			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="hibi_clocks" spirit:version="1.0"/>
-			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="hibi_clocks.absDef" spirit:version="1.0"/>
-			<spirit:slave/>
-			<spirit:connectionRequired>false</spirit:connectionRequired>
-			<spirit:portMaps>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>AGENT_CLK</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_clk_5</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>AGENT_SYNC_CLK</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_sync_clk_5</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>BUS_CLK</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>bus_clk_5</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>BUS_SYNC_CLK</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>bus_sync_clk_5</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-			</spirit:portMaps>
-			<spirit:bitsInLau>8</spirit:bitsInLau>
-			<spirit:endianness>little</spirit:endianness>
-		</spirit:busInterface>
-		<spirit:busInterface>
-			<spirit:name>clocks_4</spirit:name>
-			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="hibi_clocks" spirit:version="1.0"/>
-			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="hibi_clocks.absDef" spirit:version="1.0"/>
-			<spirit:slave/>
-			<spirit:connectionRequired>false</spirit:connectionRequired>
-			<spirit:portMaps>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>AGENT_CLK</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_clk_4</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>AGENT_SYNC_CLK</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_sync_clk_4</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>BUS_CLK</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>bus_clk_4</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>BUS_SYNC_CLK</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>bus_sync_clk_4</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-			</spirit:portMaps>
-			<spirit:bitsInLau>8</spirit:bitsInLau>
-			<spirit:endianness>little</spirit:endianness>
-		</spirit:busInterface>
-		<spirit:busInterface>
-			<spirit:name>ip_mMaster_4</spirit:name>
-			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.busdef" spirit:version="3.0"/>
-			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.absdef" spirit:version="3.0"/>
-			<spirit:mirroredMaster/>
-			<spirit:connectionRequired>false</spirit:connectionRequired>
-			<spirit:portMaps>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>AV</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_av_in_4</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>COMM</spirit:name>
-						<spirit:vector>
-							<spirit:left>4</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_comm_in_4</spirit:name>
-						<spirit:vector>
-							<spirit:left>4</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>DATA</spirit:name>
-						<spirit:vector>
-							<spirit:left>31</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_data_in_4</spirit:name>
-						<spirit:vector>
-							<spirit:left>31</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>RE</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_re_in_4</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>WE</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_we_in_4</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-			</spirit:portMaps>
-			<spirit:bitsInLau>8</spirit:bitsInLau>
-			<spirit:endianness>little</spirit:endianness>
-		</spirit:busInterface>
-		<spirit:busInterface>
-			<spirit:name>ip_mSlave_4</spirit:name>
-			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.busdef" spirit:version="3.0"/>
-			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.absdef" spirit:version="3.0"/>
-			<spirit:mirroredSlave/>
-			<spirit:connectionRequired>false</spirit:connectionRequired>
-			<spirit:portMaps>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>AV</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_av_out_4</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>COMM</spirit:name>
-						<spirit:vector>
-							<spirit:left>4</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_comm_out_4</spirit:name>
-						<spirit:vector>
-							<spirit:left>4</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>DATA</spirit:name>
-						<spirit:vector>
-							<spirit:left>31</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_data_out_4</spirit:name>
-						<spirit:vector>
-							<spirit:left>31</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>EMPTY</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_empty_out_4</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>FULL</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_full_out_4</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>ONE_D</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_one_d_out_4</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>ONE_P</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_one_p_out_4</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-			</spirit:portMaps>
-			<spirit:bitsInLau>8</spirit:bitsInLau>
-			<spirit:endianness>little</spirit:endianness>
-		</spirit:busInterface>
-		<spirit:busInterface>
-			<spirit:name>rst_n</spirit:name>
-			<spirit:description>Active low reset interface.</spirit:description>
-			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="reset.busdef" spirit:version="1.0"/>
-			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="reset.absDef" spirit:version="1.0"/>
-			<spirit:slave/>
-			<spirit:connectionRequired>false</spirit:connectionRequired>
-			<spirit:portMaps>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>RESETn</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>rst_n</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-			</spirit:portMaps>
-			<spirit:bitsInLau>8</spirit:bitsInLau>
-			<spirit:endianness>little</spirit:endianness>
-		</spirit:busInterface>
-		<spirit:busInterface>
-			<spirit:name>ip_mMaster_0</spirit:name>
-			<spirit:description>HIBI ip mirrored master agent interface 0 (r4 wrapper)</spirit:description>
-			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.busdef" spirit:version="3.0"/>
-			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.absdef" spirit:version="3.0"/>
-			<spirit:mirroredMaster/>
-			<spirit:connectionRequired>false</spirit:connectionRequired>
-			<spirit:portMaps>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>AV</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_av_in</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>COMM</spirit:name>
-						<spirit:vector>
-							<spirit:left>4</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_comm_in</spirit:name>
-						<spirit:vector>
-							<spirit:left>4</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>DATA</spirit:name>
-						<spirit:vector>
-							<spirit:left>31</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_data_in</spirit:name>
-						<spirit:vector>
-							<spirit:left>31</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>RE</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_re_in</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>WE</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_we_in</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-			</spirit:portMaps>
-			<spirit:bitsInLau>8</spirit:bitsInLau>
-			<spirit:endianness>little</spirit:endianness>
-		</spirit:busInterface>
-		<spirit:busInterface>
-			<spirit:name>ip_mSlave_0</spirit:name>
-			<spirit:description>HIBI ip mirrored slave agent interface 0 (r4 wrapper)</spirit:description>
-			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.busdef" spirit:version="3.0"/>
-			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.absdef" spirit:version="3.0"/>
-			<spirit:mirroredSlave/>
-			<spirit:connectionRequired>false</spirit:connectionRequired>
-			<spirit:portMaps>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>AV</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_av_out</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>COMM</spirit:name>
-						<spirit:vector>
-							<spirit:left>4</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_comm_out</spirit:name>
-						<spirit:vector>
-							<spirit:left>4</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>DATA</spirit:name>
-						<spirit:vector>
-							<spirit:left>31</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_data_out</spirit:name>
-						<spirit:vector>
-							<spirit:left>31</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>EMPTY</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_empty_out</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>FULL</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_full_out</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>ONE_D</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_one_d_out</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>ONE_P</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_one_p_out</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-			</spirit:portMaps>
-			<spirit:bitsInLau>8</spirit:bitsInLau>
-			<spirit:endianness>little</spirit:endianness>
-		</spirit:busInterface>
-		<spirit:busInterface>
-			<spirit:name>clocks_1</spirit:name>
+			<spirit:name>clocks_0</spirit:name>
 			<spirit:description>Clock inputs  interface for hibi wrapper_3</spirit:description>
 			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="hibi_clocks" spirit:version="1.0"/>
 			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="hibi_clocks.absDef" spirit:version="1.0"/>
@@ -848,7 +150,7 @@
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>agent_clk_1</spirit:name>
+						<spirit:name>agent_clk</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -864,7 +166,7 @@
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>agent_sync_clk_1</spirit:name>
+						<spirit:name>agent_sync_clk</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -880,7 +182,7 @@
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>bus_clk_1</spirit:name>
+						<spirit:name>bus_clk</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -896,7 +198,7 @@
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>bus_sync_clk_1</spirit:name>
+						<spirit:name>bus_sync_clk</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -908,407 +210,7 @@
 			<spirit:endianness>little</spirit:endianness>
 		</spirit:busInterface>
 		<spirit:busInterface>
-			<spirit:name>ip_mMaster_1</spirit:name>
-			<spirit:description>HIBI ip mirrored master agent interface 1 (r4 wrapper)</spirit:description>
-			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.busdef" spirit:version="3.0"/>
-			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.absdef" spirit:version="3.0"/>
-			<spirit:mirroredMaster/>
-			<spirit:connectionRequired>false</spirit:connectionRequired>
-			<spirit:portMaps>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>AV</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_av_in_1</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>COMM</spirit:name>
-						<spirit:vector>
-							<spirit:left>4</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_comm_in_1</spirit:name>
-						<spirit:vector>
-							<spirit:left>4</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>DATA</spirit:name>
-						<spirit:vector>
-							<spirit:left>31</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_data_in_1</spirit:name>
-						<spirit:vector>
-							<spirit:left>31</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>RE</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_re_in_1</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>WE</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_we_in_1</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-			</spirit:portMaps>
-			<spirit:bitsInLau>8</spirit:bitsInLau>
-			<spirit:endianness>little</spirit:endianness>
-		</spirit:busInterface>
-		<spirit:busInterface>
-			<spirit:name>ip_mSlave_1</spirit:name>
-			<spirit:description>HIBI ip mirrored slave agent interface 1  (r4 wrapper)</spirit:description>
-			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.busdef" spirit:version="3.0"/>
-			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.absdef" spirit:version="3.0"/>
-			<spirit:mirroredSlave/>
-			<spirit:connectionRequired>false</spirit:connectionRequired>
-			<spirit:portMaps>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>AV</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_av_out_1</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>COMM</spirit:name>
-						<spirit:vector>
-							<spirit:left>4</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_comm_out_1</spirit:name>
-						<spirit:vector>
-							<spirit:left>4</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>DATA</spirit:name>
-						<spirit:vector>
-							<spirit:left>31</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_data_out_1</spirit:name>
-						<spirit:vector>
-							<spirit:left>31</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>EMPTY</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_empty_out_1</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>FULL</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_full_out_1</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>ONE_D</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_one_d_out_1</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>ONE_P</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_one_p_out_1</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-			</spirit:portMaps>
-			<spirit:bitsInLau>8</spirit:bitsInLau>
-			<spirit:endianness>little</spirit:endianness>
-		</spirit:busInterface>
-		<spirit:busInterface>
-			<spirit:name>ip_mMaster_3</spirit:name>
-			<spirit:description>HIBI ip mirrored master agent interface 3 (r4 wrapper)</spirit:description>
-			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.busdef" spirit:version="3.0"/>
-			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.absdef" spirit:version="3.0"/>
-			<spirit:mirroredMaster/>
-			<spirit:connectionRequired>false</spirit:connectionRequired>
-			<spirit:portMaps>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>AV</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_av_in_3</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>COMM</spirit:name>
-						<spirit:vector>
-							<spirit:left>4</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_comm_in_3</spirit:name>
-						<spirit:vector>
-							<spirit:left>4</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>DATA</spirit:name>
-						<spirit:vector>
-							<spirit:left>31</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_data_in_3</spirit:name>
-						<spirit:vector>
-							<spirit:left>31</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>RE</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_re_in_3</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>WE</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_we_in_3</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-			</spirit:portMaps>
-			<spirit:bitsInLau>8</spirit:bitsInLau>
-			<spirit:endianness>little</spirit:endianness>
-		</spirit:busInterface>
-		<spirit:busInterface>
-			<spirit:name>ip_mMaster_2</spirit:name>
-			<spirit:description>HIBI ip mirrored master agent interface 2 (r4 wrapper)</spirit:description>
-			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.busdef" spirit:version="3.0"/>
-			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.absdef" spirit:version="3.0"/>
-			<spirit:mirroredMaster/>
-			<spirit:connectionRequired>false</spirit:connectionRequired>
-			<spirit:portMaps>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>AV</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_av_in_2</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>COMM</spirit:name>
-						<spirit:vector>
-							<spirit:left>4</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_comm_in_2</spirit:name>
-						<spirit:vector>
-							<spirit:left>4</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>DATA</spirit:name>
-						<spirit:vector>
-							<spirit:left>31</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_data_in_2</spirit:name>
-						<spirit:vector>
-							<spirit:left>31</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>RE</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_re_in_2</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>WE</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_we_in_2</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-			</spirit:portMaps>
-			<spirit:bitsInLau>8</spirit:bitsInLau>
-			<spirit:endianness>little</spirit:endianness>
-		</spirit:busInterface>
-		<spirit:busInterface>
-			<spirit:name>clocks_3</spirit:name>
+			<spirit:name>clocks_2</spirit:name>
 			<spirit:description>Clock inputs  interface for hibi wrapper_3</spirit:description>
 			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="hibi_clocks" spirit:version="1.0"/>
 			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="hibi_clocks.absDef" spirit:version="1.0"/>
@@ -1324,7 +226,7 @@
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>agent_clk_3</spirit:name>
+						<spirit:name>agent_clk_2</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -1340,7 +242,7 @@
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>agent_sync_clk_3</spirit:name>
+						<spirit:name>agent_sync_clk_2</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -1356,7 +258,7 @@
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>bus_clk_3</spirit:name>
+						<spirit:name>bus_clk_2</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -1372,7 +274,7 @@
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>bus_sync_clk_3</spirit:name>
+						<spirit:name>bus_sync_clk_2</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -1508,7 +410,7 @@
 			<spirit:endianness>little</spirit:endianness>
 		</spirit:busInterface>
 		<spirit:busInterface>
-			<spirit:name>clocks_2</spirit:name>
+			<spirit:name>clocks_3</spirit:name>
 			<spirit:description>Clock inputs  interface for hibi wrapper_3</spirit:description>
 			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="hibi_clocks" spirit:version="1.0"/>
 			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="hibi_clocks.absDef" spirit:version="1.0"/>
@@ -1524,7 +426,7 @@
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>agent_clk_2</spirit:name>
+						<spirit:name>agent_clk_3</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -1540,7 +442,7 @@
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>agent_sync_clk_2</spirit:name>
+						<spirit:name>agent_sync_clk_3</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -1556,7 +458,7 @@
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>bus_clk_2</spirit:name>
+						<spirit:name>bus_clk_3</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -1572,7 +474,7 @@
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>bus_sync_clk_2</spirit:name>
+						<spirit:name>bus_sync_clk_3</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -1584,87 +486,11 @@
 			<spirit:endianness>little</spirit:endianness>
 		</spirit:busInterface>
 		<spirit:busInterface>
-			<spirit:name>clocks_0</spirit:name>
-			<spirit:description>Clock inputs  interface for hibi wrapper_3</spirit:description>
-			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="hibi_clocks" spirit:version="1.0"/>
-			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="hibi_clocks.absDef" spirit:version="1.0"/>
-			<spirit:slave/>
-			<spirit:connectionRequired>false</spirit:connectionRequired>
-			<spirit:portMaps>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>AGENT_CLK</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_clk</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>AGENT_SYNC_CLK</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>agent_sync_clk</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>BUS_CLK</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>bus_clk</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-				<spirit:portMap>
-					<spirit:logicalPort>
-						<spirit:name>BUS_SYNC_CLK</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:logicalPort>
-					<spirit:physicalPort>
-						<spirit:name>bus_sync_clk</spirit:name>
-						<spirit:vector>
-							<spirit:left>0</spirit:left>
-							<spirit:right>0</spirit:right>
-						</spirit:vector>
-					</spirit:physicalPort>
-				</spirit:portMap>
-			</spirit:portMaps>
-			<spirit:bitsInLau>8</spirit:bitsInLau>
-			<spirit:endianness>little</spirit:endianness>
-		</spirit:busInterface>
-		<spirit:busInterface>
-			<spirit:name>ip_mSlave_3</spirit:name>
-			<spirit:description>HIBI ip mirrored slave agent interface_3 (r4 wrapper)</spirit:description>
+			<spirit:name>ip_mMaster_2</spirit:name>
+			<spirit:description>HIBI ip mirrored master agent interface 2 (r4 wrapper)</spirit:description>
 			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.busdef" spirit:version="3.0"/>
 			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.absdef" spirit:version="3.0"/>
-			<spirit:mirroredSlave/>
+			<spirit:mirroredMaster/>
 			<spirit:connectionRequired>false</spirit:connectionRequired>
 			<spirit:portMaps>
 				<spirit:portMap>
@@ -1676,7 +502,7 @@
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>agent_av_out_3</spirit:name>
+						<spirit:name>agent_av_in_2</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -1692,7 +518,7 @@
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>agent_comm_out_3</spirit:name>
+						<spirit:name>agent_comm_in_2</spirit:name>
 						<spirit:vector>
 							<spirit:left>4</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -1708,7 +534,219 @@
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>agent_data_out_3</spirit:name>
+						<spirit:name>agent_data_in_2</spirit:name>
+						<spirit:vector>
+							<spirit:left>31</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>RE</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_re_in_2</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>WE</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_we_in_2</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+			</spirit:portMaps>
+			<spirit:bitsInLau>8</spirit:bitsInLau>
+			<spirit:endianness>little</spirit:endianness>
+		</spirit:busInterface>
+		<spirit:busInterface>
+			<spirit:name>ip_mMaster_3</spirit:name>
+			<spirit:description>HIBI ip mirrored master agent interface 3 (r4 wrapper)</spirit:description>
+			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.busdef" spirit:version="3.0"/>
+			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.absdef" spirit:version="3.0"/>
+			<spirit:mirroredMaster/>
+			<spirit:connectionRequired>false</spirit:connectionRequired>
+			<spirit:portMaps>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>AV</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_av_in_3</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>COMM</spirit:name>
+						<spirit:vector>
+							<spirit:left>4</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_comm_in_3</spirit:name>
+						<spirit:vector>
+							<spirit:left>4</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>DATA</spirit:name>
+						<spirit:vector>
+							<spirit:left>31</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_data_in_3</spirit:name>
+						<spirit:vector>
+							<spirit:left>31</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>RE</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_re_in_3</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>WE</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_we_in_3</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+			</spirit:portMaps>
+			<spirit:bitsInLau>8</spirit:bitsInLau>
+			<spirit:endianness>little</spirit:endianness>
+		</spirit:busInterface>
+		<spirit:busInterface>
+			<spirit:name>rst_n</spirit:name>
+			<spirit:description>Active low reset interface.</spirit:description>
+			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="reset.busdef" spirit:version="1.0"/>
+			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="reset.absDef" spirit:version="1.0"/>
+			<spirit:slave/>
+			<spirit:connectionRequired>false</spirit:connectionRequired>
+			<spirit:portMaps>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>RESETn</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>rst_n</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+			</spirit:portMaps>
+			<spirit:bitsInLau>8</spirit:bitsInLau>
+			<spirit:endianness>little</spirit:endianness>
+		</spirit:busInterface>
+		<spirit:busInterface>
+			<spirit:name>ip_mSlave_1</spirit:name>
+			<spirit:description>HIBI ip mirrored slave agent interface 1  (r4 wrapper)</spirit:description>
+			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.busdef" spirit:version="3.0"/>
+			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.absdef" spirit:version="3.0"/>
+			<spirit:mirroredSlave/>
+			<spirit:connectionRequired>false</spirit:connectionRequired>
+			<spirit:portMaps>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>AV</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_av_out_1</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>COMM</spirit:name>
+						<spirit:vector>
+							<spirit:left>4</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_comm_out_1</spirit:name>
+						<spirit:vector>
+							<spirit:left>4</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>DATA</spirit:name>
+						<spirit:vector>
+							<spirit:left>31</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_data_out_1</spirit:name>
 						<spirit:vector>
 							<spirit:left>31</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -1724,7 +762,7 @@
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>agent_empty_out_3</spirit:name>
+						<spirit:name>agent_empty_out_1</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -1740,7 +778,7 @@
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>agent_full_out_3</spirit:name>
+						<spirit:name>agent_full_out_1</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -1756,7 +794,7 @@
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>agent_one_d_out_3</spirit:name>
+						<spirit:name>agent_one_d_out_1</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -1772,7 +810,969 @@
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>agent_one_p_out_3</spirit:name>
+						<spirit:name>agent_one_p_out_1</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+			</spirit:portMaps>
+			<spirit:bitsInLau>8</spirit:bitsInLau>
+			<spirit:endianness>little</spirit:endianness>
+		</spirit:busInterface>
+		<spirit:busInterface>
+			<spirit:name>ip_mMaster_1</spirit:name>
+			<spirit:description>HIBI ip mirrored master agent interface 1 (r4 wrapper)</spirit:description>
+			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.busdef" spirit:version="3.0"/>
+			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.absdef" spirit:version="3.0"/>
+			<spirit:mirroredMaster/>
+			<spirit:connectionRequired>false</spirit:connectionRequired>
+			<spirit:portMaps>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>AV</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_av_in_1</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>COMM</spirit:name>
+						<spirit:vector>
+							<spirit:left>4</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_comm_in_1</spirit:name>
+						<spirit:vector>
+							<spirit:left>4</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>DATA</spirit:name>
+						<spirit:vector>
+							<spirit:left>31</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_data_in_1</spirit:name>
+						<spirit:vector>
+							<spirit:left>31</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>RE</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_re_in_1</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>WE</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_we_in_1</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+			</spirit:portMaps>
+			<spirit:bitsInLau>8</spirit:bitsInLau>
+			<spirit:endianness>little</spirit:endianness>
+		</spirit:busInterface>
+		<spirit:busInterface>
+			<spirit:name>clocks_1</spirit:name>
+			<spirit:description>Clock inputs  interface for hibi wrapper_3</spirit:description>
+			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="hibi_clocks" spirit:version="1.0"/>
+			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="hibi_clocks.absDef" spirit:version="1.0"/>
+			<spirit:slave/>
+			<spirit:connectionRequired>false</spirit:connectionRequired>
+			<spirit:portMaps>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>AGENT_CLK</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_clk_1</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>AGENT_SYNC_CLK</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_sync_clk_1</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>BUS_CLK</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>bus_clk_1</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>BUS_SYNC_CLK</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>bus_sync_clk_1</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+			</spirit:portMaps>
+			<spirit:bitsInLau>8</spirit:bitsInLau>
+			<spirit:endianness>little</spirit:endianness>
+		</spirit:busInterface>
+		<spirit:busInterface>
+			<spirit:name>ip_mSlave_0</spirit:name>
+			<spirit:description>HIBI ip mirrored slave agent interface 0 (r4 wrapper)</spirit:description>
+			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.busdef" spirit:version="3.0"/>
+			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.absdef" spirit:version="3.0"/>
+			<spirit:mirroredSlave/>
+			<spirit:connectionRequired>false</spirit:connectionRequired>
+			<spirit:portMaps>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>AV</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_av_out</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>COMM</spirit:name>
+						<spirit:vector>
+							<spirit:left>4</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_comm_out</spirit:name>
+						<spirit:vector>
+							<spirit:left>4</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>DATA</spirit:name>
+						<spirit:vector>
+							<spirit:left>31</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_data_out</spirit:name>
+						<spirit:vector>
+							<spirit:left>31</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>EMPTY</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_empty_out</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>FULL</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_full_out</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>ONE_D</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_one_d_out</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>ONE_P</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_one_p_out</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+			</spirit:portMaps>
+			<spirit:bitsInLau>8</spirit:bitsInLau>
+			<spirit:endianness>little</spirit:endianness>
+		</spirit:busInterface>
+		<spirit:busInterface>
+			<spirit:name>ip_mMaster_0</spirit:name>
+			<spirit:description>HIBI ip mirrored master agent interface 0 (r4 wrapper)</spirit:description>
+			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.busdef" spirit:version="3.0"/>
+			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.absdef" spirit:version="3.0"/>
+			<spirit:mirroredMaster/>
+			<spirit:connectionRequired>false</spirit:connectionRequired>
+			<spirit:portMaps>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>AV</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_av_in</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>COMM</spirit:name>
+						<spirit:vector>
+							<spirit:left>4</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_comm_in</spirit:name>
+						<spirit:vector>
+							<spirit:left>4</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>DATA</spirit:name>
+						<spirit:vector>
+							<spirit:left>31</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_data_in</spirit:name>
+						<spirit:vector>
+							<spirit:left>31</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>RE</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_re_in</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>WE</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_we_in</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+			</spirit:portMaps>
+			<spirit:bitsInLau>8</spirit:bitsInLau>
+			<spirit:endianness>little</spirit:endianness>
+		</spirit:busInterface>
+		<spirit:busInterface>
+			<spirit:name>ip_mSlave_4</spirit:name>
+			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.busdef" spirit:version="3.0"/>
+			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.absdef" spirit:version="3.0"/>
+			<spirit:mirroredSlave/>
+			<spirit:connectionRequired>false</spirit:connectionRequired>
+			<spirit:portMaps>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>AV</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_av_out_4</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>COMM</spirit:name>
+						<spirit:vector>
+							<spirit:left>4</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_comm_out_4</spirit:name>
+						<spirit:vector>
+							<spirit:left>4</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>DATA</spirit:name>
+						<spirit:vector>
+							<spirit:left>31</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_data_out_4</spirit:name>
+						<spirit:vector>
+							<spirit:left>31</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>EMPTY</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_empty_out_4</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>FULL</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_full_out_4</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>ONE_D</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_one_d_out_4</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>ONE_P</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_one_p_out_4</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+			</spirit:portMaps>
+			<spirit:bitsInLau>8</spirit:bitsInLau>
+			<spirit:endianness>little</spirit:endianness>
+		</spirit:busInterface>
+		<spirit:busInterface>
+			<spirit:name>ip_mMaster_4</spirit:name>
+			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.busdef" spirit:version="3.0"/>
+			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.absdef" spirit:version="3.0"/>
+			<spirit:mirroredMaster/>
+			<spirit:connectionRequired>false</spirit:connectionRequired>
+			<spirit:portMaps>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>AV</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_av_in_4</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>COMM</spirit:name>
+						<spirit:vector>
+							<spirit:left>4</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_comm_in_4</spirit:name>
+						<spirit:vector>
+							<spirit:left>4</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>DATA</spirit:name>
+						<spirit:vector>
+							<spirit:left>31</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_data_in_4</spirit:name>
+						<spirit:vector>
+							<spirit:left>31</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>RE</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_re_in_4</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>WE</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_we_in_4</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+			</spirit:portMaps>
+			<spirit:bitsInLau>8</spirit:bitsInLau>
+			<spirit:endianness>little</spirit:endianness>
+		</spirit:busInterface>
+		<spirit:busInterface>
+			<spirit:name>clocks_4</spirit:name>
+			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="hibi_clocks" spirit:version="1.0"/>
+			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="hibi_clocks.absDef" spirit:version="1.0"/>
+			<spirit:slave/>
+			<spirit:connectionRequired>false</spirit:connectionRequired>
+			<spirit:portMaps>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>AGENT_CLK</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_clk_4</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>AGENT_SYNC_CLK</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_sync_clk_4</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>BUS_CLK</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>bus_clk_4</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>BUS_SYNC_CLK</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>bus_sync_clk_4</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+			</spirit:portMaps>
+			<spirit:bitsInLau>8</spirit:bitsInLau>
+			<spirit:endianness>little</spirit:endianness>
+		</spirit:busInterface>
+		<spirit:busInterface>
+			<spirit:name>clocks_5</spirit:name>
+			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="hibi_clocks" spirit:version="1.0"/>
+			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="hibi_clocks.absDef" spirit:version="1.0"/>
+			<spirit:slave/>
+			<spirit:connectionRequired>false</spirit:connectionRequired>
+			<spirit:portMaps>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>AGENT_CLK</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_clk_5</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>AGENT_SYNC_CLK</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_sync_clk_5</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>BUS_CLK</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>bus_clk_5</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>BUS_SYNC_CLK</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>bus_sync_clk_5</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+			</spirit:portMaps>
+			<spirit:bitsInLau>8</spirit:bitsInLau>
+			<spirit:endianness>little</spirit:endianness>
+		</spirit:busInterface>
+		<spirit:busInterface>
+			<spirit:name>ip_mMaster_5</spirit:name>
+			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.busdef" spirit:version="3.0"/>
+			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.absdef" spirit:version="3.0"/>
+			<spirit:mirroredMaster/>
+			<spirit:connectionRequired>false</spirit:connectionRequired>
+			<spirit:portMaps>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>AV</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_av_in_5</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>COMM</spirit:name>
+						<spirit:vector>
+							<spirit:left>4</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_comm_in_5</spirit:name>
+						<spirit:vector>
+							<spirit:left>4</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>DATA</spirit:name>
+						<spirit:vector>
+							<spirit:left>31</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_data_in_5</spirit:name>
+						<spirit:vector>
+							<spirit:left>31</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>RE</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_re_in_5</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>WE</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_we_in_5</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+			</spirit:portMaps>
+			<spirit:bitsInLau>8</spirit:bitsInLau>
+			<spirit:endianness>little</spirit:endianness>
+		</spirit:busInterface>
+		<spirit:busInterface>
+			<spirit:name>ip_mSlave_5</spirit:name>
+			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.busdef" spirit:version="3.0"/>
+			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.absdef" spirit:version="3.0"/>
+			<spirit:mirroredSlave/>
+			<spirit:connectionRequired>false</spirit:connectionRequired>
+			<spirit:portMaps>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>AV</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_av_out_5</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>COMM</spirit:name>
+						<spirit:vector>
+							<spirit:left>4</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_comm_out_5</spirit:name>
+						<spirit:vector>
+							<spirit:left>4</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>DATA</spirit:name>
+						<spirit:vector>
+							<spirit:left>31</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_data_out_5</spirit:name>
+						<spirit:vector>
+							<spirit:left>31</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>EMPTY</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_empty_out_5</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>FULL</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_full_out_5</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>ONE_D</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_one_d_out_5</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>ONE_P</spirit:name>
+						<spirit:vector>
+							<spirit:left>0</spirit:left>
+							<spirit:right>0</spirit:right>
+						</spirit:vector>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>agent_one_p_out_5</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
