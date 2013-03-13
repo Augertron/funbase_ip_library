@@ -5,7 +5,7 @@
 -- File       : hpd_rx_and_conf.vhd
 -- Author     : kulmala3
 -- Created    : 2012-01-10
--- Last update: 2012-03-13
+-- Last update: 2013-03-13
 -- Description: 
 --
 -- Currently there's no double-registers in config - the user
@@ -258,7 +258,7 @@ begin  -- rtl
   avalon_we     <= hibi_empty_in nor hibi_av_in;
   avalon_we_out <= avalon_we and curr_chan_avalon_we_r;
 
-  hibi_re <= (not avalon_waitrequest_in)  -- three first were just anded
+  hibi_re <= (not avalon_waitrequest_in or hibi_av_in)  -- three first were just anded
              and (avalon_we or hibi_empty_in or hibi_av_in)
              and (curr_chan_avalon_we_r or hibi_empty_in)
              and not (unknown_rx or unknown_rx_irq_r);
