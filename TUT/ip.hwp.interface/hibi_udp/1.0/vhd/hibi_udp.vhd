@@ -1,7 +1,7 @@
 -- ***************************************************
 -- File: hibi_udp.vhd
--- Creation date: 12.02.2013
--- Creation time: 10:37:46
+-- Creation date: 21.03.2013
+-- Creation time: 15:34:28
 -- Description: 
 -- Created by: matilail
 -- This file was generated with Kactus2 vhdl generator.
@@ -175,7 +175,7 @@ architecture structural of hibi_udp is
 			-- Interface: app_tx
 			-- Application transmit operations
 			new_tx_in : in std_logic;
-			-- no_arp_target_MAC_in : in std_logic_vector(47 downto 0);
+			no_arp_target_MAC_in : in std_logic_vector(47 downto 0);
 			source_port_in : in std_logic_vector(15 downto 0);
 			target_addr_in : in std_logic_vector(31 downto 0);
 			target_port_in : in std_logic_vector(15 downto 0);
@@ -260,7 +260,7 @@ begin
 
 	udp_ip_dm9000a_0 : udp_ip_dm9000a
 		port map (
-			clk => clk,
+			clk => clk_udp,
 			dest_port_out(15 downto 0) => udp_ip_dm9000a_0_app_rx_to_udp2hibi_0_udp_ip_rxdest_port_out(15 downto 0),
 			eth_chip_sel_out => eth_chip_sel_out,
 			eth_clk_out => eth_clk_out,
@@ -273,6 +273,7 @@ begin
 			link_up_out => udp_ip_dm9000a_0_app_rx_to_udp2hibi_0_udp_ip_rxlink_up_out,
 			new_rx_out => udp_ip_dm9000a_0_app_rx_to_udp2hibi_0_udp_ip_rxnew_rx_out,
 			new_tx_in => udp2hibi_0_udp_ip_tx_to_udp_ip_dm9000a_0_app_txnew_tx_in,
+			no_arp_target_MAC_in => "0",
 			rst_n => rst_n,
 			rx_data_out(15 downto 0) => udp_ip_dm9000a_0_app_rx_to_udp2hibi_0_udp_ip_rxrx_data_out(15 downto 0),
 			rx_data_valid_out => udp_ip_dm9000a_0_app_rx_to_udp2hibi_0_udp_ip_rxrx_data_valid_out,
