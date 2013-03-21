@@ -10,7 +10,7 @@
 	<spirit:version>1.0</spirit:version>
 	<spirit:busInterfaces>
 		<spirit:busInterface>
-			<spirit:name>clk_udp</spirit:name>
+			<spirit:name>clk</spirit:name>
 			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="clock.busdef" spirit:version="1.0"/>
 			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="clock.absDef" spirit:version="1.0"/>
 			<spirit:slave/>
@@ -25,7 +25,7 @@
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>clk_udp</spirit:name>
+						<spirit:name>clk</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -219,7 +219,7 @@
 			<spirit:endianness>little</spirit:endianness>
 		</spirit:busInterface>
 		<spirit:busInterface>
-			<spirit:name>clk</spirit:name>
+			<spirit:name>clk_udp</spirit:name>
 			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="clock.busdef" spirit:version="1.0"/>
 			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.interface" spirit:name="clock.absDef" spirit:version="1.0"/>
 			<spirit:slave/>
@@ -234,7 +234,7 @@
 						</spirit:vector>
 					</spirit:logicalPort>
 					<spirit:physicalPort>
-						<spirit:name>clk</spirit:name>
+						<spirit:name>clk_udp</spirit:name>
 						<spirit:vector>
 							<spirit:left>0</spirit:left>
 							<spirit:right>0</spirit:right>
@@ -433,26 +433,6 @@
 			</spirit:view>
 		</spirit:views>
 		<spirit:ports>
-			<spirit:port>
-				<spirit:name>clk</spirit:name>
-				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
-					<spirit:direction>in</spirit:direction>
-					<spirit:vector>
-						<spirit:left>0</spirit:left>
-						<spirit:right>0</spirit:right>
-					</spirit:vector>
-					<spirit:wireTypeDefs>
-						<spirit:wireTypeDef>
-							<spirit:typeName spirit:constrained="false">std_logic</spirit:typeName>
-							<spirit:typeDefinition>IEEE.std_logic_1164.all</spirit:typeDefinition>
-							<spirit:viewNameRef>rtl</spirit:viewNameRef>
-							<spirit:viewNameRef>structural</spirit:viewNameRef>
-							<spirit:viewNameRef>structural_vhd</spirit:viewNameRef>
-						</spirit:wireTypeDef>
-					</spirit:wireTypeDefs>
-				</spirit:wire>
-				<spirit:vendorExtensions/>
-			</spirit:port>
 			<spirit:port>
 				<spirit:name>clk_udp</spirit:name>
 				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
@@ -769,6 +749,26 @@
 						<spirit:left>0</spirit:left>
 						<spirit:right>0</spirit:right>
 					</spirit:vector>
+				</spirit:wire>
+				<spirit:vendorExtensions/>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>clk</spirit:name>
+				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
+					<spirit:direction>in</spirit:direction>
+					<spirit:vector>
+						<spirit:left>0</spirit:left>
+						<spirit:right>0</spirit:right>
+					</spirit:vector>
+					<spirit:wireTypeDefs>
+						<spirit:wireTypeDef>
+							<spirit:typeName spirit:constrained="false">std_logic</spirit:typeName>
+							<spirit:typeDefinition>IEEE.std_logic_1164.all</spirit:typeDefinition>
+							<spirit:viewNameRef>rtl</spirit:viewNameRef>
+							<spirit:viewNameRef>structural</spirit:viewNameRef>
+							<spirit:viewNameRef>structural_vhd</spirit:viewNameRef>
+						</spirit:wireTypeDef>
+					</spirit:wireTypeDefs>
 				</spirit:wire>
 				<spirit:vendorExtensions/>
 			</spirit:port>
