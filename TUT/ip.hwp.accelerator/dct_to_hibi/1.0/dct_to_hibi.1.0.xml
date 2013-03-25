@@ -10,15 +10,25 @@
 	<spirit:version>1.0</spirit:version>
 	<spirit:description>DCT to Hibi. Connects dctQidct block to HIBI Wrapper
 
-
 Input:
-1. Two address to send the results to (one for quant, one for idct)
+1.  Address to send the results to quant
+2.  Address to send the results to idct (set unused address if you don't use this)
 2. Control word for the current macroblock
-    Control word structure: bit 6: chroma(1)/luma(0), 5: intra(1)/inter(0),
-                             4..0: quantizer parameter (QP)
+    Control word structure: bit    6: chroma(1)/luma(0) (NOT USED), 
+	                        5: intra(1)/inter(0),
+                                                   4..0: quantizer parameter (QP)
 3. Then the DCT data ( 8x8x6 x 16-bit values = 384 x 16 bit )
 
-Chroma/luma: 4 luma, 2 chroma
+Only 9b DCT data values are supported currently. 
+Send two DCT-values packed to upper and lower 16bits in the sigle hibi transmission. 
+
+&lt;31------------------16--------------------0&gt;  BIT index
+            DCT_DATA_1         DCT_DATA_0     DATA                    
+
+
+NOTE: If self release is used (use_self_rel_g=1) user gets the signal that dct_to_hibi is ready to receive data.
+            By default self release is disabled and you user can send data to dct_to_hibi after quant results are received. 
+	
 
 Outputs:
  Outputs are 16-bit words which are packed up to hibi. If hibi width is
@@ -904,7 +914,7 @@ Outputs:
 			<spirit:modelParameter spirit:dataType="integer" spirit:usageType="nontyped">
 				<spirit:name>use_self_rel_g</spirit:name>
 				<spirit:description>Does it release itself from RTM?</spirit:description>
-				<spirit:value>1</spirit:value>
+				<spirit:value>0</spirit:value>
 			</spirit:modelParameter>
 		</spirit:modelParameters>
 	</spirit:model>
