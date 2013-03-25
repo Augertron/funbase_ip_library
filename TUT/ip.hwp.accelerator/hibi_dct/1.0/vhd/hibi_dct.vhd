@@ -1,18 +1,30 @@
 -- ***************************************************
 -- File: hibi_dct.vhd
--- Creation date: 12.02.2013
--- Creation time: 10:33:28
--- Description: DCT to Hibi. Connects dctQidct block to HIBI Wrapper
+-- Creation date: 25.03.2013
+-- Creation time: 13:53:33
+-- Description: This block combines dct to hibi dctQidct block together
 -- 
+-- DCT_TO_HIBI Connects dctQidct block to HIBI Wrapper
 -- 
 -- Input:
--- 1. Two address to send the results to (one for quant, one for idct)
+-- 1.  Address to send the results to quant
+-- 2.  Address to send the results to idct (set unused address if you don't use this)
 -- 2. Control word for the current macroblock
---     Control word structure: bit 6: chroma(1)/luma(0), 5: intra(1)/inter(0),
---                              4..0: quantizer parameter (QP)
+--     Control word structure: bit    6: chroma(1)/luma(0) NOT USED, 
+-- 	                        5: intra(1)/inter(0),
+--                                                    4..0: quantizer parameter (QP)
 -- 3. Then the DCT data ( 8x8x6 x 16-bit values = 384 x 16 bit )
 -- 
--- Chroma/luma: 4 luma, 2 chroma
+-- Only 9b DCT data values are supported currently. 
+-- Send two DCT-values packed to upper and lower 16bits in the sigle hibi transmission. 
+-- 
+-- <31------------------16--------------------0>  BIT index
+--             DCT_DATA_1         DCT_DATA_0     DATA                    
+-- 
+-- 
+-- NOTE: If self release is used (use_self_rel_g=1) user gets the signal that dct_to_hibi is ready to receive data.
+--             By default self release is disabled and you user can send data to dct_to_hibi after quant results are received. 
+-- 	
 -- 
 -- Outputs:
 --  Outputs are 16-bit words which are packed up to hibi. If hibi width is
@@ -95,15 +107,25 @@ architecture structural of hibi_dct is
 
 	-- DCT to Hibi. Connects dctQidct block to HIBI Wrapper
 	-- 
-	-- 
 	-- Input:
-	-- 1. Two address to send the results to (one for quant, one for idct)
+	-- 1.  Address to send the results to quant
+	-- 2.  Address to send the results to idct (set unused address if you don't use this)
 	-- 2. Control word for the current macroblock
-	--     Control word structure: bit 6: chroma(1)/luma(0), 5: intra(1)/inter(0),
-	--                              4..0: quantizer parameter (QP)
+	--     Control word structure: bit    6: chroma(1)/luma(0) (NOT USED), 
+	-- 	                        5: intra(1)/inter(0),
+	--                                                    4..0: quantizer parameter (QP)
 	-- 3. Then the DCT data ( 8x8x6 x 16-bit values = 384 x 16 bit )
 	-- 
-	-- Chroma/luma: 4 luma, 2 chroma
+	-- Only 9b DCT data values are supported currently. 
+	-- Send two DCT-values packed to upper and lower 16bits in the sigle hibi transmission. 
+	-- 
+	-- <31------------------16--------------------0>  BIT index
+	--             DCT_DATA_1         DCT_DATA_0     DATA                    
+	-- 
+	-- 
+	-- NOTE: If self release is used (use_self_rel_g=1) user gets the signal that dct_to_hibi is ready to receive data.
+	--             By default self release is disabled and you user can send data to dct_to_hibi after quant results are received. 
+	-- 	
 	-- 
 	-- Outputs:
 	--  Outputs are 16-bit words which are packed up to hibi. If hibi width is
@@ -140,7 +162,7 @@ architecture structural of hibi_dct is
 			own_address_g : integer := 0; -- Used for self-release
 			quant_width_g : integer := 8; -- Quantizated data width(8b)
 			rtm_address_g : integer := 0; -- Used for self-release
-			use_self_rel_g : integer := 1 -- Does it release itself from RTM?
+			use_self_rel_g : integer := 0 -- Does it release itself from RTM?
 
 		);
 		port (
