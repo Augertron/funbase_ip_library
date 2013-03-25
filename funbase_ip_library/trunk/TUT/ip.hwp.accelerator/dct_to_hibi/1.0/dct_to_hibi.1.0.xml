@@ -566,7 +566,7 @@ Outputs:
 					<spirit:size>32</spirit:size>
 				</spirit:register>
 			</spirit:addressBlock>
-			<spirit:addressUnitBits>32</spirit:addressUnitBits>
+			<spirit:addressUnitBits>8</spirit:addressUnitBits>
 		</spirit:memoryMap>
 	</spirit:memoryMaps>
 	<spirit:model>
