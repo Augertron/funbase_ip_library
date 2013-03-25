@@ -6,7 +6,7 @@
 -- Author     : 
 -- Company    : 
 -- Created    : 2006-05-24
--- Last update: 2006-08-22
+-- Last update: 2013-03-22
 -- Platform   : 
 -- Standard   : VHDL'87
 -------------------------------------------------------------------------------
@@ -43,7 +43,7 @@ entity tb_dct_cpu is
   
   generic (
     data_width_g : integer := 32;
-    comm_width_g : integer := 3);
+    comm_width_g : integer := 5);
   port (
     clk_dctqidct_fast : in std_logic;
     clk               : in std_logic;
@@ -124,7 +124,7 @@ architecture rtl of tb_dct_cpu is
 
   signal wait_zero_r : std_logic;
 
-  signal test_data_type : integer := 0;
+  signal test_data_type : integer := 2;
   
   -- CONTROL WORD CONFIG
   signal intra : std_logic := '0';
@@ -200,7 +200,7 @@ begin  -- rtl
           av_out    <= '1';
           data_out  <= std_logic_vector(to_unsigned(hibi_addr_dct_c, data_width_g));
           we_out    <= '1';
-          comm_out  <= "010";
+          comm_out  <= "00010";
           send_ctrl <= send_ret_addr_q;
           
         when send_ret_addr_q =>
@@ -273,9 +273,9 @@ begin  -- rtl
       end if;
       
       if empty_in = '0' and av_in = '1' and data_in = std_logic_vector(to_unsigned(hibi_addr_cpu_rtm_c+2,data_width_g)) then
-        assert false report "Got release!" severity note;
-        new_req_r <= '1';
-      end if;
+       assert false report "Got release!" severity note;
+       new_req_r <= '1';
+       end if;
 
       if res_q_cnt_r /= 0 and wait_zero_r = '0' then
         wait_zero_r <= '1';
@@ -338,7 +338,8 @@ begin  -- rtl
           if res_i_cnt_r = data_max_c-values_per_word_c then
             res_i_cnt_r <= 0;
             data_r.idct <= (others => (others => '0'));
-            assert false report "IDCT Data received!" severity note;        
+            assert false report "IDCT Data received!" severity note;
+            --new_req_r <= '1';           -- LM to no self 
           else
             res_i_cnt_r <= res_i_cnt_r + values_per_word_c;
           end if;

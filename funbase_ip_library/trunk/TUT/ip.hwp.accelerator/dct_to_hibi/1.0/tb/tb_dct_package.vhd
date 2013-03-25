@@ -5,7 +5,7 @@
 -- File       : tb_dct_package.vhd
 -- Author     : Antti Rasmus
 -- Created    : 2006-05-02
--- Last update: 2006-08-02
+-- Last update: 2013-03-22
 -------------------------------------------------------------------------------
 -- Copyright (c) 2006 
 -------------------------------------------------------------------------------
@@ -32,14 +32,14 @@ package tb_dct_package is
   constant use_self_rel_c : integer := 1;
   
   constant data_width_c : integer := 32;
-  constant comm_width_c : integer := 3;
+  constant comm_width_c : integer := 5; --switched to use hibiv3
 
   -----------------------------------------------------------------------------
   -- Hibi addresses for cpu and dct and other hibi parameters
   -----------------------------------------------------------------------------
-  constant hibi_addr_cpu_c : integer := 16#0b00_0100#;
-  constant hibi_addr_dct_c : integer := 16#0bff_df00#;
-  constant hibi_addr_cpu_rtm_c : integer := 16#0b00_0110#;
+  constant hibi_addr_cpu_c : integer := 16#0300_0000#;
+  constant hibi_addr_dct_c : integer := 16#0100_0000#;
+  constant hibi_addr_cpu_rtm_c : integer := 16#0300_0110#;
   constant hibi_addr_pinger1_c : integer := 16#0b00_0300#;
   constant hibi_addr_pinger2_c : integer := 16#0b00_0500#;
   
