@@ -6,11 +6,12 @@
 
 clear
 
-DCT_DATA_DIR="D:\tmp\Dct"
-HIBI_CVS_TREE=../../../../../../Hibi/Hibi
-HIBI_SRC_DIR=$HIBI_CVS_TREE/IP/Interconnections/Hibi/Hibi_v2/Vhdl/Ver_05
+DCT_DATA_DIR="D:\user\matilail\teaching\TKT-3541\2013\dct2hibi\sim_output"
+DACI_IP_LIB_DIR="D:/user/matilail/repos/daci_ip"
+HIBI_SRC_DIR=$DACI_IP_LIB_DIR/ip.hwp.communication/hibi/3.0/vhd
 DCT_WORK_DIR=..
 DCTQIDCT_DIR=../../..
+
 
 echo 'Creating makefile'
 
@@ -44,47 +45,42 @@ vmap idct $DCT_DATA_DIR\\idct
 vmap quantizer $DCT_DATA_DIR\\quantizer
 vmap dctQidct $DCT_DATA_DIR\\dctQidct
 
+#compile fifos
 
-# Ver_03 = cut-through
-# Ver_02= store-and-forward
-# Note! encode_decode_system.vhdl defines constant wait_fifo_empty_c 
-# it must be 0 for cut-through and 1 for store-and-forward!
-#vcom -quiet -check_synthesis ../../../../IP/Interconnections/Mesh_2d/Vhdl/$MESH_VER/mesh_2d_pkg.vhd
+vcom -93 -quiet $DACI_IP_LIB_DIR/ip.hwp.storage/fifos/fifo/1.0/vhd/fifo.vhd
+vcom -93 -quiet $DACI_IP_LIB_DIR/ip.hwp.storage/fifos/multiclk_fifo/1.0/vhd/multiclk_fifo.vhd
 
 
-vcom -quiet $HIBI_CVS_TREE/IP/Memories/Fifos/Fifo_Comparison/Vhdl/fifo_reg.vhd
-vcom -quiet $HIBI_CVS_TREE/IP/Memories/Fifos/Fifo_Comparison/Vhdl/fifo_slotted_2.vhd
+#Compile HIBI files
 
-vcom -quiet $HIBI_CVS_TREE/IP/Platform/Synchronizer/Vhdl/aif*.vhd
+vcom -93  -quiet -check_synthesis   $HIBI_SRC_DIR/hibiv3_pkg.vhd
+vcom -93  -quiet -check_synthesis   $HIBI_SRC_DIR/fifo_demux_wr.vhd
+vcom -93  -quiet -check_synthesis   $HIBI_SRC_DIR/fifo_mux_rd.vhd
+vcom -93  -quiet -check_synthesis   $HIBI_SRC_DIR/double_fifo_demux_wr.vhd
+vcom -93  -quiet -check_synthesis   $HIBI_SRC_DIR/double_fifo_mux_rd.vhd
+vcom -93  -quiet -check_synthesis   $HIBI_SRC_DIR/addr_decoder.vhd
+vcom -93  -quiet -check_synthesis   $HIBI_SRC_DIR/rx_control.vhd
+vcom -93  -quiet -check_synthesis   $HIBI_SRC_DIR/receiver.vhd
+vcom -93  -quiet -check_synthesis   $HIBI_SRC_DIR/cfg_init_pkg.vhd
+vcom -93  -quiet -check_synthesis   $HIBI_SRC_DIR/cfg_mem.vhd
+vcom -93  -quiet -check_synthesis   $HIBI_SRC_DIR/lfsr.vhd
+vcom -93  -quiet -check_synthesis   $HIBI_SRC_DIR/dyn_arb.vhd
+vcom -93  -quiet -check_synthesis   $HIBI_SRC_DIR/tx_control.vhd
+vcom -93  -quiet -check_synthesis   $HIBI_SRC_DIR/transmitter.vhd
+vcom -93  -quiet -check_synthesis   $HIBI_SRC_DIR/hibi_wrapper_r1.vhd
+vcom -93  -quiet -check_synthesis   $HIBI_SRC_DIR/hibi_wrapper_r4.vhd
+vcom -93  -quiet -check_synthesis   $HIBI_SRC_DIR/hibi_bridge_v2.vhd
 
-# Kaannetaan hibin koodit
-vcom -quiet $HIBI_SRC_DIR/hibiv2_pkg.vhd
-vcom -quiet $HIBI_SRC_DIR/cfg_init_pkg.vhd
-vcom -quiet $HIBI_SRC_DIR/addr_data_demuxes.vhd
-vcom -quiet $HIBI_SRC_DIR/tx_ctrl.vhd
-vcom -quiet $HIBI_SRC_DIR/addr_data_muxes.vhd
-vcom -quiet $HIBI_SRC_DIR/addr_decoder.vhd
-vcom -quiet $HIBI_SRC_DIR/cfg_mem.vhd
-vcom -quiet $HIBI_SRC_DIR/double_fifo_demux_wr.vhd
-vcom -quiet $HIBI_SRC_DIR/double_fifo_mux_rd.vhd
-#vcom -quiet $HIBI_SRC_DIR/fifo.vhd
-vcom -quiet $HIBI_CVS_TREE/IP/Memories/Fifos/Vhdl/multiclk_fifo.vhd
-vcom -quiet $HIBI_SRC_DIR/fifo_muxes.vhd
-vcom -quiet $HIBI_SRC_DIR/hibi_wrapper_r1.vhd
-vcom -quiet $HIBI_SRC_DIR/receiver.vhd
-vcom -quiet $HIBI_SRC_DIR/rx_ctrl.vhd
-vcom -quiet $HIBI_SRC_DIR/transmitter.vhd
-vcom -quiet $HIBI_SRC_DIR/hibi_wrapper_r3.vhd
-vcom -quiet $HIBI_SRC_DIR/hibi_wrapper_r4.vhd
-vcom -quiet $HIBI_SRC_DIR/hibi_wrapper_r3_top.vhd
-vcom -quiet $HIBI_SRC_DIR/hibi_wrapper_r4_top.vhd
-vcom -quiet $HIBI_SRC_DIR/async_fifo_interfaces.vhd
-vcom -quiet $HIBI_SRC_DIR/hibi_bridge_v2.vhd
-vcom -quiet $HIBI_SRC_DIR/eight_hibi_r4.vhd
+vcom -93  -quiet -check_synthesis   $HIBI_SRC_DIR/hibi_orbus_small.vhd
 
 
-# Käännetään system monitor
-#vcom -quiet -check_synthesis ../Vhdl/system_monitor.vhd
+
+vcom -93  -quiet -check_synthesis   $HIBI_SRC_DIR/addr_data_demux_read.vhd
+vcom -93  -quiet -check_synthesis   $HIBI_SRC_DIR/addr_data_mux_write.vhd
+vcom -93  -quiet -check_synthesis   $HIBI_SRC_DIR/hibi_wrapper_r3.vhd
+
+vcom -93  -quiet -check_synthesis   $HIBI_SRC_DIR/hibiv3_r4.vhd
+
 
 
 
@@ -139,12 +135,12 @@ echo 'Compiling testbench'
 vcom -quiet -check_synthesis ../Testbenches/tb_dct_package.vhd
 vcom -quiet -check_synthesis ../Testbenches/tb_dct_cpu.vhd
 vcom -quiet -check_synthesis ../Testbenches/tb_pinger.vhd
-vcom -quiet -check_synthesis ../Testbenches/tb_dct_top.vhd
+vcom -quiet -check_synthesis ../Testbenches/tb_dct_top_2.vhd
 
 
 # Poistetaan vanha makefile ja tehdaan uusi
-rm -f ../makefile.vhdl
-vmake $DCT_DATA_DIR/codelib > $DCT_WORK_DIR/Simulation/makefile.vhd
+rm -f ../Makefile
+vmake $DCT_DATA_DIR/codelib > $DCT_WORK_DIR/Simulation/Makefile
 
 echo "Create makefile complete "
 
