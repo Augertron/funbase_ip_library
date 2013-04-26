@@ -165,8 +165,27 @@ int mcapi_debug = 0;
 /* global my node id number */
 mcapi_uint_t my_node_id = 255;
 
-
+int cfg_fdev = 0;
 //int cpu0_dev;
+
+typedef struct {
+  mcapi_endpoint_t recv_ep;
+  int pkt_fdev;
+} pkt_chan;
+
+typedef struct {
+  mcapi_endpoint_t recv_ep;
+  int scl_fdev;
+} scl_chan;
+
+
+
+pkt_chan pkt_channels[MAX_CHANNELS];
+scl_chan scl_channels[MAX_CHANNELS];
+
+
+
+int scl_chan_idx, pkt_chan_idx  = 0;
 
 //////////////////////////////////////////////////////////////////////////////
 //                                                                          //
@@ -209,7 +228,7 @@ mcapi_boolean_t mcapi_trans_get_node_num(mcapi_uint_t* node)
 ***************************************************************************/
 mcapi_boolean_t mcapi_trans_initialize(mcapi_uint_t node_num)
 {
-	int i = 0;
+
 	mcapi_boolean_t rc = MCAPI_TRUE;
   
 	mcapi_trans_initialize_database();
@@ -222,15 +241,24 @@ mcapi_boolean_t mcapi_trans_initialize(mcapi_uint_t node_num)
  
 
 	my_node_id = node_num;
+	
+	// open file device for receiving channel configurations
+	cfg_fdev = open(dev_names[my_node_id], O_RDWR, 0x700);
+	ioctl(cfg_fdev,SET_HIBI_RX_ADDR, (void*) (hibiEndAddresses[my_node_id] ));
+	ioctl(cfg_fdev,SET_HIBI_RX_PACKETS,(void*) 4);
+	ioctl(cfg_fdev,SET_HIBI_RX_BLOCKING,(void*) HIBI_READ_BLOCKING_MODE);
 
-	printf("opening devices \n");
-	for(i = 0; i < FDEV_COUNT ; i++)
+	//create task to poll this
+	
+	
+	//printf("opening devices \n");
+	/*for(i = 0; i < FDEV_COUNT ; i++)
 	{
 		fdevs[i] = open(dev_names[i], O_RDWR, 0x700);
 		if (fdevs[i] == -1) rc = MCAPI_FALSE;
 
 	}
-
+*/
   return rc;
 }
 
@@ -1089,7 +1117,10 @@ mcapi_boolean_t mcapi_trans_create_endpoint_(mcapi_endpoint_t* ep, mcapi_uint_t 
   
   /* unlock the database */
   // mcapi_trans_access_database_post();
-
+  
+  //Open device for local endpoint to receive messages
+   //int fdev = 0;
+   fdevs[node_num] = open(dev_names[node_num], O_RDWR, 0x700);
 
   ioctl(fdevs[node_num],SET_HIBI_RX_ADDR,(void*) (hibiBaseAddresses[node_num] | port_num)  );
   ioctl(fdevs[node_num],SET_HIBI_RX_PACKETS,(void*) DEFAULT_MSG_SIZE);
@@ -1279,7 +1310,7 @@ mcapi_boolean_t mcapi_trans_msg_send( mcapi_endpoint_t  send_endpoint,
                             char* buffer, size_t buffer_size, mcapi_request_t* request,
                              mcapi_status_t* mcapi_status) 
 {
-  int port_id,node_id = 0;
+  int port_id,node_id ,fdev = 0;
   uint16_t sn,se;
   uint16_t rn,re;
   /* if errors were found at the mcapi layer, then the request is considered complete */
@@ -1307,16 +1338,21 @@ mcapi_boolean_t mcapi_trans_msg_send( mcapi_endpoint_t  send_endpoint,
   
     
     
-    printf("TRANS: Sending message...\n");
+    //printf("TRANS: Sending message...\n");
     // TODO: FILE_DEVICE send_data
     port_id = receive_endpoint & 0x0000FFFF;
     node_id = receive_endpoint >> 16;
+	
+	fdev = open(dev_names[node_id], O_RDWR, 0x700);
+
 
     if(port_id != 0)
     {
     	lseek(fdevs[node_id], port_id, SEEK_SET);
     }
     write(fdevs[node_id], buffer , buffer_size);
+  
+	close(fdevs[node_id]);
   
     //if (!mcapi_trans_send_internal (sn,se,rn,re,buffer,buffer_size,MCAPI_FALSE,0)) {
       /* assume couldn't get a buffer */
@@ -1413,7 +1449,7 @@ void mcapi_trans_msg_recv_i( mcapi_endpoint_t  receive_endpoint,  char* buffer,
 
   
   // TODO: FILE_DEV get received data from hibi_pe_dma
-  read(fdevs[0], (char*) &buffer, buffer_size);
+  read(fdevs[rp], (char*) &buffer, buffer_size);
   
   // initialize msg channel
   //initCh(hibi_address_table[my_node_id] + receive_endpoint & 0x0000FFFF, receive_endpoint & 0x0000FFFF, (int)(rx_data), buffer_size);
@@ -1473,6 +1509,9 @@ void mcapi_trans_connect_pktchan_i( mcapi_endpoint_t  send_endpoint,
                                     mcapi_request_t* request,mcapi_status_t* mcapi_status)
 {
   
+  int port_id, node_id =0;
+  char buffer;
+
   /* if errors were found at the mcapi layer, then the request is considered complete */
   mcapi_boolean_t completed =  (*mcapi_status == MCAPI_SUCCESS) ? MCAPI_FALSE : MCAPI_TRUE;
 
@@ -1485,6 +1524,22 @@ void mcapi_trans_connect_pktchan_i( mcapi_endpoint_t  send_endpoint,
   }
   setup_request_internal(&receive_endpoint,request,mcapi_status,completed,0,NULL,0);
 
+
+  port_id = receive_endpoint & 0x0000FFFF;
+  node_id = receive_endpoint >> 16;
+
+
+  // Open file device for packet channel and store receive endpoint
+  pkt_channels[pkt_chan_idx].pkt_fdev = open((void*) fdevs[node_id], O_RDWR, 0x700);
+  pkt_channels[pkt_chan_idx].recv_ep = receive_endpoint;
+  pkt_chan_idx++;
+  
+  //Send connect message to receive nodes config channel TODO:set correct size
+  write(fdevs[node_id],(void*) 11 ,  4);
+  
+  // Receive acknoledge
+  read(cfg_fdev, (char*) &buffer, 1);
+  
     /* unlock the database */
   // mcapi_trans_access_database_post();
 }
@@ -1503,7 +1558,6 @@ void mcapi_trans_connect_pktchan_i( mcapi_endpoint_t  send_endpoint,
                                        mcapi_endpoint_t receive_endpoint, 
                                        mcapi_request_t* request,mcapi_status_t* mcapi_status)
 {
-    //initCh(hibi_address_table[my_node_id]+(receive_endpoint & 0x0000FFFF)  , receive_endpoint & 0x0000FFFF, (int)(rx_data), 1);
   uint16_t rn,re;
    /* if errors were found at the mcapi layer, then the request is considered complete */
    mcapi_boolean_t completed =  (*mcapi_status == MCAPI_SUCCESS) ? MCAPI_FALSE : MCAPI_TRUE;
@@ -1522,6 +1576,8 @@ void mcapi_trans_connect_pktchan_i( mcapi_endpoint_t  send_endpoint,
      /* fill in the channel handle */
      *recv_handle = mcapi_trans_encode_handle_internal(rn,re);
      
+	 // TODO: read(configure)
+	 
      
      /* has the channel been connected yet? */
      if ( c_db->nodes[rn].node_d.endpoints[re].recv_queue.channel_type == MCAPI_PKT_CHAN) {
@@ -1602,6 +1658,7 @@ void mcapi_trans_pktchan_send_i( mcapi_pktchan_send_hndl_t send_handle,
                                 void* buffer, size_t size, mcapi_request_t* request,
                                  mcapi_status_t* mcapi_status)
 {
+  int i;
   uint16_t sn,se,rn,re;
    /* if errors were found at the mcapi layer, then the request is considered complete */
   mcapi_boolean_t completed =  (*mcapi_status == MCAPI_SUCCESS) ? MCAPI_FALSE : MCAPI_TRUE; 
@@ -1624,7 +1681,12 @@ void mcapi_trans_pktchan_send_i( mcapi_pktchan_send_hndl_t send_handle,
     /*     } */
 
     
-    write(fdevs[0], buffer , size);
+  for(i=0; i < pkt_chan_idx;) {
+	if (pkt_channels[i].recv_ep == re) break;
+	i++;
+  }
+  
+  write(pkt_channels[i].pkt_fdev, buffer , size);
 
 
     completed = MCAPI_TRUE;
@@ -1885,6 +1947,9 @@ void mcapi_trans_connect_sclchan_i( mcapi_endpoint_t  send_endpoint,
                                     mcapi_endpoint_t  receive_endpoint, 
                                     mcapi_request_t* request,mcapi_status_t* mcapi_status)
 {
+  int node_id, port_id = 0;
+  char buffer;
+
   /* if errors were found at the mcapi layer, then the request is considered complete */
   mcapi_boolean_t completed =  (*mcapi_status == MCAPI_SUCCESS) ? MCAPI_FALSE : MCAPI_TRUE;
 
@@ -1896,6 +1961,21 @@ void mcapi_trans_connect_sclchan_i( mcapi_endpoint_t  send_endpoint,
     completed = MCAPI_TRUE;
   }
   setup_request_internal(&receive_endpoint,request,mcapi_status,completed,0,NULL,0);
+  
+
+  port_id = receive_endpoint & 0x0000FFFF;
+  node_id = receive_endpoint >> 16;
+
+  // Open file device for packet channel and store receive endpoint
+  scl_channels[scl_chan_idx].scl_fdev = open((void*)fdevs[node_id], O_RDWR, 0x700);
+  scl_channels[scl_chan_idx].recv_ep = receive_endpoint;
+  scl_chan_idx++;
+  
+  //Send connect message to receive nodes config channel TODO: Set correct size
+  write(fdevs[node_id],(void*) 11 , 4);
+  
+  // Receive acknoledge
+  read(cfg_fdev, (char*) &buffer, 1);
   
   /* unlock the database */
   // mcapi_trans_access_database_post();
@@ -2006,6 +2086,7 @@ void mcapi_trans_open_sclchan_send_i( mcapi_sclchan_send_hndl_t* send_handle,
 mcapi_boolean_t mcapi_trans_sclchan_send(
     mcapi_sclchan_send_hndl_t send_handle, uint64_t dataword, uint32_t size)
 {  
+  int i = 0;
   uint16_t sn,se,rn,re;
   int rc = MCAPI_FALSE;
   mcapi_boolean_t rv = MCAPI_FALSE;
@@ -2022,8 +2103,12 @@ mcapi_boolean_t mcapi_trans_sclchan_send(
   
   rc = mcapi_trans_send_internal (sn,se,rn,re,NULL,size,MCAPI_TRUE,dataword); 
   
-
-  write(fdevs[0], &dataword , size);
+ for(i=0; i < scl_chan_idx;) {
+	if (pkt_channels[i].recv_ep == re) break;
+	i++;
+  }
+  
+  write(scl_channels[i].scl_fdev, &dataword , size);
 
   /* unlock the database */
   // mcapi_trans_access_database_post();
