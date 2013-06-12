@@ -495,8 +495,9 @@ BEGIN
   DCscaler_from_ROM  : PROCESS (addr_DCscaler_r)
     VARIABLE address : integer;
   BEGIN
-    address := conv_integer(unsigned(addr_DCscaler_r));
-    DCscaler <= ROM_DCSCALER(address);
+    --address := conv_integer(unsigned(addr_DCscaler_r));
+    address := 1; 					-- LM 12.6.2013 changed dcscaler to constant 8
+	DCscaler <= ROM_DCSCALER(address);
   END PROCESS DCscaler_from_ROM;
 
 -- purpose: fetch Inv_QP from ROM
@@ -511,8 +512,9 @@ BEGIN
   Inv_DCscaler_from_ROM : PROCESS (addr_inv_dcscaler_r)
     VARIABLE address    : integer;
   BEGIN
-    address := conv_integer(unsigned(addr_inv_dcscaler_r));
-    inv_DCscaler <= ROM_INV_DCSCALER(address);
+    --address := conv_integer(unsigned(addr_inv_dcscaler_r));
+    address := 1; 					-- LM 12.6.2013 changed dcscaler to constant 8
+	inv_DCscaler <= ROM_INV_DCSCALER(address);  
   END PROCESS Inv_DCscaler_from_ROM;
 
 
