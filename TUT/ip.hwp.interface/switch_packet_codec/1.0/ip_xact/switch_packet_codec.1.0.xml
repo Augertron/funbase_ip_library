@@ -415,6 +415,7 @@
 				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
 					<spirit:direction>in</spirit:direction>
 				</spirit:wire>
+				<spirit:vendorExtensions/>
 			</spirit:port>
 			<spirit:port>
 				<spirit:name>rst_n</spirit:name>
@@ -425,12 +426,14 @@
 						<spirit:right>0</spirit:right>
 					</spirit:vector>
 				</spirit:wire>
+				<spirit:vendorExtensions/>
 			</spirit:port>
 			<spirit:port>
 				<spirit:name>rx_av_in</spirit:name>
 				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
 					<spirit:direction>in</spirit:direction>
 				</spirit:wire>
+				<spirit:vendorExtensions/>
 			</spirit:port>
 			<spirit:port>
 				<spirit:name>rx_data_in</spirit:name>
@@ -441,24 +444,28 @@
 						<spirit:right>0</spirit:right>
 					</spirit:vector>
 				</spirit:wire>
+				<spirit:vendorExtensions/>
 			</spirit:port>
 			<spirit:port>
 				<spirit:name>rx_empty_in</spirit:name>
 				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
 					<spirit:direction>in</spirit:direction>
 				</spirit:wire>
+				<spirit:vendorExtensions/>
 			</spirit:port>
 			<spirit:port>
 				<spirit:name>rx_re_out</spirit:name>
 				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
 					<spirit:direction>out</spirit:direction>
 				</spirit:wire>
+				<spirit:vendorExtensions/>
 			</spirit:port>
 			<spirit:port>
 				<spirit:name>switch_in</spirit:name>
 				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
 					<spirit:direction>in</spirit:direction>
 				</spirit:wire>
+				<spirit:vendorExtensions/>
 			</spirit:port>
 			<spirit:port>
 				<spirit:name>tx_av_out</spirit:name>
@@ -469,6 +476,7 @@
 						<spirit:right>0</spirit:right>
 					</spirit:vector>
 				</spirit:wire>
+				<spirit:vendorExtensions/>
 			</spirit:port>
 			<spirit:port>
 				<spirit:name>tx_comm_out</spirit:name>
@@ -479,6 +487,7 @@
 						<spirit:right>0</spirit:right>
 					</spirit:vector>
 				</spirit:wire>
+				<spirit:vendorExtensions/>
 			</spirit:port>
 			<spirit:port>
 				<spirit:name>tx_data_out</spirit:name>
@@ -489,12 +498,14 @@
 						<spirit:right>0</spirit:right>
 					</spirit:vector>
 				</spirit:wire>
+				<spirit:vendorExtensions/>
 			</spirit:port>
 			<spirit:port>
 				<spirit:name>tx_full_in</spirit:name>
 				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
 					<spirit:direction>in</spirit:direction>
 				</spirit:wire>
+				<spirit:vendorExtensions/>
 			</spirit:port>
 			<spirit:port>
 				<spirit:name>tx_txlen_out</spirit:name>
@@ -505,12 +516,14 @@
 						<spirit:right>0</spirit:right>
 					</spirit:vector>
 				</spirit:wire>
+				<spirit:vendorExtensions/>
 			</spirit:port>
 			<spirit:port>
 				<spirit:name>tx_we_out</spirit:name>
 				<spirit:wire spirit:allLogicalDirectionsAllowed="false">
 					<spirit:direction>out</spirit:direction>
 				</spirit:wire>
+				<spirit:vendorExtensions/>
 			</spirit:port>
 		</spirit:ports>
 		<spirit:modelParameters>
@@ -537,9 +550,6 @@
 				<spirit:fileType>vhdlSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 				<spirit:logicalName spirit:default="false">work</spirit:logicalName>
-				<spirit:buildCommand>
-					<spirit:replaceDefaultFlags>false</spirit:replaceDefaultFlags>
-				</spirit:buildCommand>
 			</spirit:file>
 			<spirit:defaultFileBuilder>
 				<spirit:fileType>vhdlSource</spirit:fileType>
