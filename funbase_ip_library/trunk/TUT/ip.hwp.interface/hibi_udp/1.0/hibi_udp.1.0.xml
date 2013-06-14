@@ -131,7 +131,9 @@
 			<spirit:name>hibi_slave</spirit:name>
 			<spirit:busType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.busdef" spirit:version="3.0"/>
 			<spirit:abstractionType spirit:vendor="TUT" spirit:library="ip.hwp.communication" spirit:name="hibi_ip_r4.absdef" spirit:version="3.0"/>
-			<spirit:slave/>
+			<spirit:slave>
+				<spirit:memoryMapRef spirit:memoryMapRef="hibi_mem_map"/>
+			</spirit:slave>
 			<spirit:connectionRequired>false</spirit:connectionRequired>
 			<spirit:portMaps>
 				<spirit:portMap>
@@ -412,6 +414,19 @@
 			<spirit:endianness>little</spirit:endianness>
 		</spirit:busInterface>
 	</spirit:busInterfaces>
+	<spirit:memoryMaps>
+		<spirit:memoryMap>
+			<spirit:name>hibi_mem_map</spirit:name>
+			<spirit:addressBlock>
+				<spirit:name>udp2hibi_regs</spirit:name>
+				<spirit:baseAddress>0x0</spirit:baseAddress>
+				<spirit:range>4</spirit:range>
+				<spirit:width>32</spirit:width>
+				<spirit:usage>register</spirit:usage>
+			</spirit:addressBlock>
+			<spirit:addressUnitBits>32</spirit:addressUnitBits>
+		</spirit:memoryMap>
+	</spirit:memoryMaps>
 	<spirit:model>
 		<spirit:views>
 			<spirit:view>

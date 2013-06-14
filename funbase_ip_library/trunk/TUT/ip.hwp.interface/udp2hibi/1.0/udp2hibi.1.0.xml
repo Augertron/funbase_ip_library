@@ -600,6 +600,7 @@
 	<spirit:memoryMaps>
 		<spirit:memoryMap>
 			<spirit:name>udp2hibi_memmap</spirit:name>
+			<spirit:description>hibi memory map</spirit:description>
 			<spirit:addressBlock>
 				<spirit:name>registers</spirit:name>
 				<spirit:baseAddress>0x0</spirit:baseAddress>
@@ -615,7 +616,13 @@
 				<spirit:register>
 					<spirit:name>RX_cntrl</spirit:name>
 					<spirit:dim>0</spirit:dim>
-					<spirit:addressOffset>0x0</spirit:addressOffset>
+					<spirit:addressOffset>0x1</spirit:addressOffset>
+					<spirit:size>32</spirit:size>
+				</spirit:register>
+				<spirit:register>
+					<spirit:name>lock_state</spirit:name>
+					<spirit:dim>0</spirit:dim>
+					<spirit:addressOffset>0x3</spirit:addressOffset>
 					<spirit:size>32</spirit:size>
 				</spirit:register>
 			</spirit:addressBlock>

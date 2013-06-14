@@ -10,8 +10,8 @@
  */
  
 #include "udp2hibi.h"
-#include "tut_n2h_regs.h"
-#include "N2H_registers_and_macros.h"
+#include "system.h"
+
 
  
  
@@ -20,7 +20,7 @@ int udp2hibi_rx_conf( int ip_addr, int dest_port, int source_port, int receiving
     // todo: check that ip and ports are valid
     
     // wait tx to finish
-    while ( !N2H_TX_DONE( (int*)N2H_REGISTERS_BASE_ADDRESS )) {}
+    while ( !HPD_TX_DONE( (int*)N2H_REGISTERS_BASE_ADDRESS )) {}
     
     // set up n2h2 to receive ack/nack sent to receiving_haddr
     N2H_CHAN_CONF( 0, N2H_REGISTERS_RX_BUFFER_START, receiving_haddr, 1, N2H_REGISTERS_BASE_ADDRESS);
