@@ -1475,7 +1475,6 @@
 				<spirit:flags> -work hibi -check_synthesis -quiet</spirit:flags>
 				<spirit:replaceDefaultFlags>false</spirit:replaceDefaultFlags>
 			</spirit:defaultFileBuilder>
-			<spirit:dependency>Double click to add new item.</spirit:dependency>
 		</spirit:fileSet>
 		<spirit:fileSet>
 			<spirit:name>doc</spirit:name>
