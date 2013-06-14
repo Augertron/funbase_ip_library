@@ -14,7 +14,7 @@ Input:
 1.  Address to send the results to quant
 2.  Address to send the results to idct (set unused address if you don't use this)
 2. Control word for the current macroblock
-    Control word structure: bit    6: chroma(1)/luma(0) (NOT USED), 
+    Control word structure: bit    6: chroma(1)/luma(0) NOT USED, 
 	                        5: intra(1)/inter(0),
                                                    4..0: quantizer parameter (QP)
 3. Then the DCT data ( 8x8x6 x 16-bit values = 384 x 16 bit )
@@ -524,7 +524,7 @@ Outputs:
 			<spirit:addressBlock>
 				<spirit:name>dct_regs</spirit:name>
 				<spirit:baseAddress>0x0</spirit:baseAddress>
-				<spirit:range>1</spirit:range>
+				<spirit:range>7</spirit:range>
 				<spirit:width>32</spirit:width>
 				<spirit:usage>register</spirit:usage>
 				<spirit:register>
@@ -576,7 +576,7 @@ Outputs:
 					<spirit:size>32</spirit:size>
 				</spirit:register>
 			</spirit:addressBlock>
-			<spirit:addressUnitBits>8</spirit:addressUnitBits>
+			<spirit:addressUnitBits>32</spirit:addressUnitBits>
 		</spirit:memoryMap>
 	</spirit:memoryMaps>
 	<spirit:model>
@@ -965,6 +965,7 @@ Outputs:
 					<kactus2:transferType>packet</kactus2:transferType>
 					<kactus2:comDirection>in</kactus2:comDirection>
 					<kactus2:propertyValues/>
+					<kactus2:comImplementationRef spirit:vendor="" spirit:library="" spirit:name="" spirit:version=""/>
 				</kactus2:comInterface>
 				<kactus2:comInterface>
 					<spirit:name>dct_data_out</spirit:name>
@@ -974,6 +975,7 @@ Outputs:
 					<kactus2:transferType>packet</kactus2:transferType>
 					<kactus2:comDirection>out</kactus2:comDirection>
 					<kactus2:propertyValues/>
+					<kactus2:comImplementationRef spirit:vendor="" spirit:library="" spirit:name="" spirit:version=""/>
 				</kactus2:comInterface>
 				<kactus2:comInterface>
 					<spirit:name>block_count_in</spirit:name>
@@ -983,6 +985,7 @@ Outputs:
 					<kactus2:transferType>message</kactus2:transferType>
 					<kactus2:comDirection>in</kactus2:comDirection>
 					<kactus2:propertyValues/>
+					<kactus2:comImplementationRef spirit:vendor="" spirit:library="" spirit:name="" spirit:version=""/>
 				</kactus2:comInterface>
 			</kactus2:comInterfaces>
 		</kactus2:extensions>

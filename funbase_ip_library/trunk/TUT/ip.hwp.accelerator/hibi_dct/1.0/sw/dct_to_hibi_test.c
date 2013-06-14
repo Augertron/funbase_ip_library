@@ -13,8 +13,8 @@
 #include "hpd_functions.h"
 
 #define MY_ADDR   0x01000000
-#define DCT_ADDR  0x03000000  
-#define FOO_ADDR  0x05000000
+#define DCT_ADDR  0x05000000
+#define FOO_ADDR  0x09000000
 
 
 

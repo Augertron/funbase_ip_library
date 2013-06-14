@@ -5,6 +5,7 @@
 	<spirit:library>ip.hwp.accelerator</spirit:library>
 	<spirit:name>port_blinker</spirit:name>
 	<spirit:version>1.0</spirit:version>
+	<spirit:description>Counts up and inverts output when reaching the limit value. Then start over again.</spirit:description>
 	<spirit:busInterfaces>
 		<spirit:busInterface>
 			<spirit:name>clk</spirit:name>
@@ -158,6 +159,9 @@
 						</spirit:wireTypeDef>
 					</spirit:wireTypeDefs>
 				</spirit:wire>
+				<spirit:vendorExtensions>
+					<kactus2:adHocVisible/>
+				</spirit:vendorExtensions>
 			</spirit:port>
 			<spirit:port>
 				<spirit:name>ena_in</spirit:name>
@@ -175,6 +179,9 @@
 						</spirit:wireTypeDef>
 					</spirit:wireTypeDefs>
 				</spirit:wire>
+				<spirit:vendorExtensions>
+					<kactus2:adHocVisible/>
+				</spirit:vendorExtensions>
 			</spirit:port>
 			<spirit:port>
 				<spirit:name>port_out</spirit:name>
@@ -192,6 +199,9 @@
 						</spirit:wireTypeDef>
 					</spirit:wireTypeDefs>
 				</spirit:wire>
+				<spirit:vendorExtensions>
+					<kactus2:adHocVisible/>
+				</spirit:vendorExtensions>
 			</spirit:port>
 			<spirit:port>
 				<spirit:name>rst_n</spirit:name>
@@ -209,6 +219,9 @@
 						</spirit:wireTypeDef>
 					</spirit:wireTypeDefs>
 				</spirit:wire>
+				<spirit:vendorExtensions>
+					<kactus2:adHocVisible/>
+				</spirit:vendorExtensions>
 			</spirit:port>
 			<spirit:port>
 				<spirit:name>val_in</spirit:name>
@@ -226,6 +239,9 @@
 						</spirit:wireTypeDef>
 					</spirit:wireTypeDefs>
 				</spirit:wire>
+				<spirit:vendorExtensions>
+					<kactus2:adHocVisible/>
+				</spirit:vendorExtensions>
 			</spirit:port>
 		</spirit:ports>
 		<spirit:modelParameters>
@@ -244,9 +260,6 @@
 				<spirit:fileType>vhdlSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 				<spirit:logicalName spirit:default="false">work</spirit:logicalName>
-				<spirit:buildCommand>
-					<spirit:replaceDefaultFlags>false</spirit:replaceDefaultFlags>
-				</spirit:buildCommand>
 			</spirit:file>
 			<spirit:defaultFileBuilder>
 				<spirit:fileType>vhdlSource</spirit:fileType>
@@ -263,21 +276,14 @@
 				<spirit:name>../doc/port_blinker.html</spirit:name>
 				<spirit:userFileType>documentation</spirit:userFileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
-				<spirit:buildCommand>
-					<spirit:replaceDefaultFlags>false</spirit:replaceDefaultFlags>
-				</spirit:buildCommand>
 			</spirit:file>
 			<spirit:file>
 				<spirit:name>../doc/TUT.ip.hwp.accelerator.port_blinker.1.0.png</spirit:name>
 				<spirit:userFileType>jpg</spirit:userFileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
-				<spirit:buildCommand>
-					<spirit:replaceDefaultFlags>false</spirit:replaceDefaultFlags>
-				</spirit:buildCommand>
 			</spirit:file>
 		</spirit:fileSet>
 	</spirit:fileSets>
-	<spirit:description>Counts up and inverts output when reaching the limit value. Then start over again.</spirit:description>
 	<spirit:vendorExtensions>
 		<kactus2:extensions>
 			<kactus2:kts_attributes>
