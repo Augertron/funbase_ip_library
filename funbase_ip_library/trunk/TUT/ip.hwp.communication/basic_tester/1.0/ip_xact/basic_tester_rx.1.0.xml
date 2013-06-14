@@ -294,27 +294,18 @@ Works only in simulation because configuration is done with ASCII file.</spirit:
 				<spirit:fileType>vhdlSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 				<spirit:logicalName spirit:default="false">work</spirit:logicalName>
-				<spirit:buildCommand>
-					<spirit:replaceDefaultFlags>false</spirit:replaceDefaultFlags>
-				</spirit:buildCommand>
 			</spirit:file>
 			<spirit:file>
 				<spirit:name>../vhd/basic_tester_pkg.vhd</spirit:name>
 				<spirit:fileType>vhdlSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 				<spirit:logicalName spirit:default="false">work</spirit:logicalName>
-				<spirit:buildCommand>
-					<spirit:replaceDefaultFlags>false</spirit:replaceDefaultFlags>
-				</spirit:buildCommand>
 			</spirit:file>
 			<spirit:file>
 				<spirit:name>../vhd/basic_tester_rx.vhd</spirit:name>
 				<spirit:fileType>vhdlSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 				<spirit:logicalName spirit:default="false">work</spirit:logicalName>
-				<spirit:buildCommand>
-					<spirit:replaceDefaultFlags>false</spirit:replaceDefaultFlags>
-				</spirit:buildCommand>
 			</spirit:file>
 			<spirit:defaultFileBuilder>
 				<spirit:fileType>vhdlSource</spirit:fileType>
@@ -331,9 +322,6 @@ Works only in simulation because configuration is done with ASCII file.</spirit:
 				<spirit:fileType>vhdlSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 				<spirit:logicalName spirit:default="false">work</spirit:logicalName>
-				<spirit:buildCommand>
-					<spirit:replaceDefaultFlags>false</spirit:replaceDefaultFlags>
-				</spirit:buildCommand>
 				<spirit:description>Top-level. Generates clock and reset, instantiates basic tester tx+rx and hibi wrappers.</spirit:description>
 			</spirit:file>
 			<spirit:file>
@@ -341,27 +329,18 @@ Works only in simulation because configuration is done with ASCII file.</spirit:
 				<spirit:fileType>vhdlSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
 				<spirit:logicalName spirit:default="false">work</spirit:logicalName>
-				<spirit:buildCommand>
-					<spirit:replaceDefaultFlags>false</spirit:replaceDefaultFlags>
-				</spirit:buildCommand>
 				<spirit:description>Receiver unit.</spirit:description>
 			</spirit:file>
 			<spirit:file>
 				<spirit:name>../sim/test_tx.txt</spirit:name>
 				<spirit:userFileType>ASCII</spirit:userFileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
-				<spirit:buildCommand>
-					<spirit:replaceDefaultFlags>false</spirit:replaceDefaultFlags>
-				</spirit:buildCommand>
 				<spirit:description>Contents of transmitted values</spirit:description>
 			</spirit:file>
 			<spirit:file>
 				<spirit:name>../sim/compile_all.sh</spirit:name>
 				<spirit:userFileType>shell script</spirit:userFileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
-				<spirit:buildCommand>
-					<spirit:replaceDefaultFlags>false</spirit:replaceDefaultFlags>
-				</spirit:buildCommand>
 				<spirit:dependency></spirit:dependency>
 				<spirit:description>Creates VHDL libraries and compiles everything.
 </spirit:description>
@@ -370,18 +349,12 @@ Works only in simulation because configuration is done with ASCII file.</spirit:
 				<spirit:name>../sim/tb_basic_tester.do</spirit:name>
 				<spirit:userFileType>Modelsim macro</spirit:userFileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
-				<spirit:buildCommand>
-					<spirit:replaceDefaultFlags>false</spirit:replaceDefaultFlags>
-				</spirit:buildCommand>
 				<spirit:description>Sets up the wave viewer</spirit:description>
 			</spirit:file>
 			<spirit:file>
 				<spirit:name>../sim/test_rx.txt</spirit:name>
 				<spirit:userFileType>ASCII</spirit:userFileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
-				<spirit:buildCommand>
-					<spirit:replaceDefaultFlags>false</spirit:replaceDefaultFlags>
-				</spirit:buildCommand>
 				<spirit:description>Expected values for the receiver
 </spirit:description>
 			</spirit:file>
@@ -392,7 +365,7 @@ Works only in simulation because configuration is done with ASCII file.</spirit:
 				<spirit:replaceDefaultFlags>false</spirit:replaceDefaultFlags>
 			</spirit:defaultFileBuilder>
 			<spirit:dependency>../../../../ip.hwp.storage/fifos</spirit:dependency>
-			<spirit:dependency>../../../../ip.hwp.storage/fifos/multi_clk/vhd</spirit:dependency>
+			<spirit:dependency>../../../../ip.hwp.storage/fifos/multiclk_fifo/1.0/vhd</spirit:dependency>
 			<spirit:dependency>../../../hibi/3.0/vhd</spirit:dependency>
 		</spirit:fileSet>
 	</spirit:fileSets>
