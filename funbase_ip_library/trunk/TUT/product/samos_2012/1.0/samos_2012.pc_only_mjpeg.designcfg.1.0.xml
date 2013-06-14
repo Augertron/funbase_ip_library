@@ -21,4 +21,8 @@
 		<spirit:instanceName>nios_ii_sram</spirit:instanceName>
 		<spirit:viewName>software</spirit:viewName>
 	</spirit:viewConfiguration>
+	<spirit:viewConfiguration>
+		<spirit:instanceName>xilinx_spartan_xc3S500e_ublaze_0</spirit:instanceName>
+		<spirit:viewName>sof</spirit:viewName>
+	</spirit:viewConfiguration>
 </spirit:designConfiguration>
