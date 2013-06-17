@@ -6,8 +6,8 @@
  <!--     2 in ../../../../../TUT/ip.hwp.communication/hibi_pe_dma/ip/ -->
  <!--   -->
  
+  <path
+   path="../../../../../TUT/ip.swp.driver/hibi_pe_dma_fdev/1.0/src/**/*" />
    <path
-   path="D:/user/matilail/teaching/TKT-3541/2013_fall/TUT/ip.hwp.communication/hibi_pe_dma/ip/**/*" />
-   <path
-   path="D:/user/matilail/quartus_projects/altera_ips/altera_up_avalon_sram/**/*" />
+   path="../../../../up_avalon_sram/**/*" />
 </library>
