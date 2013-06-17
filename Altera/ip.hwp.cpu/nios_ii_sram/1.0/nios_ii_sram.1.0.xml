@@ -8,7 +8,10 @@
 	<spirit:library>ip.hwp.cpu</spirit:library>
 	<spirit:name>nios_ii_sram</spirit:name>
 	<spirit:version>1.0</spirit:version>
-	<spirit:description>Nios2 SRAM subsystem</spirit:description>
+	<spirit:description>Nios2 subsystem using SRAM as a data and program memory.
+Includes HIBI_PE_DMA for hibi communication.
+
+</spirit:description>
 	<spirit:busInterfaces>
 		<spirit:busInterface>
 			<spirit:name>clk</spirit:name>
@@ -427,26 +430,116 @@
 					<spirit:range>4K</spirit:range>
 				</spirit:segment>
 			</spirit:segments>
-			<spirit:addressUnitBits>8</spirit:addressUnitBits>
+			<spirit:addressUnitBits>32</spirit:addressUnitBits>
 			<spirit:localMemoryMap>
 				<spirit:name>avalon_addr_space</spirit:name>
 				<spirit:addressBlock>
 					<spirit:name>HIBI_PE_DMA</spirit:name>
-					<spirit:baseAddress>0x0</spirit:baseAddress>
-					<spirit:range>4</spirit:range>
+					<spirit:baseAddress>0x500</spirit:baseAddress>
+					<spirit:range>64</spirit:range>
 					<spirit:width>32</spirit:width>
-					<spirit:usage>reserved</spirit:usage>
+					<spirit:usage>register</spirit:usage>
+					<spirit:register>
+						<spirit:name>RX_INITIALIZE</spirit:name>
+						<spirit:description>Initializes the channel</spirit:description>
+						<spirit:dim>0</spirit:dim>
+						<spirit:addressOffset>0x0</spirit:addressOffset>
+						<spirit:size>32</spirit:size>
+						<spirit:volatile>false</spirit:volatile>
+						<spirit:access>write-only</spirit:access>
+					</spirit:register>
+					<spirit:register>
+						<spirit:name>CONTROL</spirit:name>
+						<spirit:description>Control register</spirit:description>
+						<spirit:dim>0</spirit:dim>
+						<spirit:addressOffset>0x1</spirit:addressOffset>
+						<spirit:size>32</spirit:size>
+						<spirit:access>read-write</spirit:access>
+					</spirit:register>
+					<spirit:register>
+						<spirit:name>IRQ_STATUS</spirit:name>
+						<spirit:description>Read IRQ status and acknoledge interrupts</spirit:description>
+						<spirit:dim>0</spirit:dim>
+						<spirit:addressOffset>0x2</spirit:addressOffset>
+						<spirit:size>32</spirit:size>
+						<spirit:access>read-write</spirit:access>
+					</spirit:register>
+					<spirit:register>
+						<spirit:name>TX_MEM_ADDR</spirit:name>
+						<spirit:description>Address where data to be sent begins</spirit:description>
+						<spirit:dim>0</spirit:dim>
+						<spirit:addressOffset>0x3</spirit:addressOffset>
+						<spirit:size>32</spirit:size>
+						<spirit:access>write-only</spirit:access>
+					</spirit:register>
+					<spirit:register>
+						<spirit:name>TX_WORDS</spirit:name>
+						<spirit:description>How many words to send</spirit:description>
+						<spirit:dim>0</spirit:dim>
+						<spirit:addressOffset>0x4</spirit:addressOffset>
+						<spirit:size>32</spirit:size>
+						<spirit:access>read-only</spirit:access>
+					</spirit:register>
+					<spirit:register>
+						<spirit:name>TX_COMM</spirit:name>
+						<spirit:description>Hibi command to send the data with</spirit:description>
+						<spirit:dim>0</spirit:dim>
+						<spirit:addressOffset>0x5</spirit:addressOffset>
+						<spirit:size>32</spirit:size>
+						<spirit:access>write-only</spirit:access>
+					</spirit:register>
+					<spirit:register>
+						<spirit:name>TX_HIBI_ADDR</spirit:name>
+						<spirit:description>Hibi address to send the data</spirit:description>
+						<spirit:dim>0</spirit:dim>
+						<spirit:addressOffset>0x6</spirit:addressOffset>
+						<spirit:size>32</spirit:size>
+						<spirit:access>write-only</spirit:access>
+					</spirit:register>
+					<spirit:register>
+						<spirit:name>RX_HIBI_DATA</spirit:name>
+						<spirit:description>Current data on hibi rx interface</spirit:description>
+						<spirit:dim>0</spirit:dim>
+						<spirit:addressOffset>0x7</spirit:addressOffset>
+						<spirit:size>32</spirit:size>
+						<spirit:access>read-only</spirit:access>
+					</spirit:register>
+					<spirit:register>
+						<spirit:name>RX_MEM_ADDR</spirit:name>
+						<spirit:description>Address where channel n stores received data</spirit:description>
+						<spirit:dim>0</spirit:dim>
+						<spirit:addressOffset>0x8</spirit:addressOffset>
+						<spirit:size>32</spirit:size>
+						<spirit:access>read-write</spirit:access>
+					</spirit:register>
+					<spirit:register>
+						<spirit:name>RX_WORDS</spirit:name>
+						<spirit:description>How many words to receive for packet channel n or read
+acknowledge for stream channel n</spirit:description>
+						<spirit:dim>0</spirit:dim>
+						<spirit:addressOffset>0x9</spirit:addressOffset>
+						<spirit:size>32</spirit:size>
+						<spirit:access>read-write</spirit:access>
+					</spirit:register>
+					<spirit:register>
+						<spirit:name>RX_HIBI_ADDR</spirit:name>
+						<spirit:description>Hibi address for channel n to listen</spirit:description>
+						<spirit:dim>0</spirit:dim>
+						<spirit:addressOffset>0xA</spirit:addressOffset>
+						<spirit:size>32</spirit:size>
+						<spirit:access>read-write</spirit:access>
+					</spirit:register>
 				</spirit:addressBlock>
 				<spirit:addressBlock>
 					<spirit:name>JTAG_UART</spirit:name>
-					<spirit:baseAddress>0x4</spirit:baseAddress>
+					<spirit:baseAddress>0x100</spirit:baseAddress>
 					<spirit:range>4</spirit:range>
 					<spirit:width>32</spirit:width>
 					<spirit:usage>reserved</spirit:usage>
 				</spirit:addressBlock>
 				<spirit:addressBlock>
 					<spirit:name>TIMER</spirit:name>
-					<spirit:baseAddress>0x8</spirit:baseAddress>
+					<spirit:baseAddress>0x300</spirit:baseAddress>
 					<spirit:range>4</spirit:range>
 					<spirit:width>32</spirit:width>
 					<spirit:usage>reserved</spirit:usage>
@@ -460,7 +553,7 @@
 				</spirit:addressBlock>
 				<spirit:addressBlock>
 					<spirit:name>SYSID</spirit:name>
-					<spirit:baseAddress>0x10</spirit:baseAddress>
+					<spirit:baseAddress>0x200</spirit:baseAddress>
 					<spirit:range>4</spirit:range>
 					<spirit:width>32</spirit:width>
 					<spirit:usage>reserved</spirit:usage>
@@ -485,6 +578,13 @@
 	<spirit:memoryMaps>
 		<spirit:memoryMap>
 			<spirit:name>hibi_mem_map</spirit:name>
+			<spirit:addressBlock>
+				<spirit:name>hibi_addr_block</spirit:name>
+				<spirit:baseAddress>0x0</spirit:baseAddress>
+				<spirit:range>32</spirit:range>
+				<spirit:width>32</spirit:width>
+				<spirit:usage>reserved</spirit:usage>
+			</spirit:addressBlock>
 			<spirit:addressUnitBits>32</spirit:addressUnitBits>
 		</spirit:memoryMap>
 	</spirit:memoryMaps>
@@ -774,6 +874,19 @@
 				<spirit:name>hdl/onchip_memory_0.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
 				<spirit:isIncludeFile spirit:externalDeclarations="false">false</spirit:isIncludeFile>
+			</spirit:file>
+		</spirit:fileSet>
+		<spirit:fileSet>
+			<spirit:name>avalon_addr_space_header</spirit:name>
+			<spirit:description>Contains header files generated for the component.</spirit:description>
+			<spirit:group>generatedFiles</spirit:group>
+			<spirit:file>
+				<spirit:name>headers/avalon_addr_space.h</spirit:name>
+				<spirit:fileType>cSource</spirit:fileType>
+				<spirit:fileType>cppSource</spirit:fileType>
+				<spirit:isIncludeFile spirit:externalDeclarations="false">true</spirit:isIncludeFile>
+				<spirit:description>A header file generated by Kactus2.
+This file contains the register and memory addresses defined in the memory map(s)</spirit:description>
 			</spirit:file>
 		</spirit:fileSet>
 	</spirit:fileSets>
